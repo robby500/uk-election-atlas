@@ -31,13 +31,24 @@
     1987: "1983", 1983: "1983",
   };
 
-  /* Regions file is the same for all eras (ONS 12-region boundary is stable) */
+  /* Resolve file paths relative to this script's location, not the page URL.
+     This means the files always load correctly regardless of which page loads the script. */
+  const BASE_URL = (function() {
+    const scripts = document.querySelectorAll("script[src]");
+    for (const s of scripts) {
+      if (s.src && s.src.includes("uk-election-map")) {
+        return s.src.substring(0, s.src.lastIndexOf("/") + 1);
+      }
+    }
+    return "./";  // fallback
+  })();
+
   function ridingsFile(era) {
-    return era === "2024" ? "uk-ridings.json" : `ridings-${era}.json`;
+    return BASE_URL + (era === "2024" ? "uk-ridings.json" : `ridings-${era}.json`);
   }
-  function regionsFile() { return "uk-regions.json"; }
+  function regionsFile() { return BASE_URL + "uk-regions.json"; }
   function resultsFile(year) {
-    return year === 2024 ? "election_results_uk.xlsx" : `election_results_${year}.xlsx`;
+    return BASE_URL + (year === 2024 ? "election_results_uk.xlsx" : `election_results_${year}.xlsx`);
   }
 
   /* ─── Party name normalisation (results files use abbreviations) ── */
