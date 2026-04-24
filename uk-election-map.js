@@ -332,7 +332,7 @@
       ALL:    ["#e67e22","#7a3a00"], UKIP:   ["#6b2fa0","#2d1045"],
       Brexit: ["#12b6cf","#065a69"], IND:    ["#95a5a6","#2c3e50"],
     };
-    return pairs[winner] || ["#3a3f50","#1e2235"];
+    return pairs[winner] || ["#7c8290","#2d3035"];
   }
 
   function partyColourAccent(party) {
@@ -342,7 +342,7 @@
       SF:"#4a9e6e", DUP:"#8e44ad", SDLP:"#2ecc71", UUP:"#5b8ed4",
       ALL:"#e67e22", UKIP:"#9b59b6", Brexit:"#12b6cf", IND:"#95a5a6",
     };
-    return map[party] || "#888";
+    return map[party] || "#7c8290";
   }
 
   /* ─── 5. Load election data ─────────────────────────────────────── */
@@ -885,7 +885,7 @@
     let html = `<div class="leg-title">UK General Election ${yearLabel}</div>`;
     for (const [party, seats] of sorted) {
       if (!seats) continue;
-      const c = pairs[party] || ["#3a3f50","#1e2235"];
+      const c = pairs[party] || ["#7c8290","#2d3035"];
       const accent = partyColourAccent(party);
       const name = displayNames[party] || party;
       html += `<div class="leg-bar">
@@ -904,7 +904,7 @@
       SF:"#4a9e6e", DUP:"#8e44ad", SDLP:"#2ecc71", UUP:"#5b8ed4",
       ALL:"#e67e22", UKIP:"#9b59b6", Brexit:"#12b6cf", IND:"#95a5a6",
     };
-    return map[party] || "#888";
+    return map[party] || "#7c8290";
   }
 
   /* ─── 8. Bootstrap ──────────────────────────────────────────────── */
