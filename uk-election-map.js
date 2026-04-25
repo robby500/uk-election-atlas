@@ -152,9 +152,15 @@
         background: #13161e;
         border: 1px solid #2a3350;
         border-radius: 6px;
-        overflow: hidden;
+        overflow-x: auto;
+        overflow-y: hidden;
         pointer-events: all;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+        max-width: calc(100vw - 24px);
       }
+
+      #year-selector::-webkit-scrollbar { display: none; }
 
       .year-btn {
         background: transparent;
@@ -168,6 +174,9 @@
         cursor: pointer;
         transition: background 0.15s, color 0.15s;
         white-space: nowrap;
+        flex-shrink: 0;
+        -webkit-tap-highlight-color: transparent;
+        touch-action: manipulation;
       }
 
       .year-btn:last-child { border-right: none; }
@@ -200,9 +209,9 @@
       /* ── Reset button ── */
       #reset-btn {
         position: fixed;
-        top: 16px;
+        top: calc(var(--topbar-height, 0px) + 10px);
         left: 16px;
-        z-index: 100;
+        z-index: 10000;
         background: #13161e;
         border: 1px solid #2a3350;
         color: #5a6280;
@@ -216,11 +225,13 @@
         opacity: 0;
         pointer-events: none;
         transition: opacity 0.2s, color 0.15s, border-color 0.15s;
+        -webkit-tap-highlight-color: transparent;
+        touch-action: manipulation;
       }
       #reset-btn.visible { opacity: 1; pointer-events: all; }
       #reset-btn:hover { color: #e8eaf0; border-color: #4e7cff; }
 
-      /* ── Tooltip ── */
+      /* ── Tooltip — anchored to bottom on mobile, cursor-follow on desktop ── */
       #map-tooltip {
         position: fixed;
         pointer-events: none;
@@ -248,6 +259,24 @@
       #map-tooltip .tt-abbr { color: var(--accent); font-size: 0.68rem; text-transform: uppercase; letter-spacing: 0.1em; }
       #map-tooltip .tt-votes { margin-top: 6px; font-size: 0.7rem; color: var(--muted); display: flex; flex-direction: column; gap: 2px; }
       #map-tooltip .tt-margin { color: var(--muted); font-size: 0.65rem; margin-top: 3px; }
+
+      /* Mobile tooltip — fixed to bottom of screen */
+      @media (max-width: 768px) {
+        #map-tooltip {
+          left: 12px !important;
+          right: 12px !important;
+          bottom: 16px !important;
+          top: auto !important;
+          white-space: normal;
+          min-width: unset;
+          max-width: calc(100vw - 24px);
+          transform: translateY(8px);
+        }
+        #map-tooltip.visible { transform: translateY(0); }
+        #map-legend {
+          display: none;
+        }
+      }
 
       /* ── Legend ── */
       #map-legend {
@@ -456,6 +485,8 @@
       document.body.appendChild(tooltip);
     }
 
+    const isMobile = window.matchMedia("(max-width: 768px)").matches || ("ontouchstart" in window);
+
     function pct(v) { return (v * 100).toFixed(1) + "%"; }
     function fmtVotes(v) { return v ? v.toLocaleString() : ""; }
 
@@ -592,8 +623,7 @@
           // Don't show region hover for the currently active region (ridings handle it)
           if (code === activeRegionCode) return;
           setTooltip(d.properties.name, REGION_ABBR[d.properties.name] || code, regionData[code], true);
-          tooltip.style.left = (event.clientX + 14) + "px";
-          tooltip.style.top  = (event.clientY - 36) + "px";
+          if (!isMobile) { tooltip.style.left = (event.clientX + 14) + "px"; tooltip.style.top = (event.clientY - 36) + "px"; }
           mapG.append(() => highlightG.node());
           highlightG.selectAll(".region-hover-ring").remove();
           highlightG.append("path").attr("class","region-hover-ring")
@@ -624,9 +654,10 @@
         });
 
       /* ── Initial load ── */
-      // Mark correct year button active (handles ATLAS_INITIAL_YEAR)
       document.querySelectorAll(".year-btn").forEach(b => {
-        b.classList.toggle("active", +b.dataset.year === activeYear);
+        const isActive = +b.dataset.year === activeYear;
+        b.classList.toggle("active", isActive);
+        if (isActive) setTimeout(() => b.scrollIntoView({ block: "nearest", inline: "center" }), 100);
       });
       loadYear(activeYear, regionPaths);
 
@@ -639,6 +670,8 @@
           activeYear = yr;
           yearSel.querySelectorAll(".year-btn").forEach(b => b.classList.remove("active"));
           this.classList.add("active");
+          // Scroll active button into view on mobile
+          this.scrollIntoView({ behavior: "smooth", block: "nearest", inline: "center" });
           // Reset map state
           activeRegionCode = null;
           regionPaths.classed("selected", false);
@@ -767,11 +800,11 @@
           return ridingColour(data);
         })
         .attr("stroke-width", 0.5 / currentK)
-        .on("mousemove", function(event, d) {
+        .on("mousemove touchstart", function(event, d) {
+          event.preventDefault && event.preventDefault();
           const data = ridingData[d.properties.code] || ridingData[normName(d.properties.name)];
           setTooltip(d.properties.name, "Constituency", data);
-          tooltip.style.left = (event.clientX + 14) + "px";
-          tooltip.style.top  = (event.clientY - 36) + "px";
+          if (!isMobile) { tooltip.style.left = (event.clientX + 14) + "px"; tooltip.style.top = (event.clientY - 36) + "px"; }
           highlightG.selectAll(".riding-hover").remove();
           highlightG.append("path").attr("class", "riding-hover")
             .datum(d).attr("d", path)
