@@ -569,7 +569,8 @@
         {abbr:"UUP",   label:"UUP",          colour:"#5b8ed4"},
         {abbr:"ALL",   label:"Alliance",     colour:"#e67e22"},
         {abbr:"IND",   label:"Ind",          colour:"#95a5a6"},
-      ].filter(p => seats[p.abbr] > 0);
+      ].filter(p => seats[p.abbr] > 0)
+       .sort((a, b) => (seats[b.abbr] || 0) - (seats[a.abbr] || 0));
 
       bar.innerHTML = order.map(p => `
         <div class="seat-segment">
@@ -591,7 +592,14 @@
         {abbr:"SNP", label:"SNP",          c:["#dfc440","#5a4700"]},
         {abbr:"Grn", label:"Green",        c:["#5cb85c","#1a4a1a"]},
         {abbr:"PC",  label:"Plaid Cymru",  c:["#4aaa74","#083d1c"]},
-      ].filter(p => seats[p.abbr] > 0);
+        {abbr:"SF",  label:"Sinn Féin",    c:["#4a9e6e","#0d3320"]},
+        {abbr:"DUP", label:"DUP",          c:["#8e44ad","#3d1060"]},
+        {abbr:"SDLP",label:"SDLP",         c:["#2ecc71","#0a4a25"]},
+        {abbr:"UUP", label:"UUP",          c:["#5b8ed4","#1a3560"]},
+        {abbr:"ALL", label:"Alliance",     c:["#e67e22","#7a3a00"]},
+        {abbr:"IND", label:"Independent",  c:["#95a5a6","#2c3e50"]},
+      ].filter(p => seats[p.abbr] > 0)
+       .sort((a, b) => (seats[b.abbr] || 0) - (seats[a.abbr] || 0));
 
       leg.innerHTML = `<div class="leg-title">Model Projection</div>` +
         order.map(p => `
