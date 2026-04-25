@@ -20,7 +20,7 @@
   "use strict";
 
   /* ─── Year / era config ─────────────────────────────────────────── */
-  const YEARS = [2024, 2019, 2017, 2015, 2010, 2005, 2001, 1997, 1992, 1987, 1983];
+  const YEARS = [2024, 2019, 2017, 2015, 2010, 2005, 2001, 1997, 1992, 1987, 1983, "ref2016"];
 
   const YEAR_TO_ERA = {
     2024: "2024",
@@ -29,7 +29,10 @@
     2001: "1997", 1997: "1997",
     1992: "1992",
     1987: "1983", 1983: "1983",
+    "ref2016": "ref2016",
   };
+
+  function isRefMode(year) { return year === "ref2016"; }
 
   /* Resolve file paths relative to this script's location, not the page URL.
      This means the files always load correctly regardless of which page loads the script. */
@@ -48,8 +51,10 @@
   }
   function regionsFile() { return BASE_URL + "uk-regions.json"; }
   function resultsFile(year) {
+    if (isRefMode(year)) return BASE_URL + "referendum_results.xlsx";
     return BASE_URL + (year === 2024 ? "election_results_uk.xlsx" : `election_results_${year}.xlsx`);
   }
+  function refBoundaryFile() { return BASE_URL + "uk-referendum-authorities.json"; }
 
   /* ─── Party name normalisation (results files use abbreviations) ── */
   // Map winner codes → colour scheme key used in ridingColour/regionColour
@@ -374,10 +379,49 @@
     return map[party] || "#7c8290";
   }
 
+  /* ─── Referendum colours ─────────────────────────────────────────── */
+  function refColour(data) {
+    if (!data) return "#1a2035";
+    const t = Math.min(1, data.margin / 0.40);
+    if (data.winner === "Leave") return d3.interpolateRgb("#e8a83c", "#7a2000")(t);
+    return d3.interpolateRgb("#5b9ec9", "#0a2244")(t);
+  }
+
+  function refAccent(winner) {
+    return winner === "Leave" ? "#e8a83c" : "#5b9ec9";
+  }
+
   /* ─── 5. Load election data ─────────────────────────────────────── */
   function normName(s) {
     if (!s) return '';
     return String(s).trim().toLowerCase().replace(/\s*&\s*/g, ' and ').replace(/\s+/g, ' ');
+  }
+
+  /* ─── Load referendum results ────────────────────────────────────── */
+  function loadRefData() {
+    return fetch(resultsFile("ref2016"))
+      .then(r => r.arrayBuffer())
+      .then(buf => {
+        const wb = XLSX.read(buf, { type: "array" });
+        const rows = XLSX.utils.sheet_to_json(wb.Sheets["Results"]);
+        const data = {};
+        rows.forEach(r => {
+          data[r["Area Code"]] = {
+            name:       r["Area Name"],
+            winner:     r["Winner"],
+            winnerPct:  +r["Winner %"],
+            loser:      r["Loser"],
+            loserPct:   +r["Loser %"],
+            remain:     r["Remain Votes"],
+            leave:      r["Leave Votes"],
+            totalVotes: r["Total Votes"],
+            pctRemain:  +r["Remain %"],
+            pctLeave:   +r["Leave %"],
+            margin:     +r["Margin"],
+          };
+        });
+        return data;
+      });
   }
 
   function loadElectionData(year) {
@@ -510,8 +554,38 @@
             ${elecData.winner} +${pct(elecData.margin)} · ${elecData.seats}/${elecData.totalSeats} seats
           </span>
         </div>`;
+      } else if (elecData.remain !== undefined) {
+        // Referendum tooltip
+        const leaveColour = "#e8a83c", remainColour = "#5b9ec9";
+        const winnerColour = elecData.winner === "Leave" ? leaveColour : remainColour;
+        tooltip.style.borderLeftColor = winnerColour;
+        const leaveBar = Math.round((elecData.pctLeave / Math.max(elecData.pctLeave, elecData.pctRemain)) * 100);
+        const remainBar = Math.round((elecData.pctRemain / Math.max(elecData.pctLeave, elecData.pctRemain)) * 100);
+        html += `<div style="margin-top:8px">
+          <div style="margin-bottom:6px">
+            <div style="display:flex;justify-content:space-between;margin-bottom:2px">
+              <span style="color:${leaveColour};font-weight:500">Leave</span>
+              <span style="color:#8890aa;font-size:0.68rem">${pct(elecData.pctLeave)}<span style="color:#3a4460;margin-left:6px">${fmtVotes(elecData.leave)}</span></span>
+            </div>
+            <div style="height:3px;background:#1e2330;border-radius:2px">
+              <div style="height:100%;width:${leaveBar}%;background:${leaveColour};border-radius:2px;opacity:0.85"></div>
+            </div>
+          </div>
+          <div style="margin-bottom:6px">
+            <div style="display:flex;justify-content:space-between;margin-bottom:2px">
+              <span style="color:${remainColour};font-weight:500">Remain</span>
+              <span style="color:#8890aa;font-size:0.68rem">${pct(elecData.pctRemain)}<span style="color:#3a4460;margin-left:6px">${fmtVotes(elecData.remain)}</span></span>
+            </div>
+            <div style="height:3px;background:#1e2330;border-radius:2px">
+              <div style="height:100%;width:${remainBar}%;background:${remainColour};border-radius:2px;opacity:0.85"></div>
+            </div>
+          </div>
+          <div style="font-size:0.6rem;color:#3a4460;margin-top:2px">
+            ${elecData.winner} +${pct(elecData.margin)} · Total votes: ${fmtVotes(elecData.totalVotes)}
+          </div>
+        </div>`;
       } else {
-        // Rich riding view
+        // Rich election riding view
         const parties = [
           { party: elecData.winner,   pctVal: elecData.winnerPct,   v: elecData.winnerVotes },
           { party: elecData.runnerUp, pctVal: elecData.runnerUpPct, v: elecData.runnerUpVotes },
@@ -644,7 +718,7 @@
           highlightG.append("path").attr("class","region-selected-ring")
             .datum(d).attr("d", path).attr("fill","none").attr("stroke","#ffffff")
             .attr("stroke-width", 3).attr("stroke-opacity", 0.9).attr("pointer-events","none");
-          if (ridingsData) showRidings(code);
+          if (ridingsData && !isRefMode(activeYear)) showRidings(code);
           // Move zoomedRidingG above regionsLayer so it intercepts events inside the region,
           // but regionPaths still intercept events outside it for hover rings.
           regionsLayer.node().parentNode.insertBefore(zoomedRidingG.node(), regionsLayer.node().nextSibling);
@@ -655,7 +729,8 @@
 
       /* ── Initial load ── */
       document.querySelectorAll(".year-btn").forEach(b => {
-        const isActive = +b.dataset.year === activeYear;
+        const bYear = b.dataset.year === "ref2016" ? "ref2016" : +b.dataset.year;
+        const isActive = bYear === activeYear;
         b.classList.toggle("active", isActive);
         if (isActive) setTimeout(() => b.scrollIntoView({ block: "nearest", inline: "center" }), 100);
       });
@@ -665,7 +740,7 @@
       const yearSel = document.getElementById("year-selector");
       yearSel.querySelectorAll(".year-btn").forEach(btn => {
         btn.addEventListener("click", function() {
-          const yr = +this.dataset.year;
+          const yr = this.dataset.year === "ref2016" ? "ref2016" : +this.dataset.year;
           if (yr === activeYear) return;
           activeYear = yr;
           yearSel.querySelectorAll(".year-btn").forEach(b => b.classList.remove("active"));
@@ -689,28 +764,45 @@
     /* ── Load a year's boundary + results ── */
     function loadYear(year, regionPaths) {
       loadingEl.style.display = "block";
-      const era = YEAR_TO_ERA[year];
 
-      Promise.all([
-        d3.json(ridingsFile(era)),
-        loadElectionData(year),
-      ]).then(function([rData, elecResults]) {
-        ridingsData = rData;
-        allRidings = topojson.feature(ridingsData, ridingsData.objects.ridings);
-        ridingData  = elecResults.ridingData;
-        regionData  = elecResults.regionData;
-
-        // Region fills are transparent via CSS — ridings below carry the colour
-        showAllRidings();
-
-        /* Update legend */
-        updateLegend(year);
-
-        loadingEl.style.display = "none";
-      }).catch(err => {
-        console.error("Failed to load year data:", err);
-        loadingEl.style.display = "none";
-      });
+      if (isRefMode(year)) {
+        // ── Referendum mode ──
+        regionsLayer.style("display", "none");  // hide region overlay
+        Promise.all([
+          d3.json(refBoundaryFile()),
+          loadRefData(),
+        ]).then(function([rData, refResults]) {
+          ridingsData = rData;
+          allRidings = topojson.feature(ridingsData, ridingsData.objects.authorities);
+          ridingData = refResults;
+          regionData = {};
+          showAllRidings();
+          updateLegend(year);
+          loadingEl.style.display = "none";
+        }).catch(err => {
+          console.error("Failed to load referendum data:", err);
+          loadingEl.style.display = "none";
+        });
+      } else {
+        // ── Election mode ──
+        regionsLayer.style("display", null);  // restore region overlay
+        const era = YEAR_TO_ERA[year];
+        Promise.all([
+          d3.json(ridingsFile(era)),
+          loadElectionData(year),
+        ]).then(function([rData, elecResults]) {
+          ridingsData = rData;
+          allRidings = topojson.feature(ridingsData, ridingsData.objects.ridings);
+          ridingData  = elecResults.ridingData;
+          regionData  = elecResults.regionData;
+          showAllRidings();
+          updateLegend(year);
+          loadingEl.style.display = "none";
+        }).catch(err => {
+          console.error("Failed to load year data:", err);
+          loadingEl.style.display = "none";
+        });
+      }
     }
 
     /* ── Show all ridings at once (full map colouring) ── */
@@ -718,7 +810,7 @@
       ridingG.selectAll("*").remove();
       if (!ridingsData) return;
 
-      // Riding fills
+      // Riding fills (or authority fills in ref mode)
       ridingG.selectAll(".riding-fill")
         .data(allRidings.features)
         .join("path")
@@ -726,11 +818,11 @@
         .attr("d", path)
         .attr("fill", d => {
           const data = ridingData[d.properties.code] || ridingData[normName(d.properties.name)];
-          return ridingColour(data);
+          return isRefMode(activeYear) ? refColour(data) : ridingColour(data);
         })
         .attr("stroke", d => {
           const data = ridingData[d.properties.code] || ridingData[normName(d.properties.name)];
-          return ridingColour(data);
+          return isRefMode(activeYear) ? refColour(data) : ridingColour(data);
         })
         .attr("stroke-width", 0.5)
         .attr("pointer-events", "all")
@@ -793,11 +885,11 @@
         .attr("d", path)
         .attr("fill", d => {
           const data = ridingData[d.properties.code] || ridingData[normName(d.properties.name)];
-          return ridingColour(data);
+          return isRefMode(activeYear) ? refColour(data) : ridingColour(data);
         })
         .attr("stroke", d => {
           const data = ridingData[d.properties.code] || ridingData[normName(d.properties.name)];
-          return ridingColour(data);
+          return isRefMode(activeYear) ? refColour(data) : ridingColour(data);
         })
         .attr("stroke-width", 0.5 / currentK)
         .on("mousemove touchstart", function(event, d) {
@@ -895,6 +987,22 @@
   function updateLegend(year) {
     const leg = document.getElementById("map-legend");
     if (!leg) return;
+
+    if (isRefMode(year)) {
+      leg.innerHTML = `
+        <div class="leg-title">EU Referendum 2016</div>
+        <div class="leg-bar">
+          <div class="leg-swatch" style="background:linear-gradient(to right,#e8a83c,#7a2000)"></div>
+          <span style="color:#e8a83c">Leave</span>
+        </div>
+        <div class="leg-bar">
+          <div class="leg-swatch" style="background:linear-gradient(to right,#5b9ec9,#0a2244)"></div>
+          <span style="color:#5b9ec9">Remain</span>
+        </div>
+        <div style="margin-top:6px;font-size:0.6rem;color:#3a4460">Darker = larger margin</div>`;
+      return;
+    }
+
     const totals = SEAT_TOTALS[year] || {};
     const sorted = Object.entries(totals).sort((a,b) => b[1]-a[1]);
     const pairs = {
@@ -940,6 +1048,18 @@
     return map[party] || "#7c8290";
   }
 
+  /* ─── Referendum colours ─────────────────────────────────────────── */
+  function refColour(data) {
+    if (!data) return "#1a2035";
+    const t = Math.min(1, data.margin / 0.40);
+    if (data.winner === "Leave") return d3.interpolateRgb("#e8a83c", "#7a2000")(t);
+    return d3.interpolateRgb("#5b9ec9", "#0a2244")(t);
+  }
+
+  function refAccent(winner) {
+    return winner === "Leave" ? "#e8a83c" : "#5b9ec9";
+  }
+
   /* ─── 8. Bootstrap ──────────────────────────────────────────────── */
   function bootstrap() {
     injectStyles();
@@ -978,7 +1098,7 @@
         const btn = document.createElement("button");
         btn.className = "year-btn" + (i === 0 ? " active" : "");
         btn.dataset.year = yr;
-        btn.textContent = yr;
+        btn.textContent = yr === "ref2016" ? "2016 Ref" : yr;
         sel.appendChild(btn);
       });
       document.body.appendChild(sel);
