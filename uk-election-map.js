@@ -773,7 +773,10 @@
           loadRefData(),
         ]).then(function([rData, refResults]) {
           ridingsData = rData;
-          allRidings = topojson.feature(ridingsData, ridingsData.objects.authorities);
+          // Object name depends on mapshaper input filename — try 'authorities' then use first object
+          const refObj = ridingsData.objects.authorities
+            || ridingsData.objects[Object.keys(ridingsData.objects)[0]];
+          allRidings = topojson.feature(ridingsData, refObj);
           ridingData = refResults;
           regionData = {};
           showAllRidings();
