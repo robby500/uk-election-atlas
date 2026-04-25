@@ -23,6 +23,7 @@
       --lab:      #db6b5f;
       --con:      #5b9ec9;
       --ld:       #e8a83c;
+      --model:    #4e7cff;
     }
 
     html { scroll-behavior: smooth; }
@@ -262,6 +263,7 @@
     .election-row:nth-child(10) { animation-delay: 0.55s; }
     .election-row:nth-child(11) { animation-delay: 0.6s; }
     .election-row:nth-child(12) { animation-delay: 0.65s; }
+    .election-row:nth-child(13) { animation-delay: 0.7s; }
 
     @keyframes slideIn {
       to { opacity: 1; transform: translateX(0); }
@@ -681,6 +683,17 @@
 
     <div class="hero-right">
       <!-- Election results timeline -->
+      <a href="model/index.html" class="election-row" style="border-bottom:1px solid #2a3350;background:rgba(78,124,255,0.04)">
+        <div class="election-year" style="color:var(--model)">Model</div>
+        <div class="election-winner">
+          <div class="winner-dot" style="background:var(--model);box-shadow:0 0 6px var(--model)"></div>
+          <span class="winner-name" style="color:var(--model)">Current projection</span>
+        </div>
+        <div class="winner-seats" style="color:var(--model)">↗</div>
+        <div class="seat-bar-wrap">
+          <div class="seat-bar" style="width:100%;background:linear-gradient(to right,#1a2a5a,#4e7cff)"></div>
+        </div>
+      </a>
       <a href="atlas/index.html?year=2024" class="election-row">
         <div class="election-year">2024</div>
         <div class="election-winner">
@@ -831,19 +844,20 @@
         <div class="card-arrow">→</div>
       </a>
 
-      <!-- Model card — coming soon -->
-      <div class="map-card coming-soon">
-        <span class="card-tag soon">Coming soon</span>
+      <!-- Model card — live -->
+      <a href="model/index.html" class="map-card">
+        <span class="card-tag">Live</span>
         <div class="card-title">Election Model</div>
         <p class="card-desc">
-          Poll-to-seat projections using regional swing modelling. Input current polling and see a projected seat map in real time.
+          Poll-to-seat projections using regional swing and demographic modelling. 5,000 simulations per run, updated with the latest polling.
         </p>
         <div class="card-meta">
-          <span>Projection tool</span>
-          <span>Regional MRP</span>
+          <span>2024 boundaries</span>
+          <span>650 constituencies</span>
+          <span>5,000 simulations</span>
         </div>
-        <div class="card-arrow" style="color:var(--dim)">→</div>
-      </div>
+        <div class="card-arrow">→</div>
+      </a>
 
       <!-- Historical swings — coming soon -->
       <div class="map-card coming-soon">

@@ -32,7 +32,7 @@
     "ref2016": "ref2016",
   };
 
-  function isRefMode(year) { return year === "ref2016"; }
+  function isRefMode(year)   { return year === "ref2016"; }
 
   /* Resolve file paths relative to this script's location, not the page URL.
      This means the files always load correctly regardless of which page loads the script. */
@@ -561,25 +561,24 @@
         tooltip.style.borderLeftColor = winnerColour;
         const leaveBar = Math.round((elecData.pctLeave / Math.max(elecData.pctLeave, elecData.pctRemain)) * 100);
         const remainBar = Math.round((elecData.pctRemain / Math.max(elecData.pctLeave, elecData.pctRemain)) * 100);
+        // Winner shown first
+        const first  = elecData.winner === "Leave"
+          ? { label:"Leave",  colour:leaveColour,  pctVal:elecData.pctLeave,  votes:elecData.leave,  bar:leaveBar }
+          : { label:"Remain", colour:remainColour, pctVal:elecData.pctRemain, votes:elecData.remain, bar:remainBar };
+        const second = elecData.winner === "Leave"
+          ? { label:"Remain", colour:remainColour, pctVal:elecData.pctRemain, votes:elecData.remain, bar:remainBar }
+          : { label:"Leave",  colour:leaveColour,  pctVal:elecData.pctLeave,  votes:elecData.leave,  bar:leaveBar };
+        const row = (r) => `<div style="margin-bottom:6px">
+            <div style="display:flex;justify-content:space-between;margin-bottom:2px">
+              <span style="color:${r.colour};font-weight:500">${r.label}</span>
+              <span style="color:#8890aa;font-size:0.68rem">${pct(r.pctVal)}<span style="color:#3a4460;margin-left:6px">${fmtVotes(r.votes)}</span></span>
+            </div>
+            <div style="height:3px;background:#1e2330;border-radius:2px">
+              <div style="height:100%;width:${r.bar}%;background:${r.colour};border-radius:2px;opacity:0.85"></div>
+            </div>
+          </div>`;
         html += `<div style="margin-top:8px">
-          <div style="margin-bottom:6px">
-            <div style="display:flex;justify-content:space-between;margin-bottom:2px">
-              <span style="color:${leaveColour};font-weight:500">Leave</span>
-              <span style="color:#8890aa;font-size:0.68rem">${pct(elecData.pctLeave)}<span style="color:#3a4460;margin-left:6px">${fmtVotes(elecData.leave)}</span></span>
-            </div>
-            <div style="height:3px;background:#1e2330;border-radius:2px">
-              <div style="height:100%;width:${leaveBar}%;background:${leaveColour};border-radius:2px;opacity:0.85"></div>
-            </div>
-          </div>
-          <div style="margin-bottom:6px">
-            <div style="display:flex;justify-content:space-between;margin-bottom:2px">
-              <span style="color:${remainColour};font-weight:500">Remain</span>
-              <span style="color:#8890aa;font-size:0.68rem">${pct(elecData.pctRemain)}<span style="color:#3a4460;margin-left:6px">${fmtVotes(elecData.remain)}</span></span>
-            </div>
-            <div style="height:3px;background:#1e2330;border-radius:2px">
-              <div style="height:100%;width:${remainBar}%;background:${remainColour};border-radius:2px;opacity:0.85"></div>
-            </div>
-          </div>
+          ${row(first)}${row(second)}
           <div style="font-size:0.6rem;color:#3a4460;margin-top:2px">
             ${elecData.winner} +${pct(elecData.margin)} · Total votes: ${fmtVotes(elecData.totalVotes)}
           </div>

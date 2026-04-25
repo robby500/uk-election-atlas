@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Election Model — UK Election Atlas</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root { --bg:#0d0f14; --panel:#13161e; --border:#1e2330; --accent:#4e7cff; --text:#e8eaf0; --muted:#5a6280; }
+    body { background:var(--bg); color:var(--text); font-family:'DM Mono',monospace; height:100vh; overflow:hidden; display:flex; flex-direction:column; }
+
+    .model-topbar {
+      height:36px; display:flex; align-items:center; justify-content:space-between;
+      padding:0 16px; background:rgba(13,15,20,0.98);
+      border-bottom:1px solid var(--border); flex-shrink:0; z-index:500;
+    }
+    .topbar-left { display:flex; align-items:center; gap:16px; }
+    .back-link { font-size:0.62rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--muted); text-decoration:none; transition:color 0.15s; }
+    .back-link:hover { color:var(--text); }
+    .topbar-title { font-size:0.65rem; letter-spacing:0.16em; text-transform:uppercase; color:var(--muted); }
+    .topbar-title span { color:var(--accent); }
+    .topbar-right { display:flex; align-items:center; gap:12px; }
+    .topbar-link { font-size:0.6rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--muted); text-decoration:none; transition:color 0.15s; }
+    .topbar-link:hover { color:var(--text); }
+    .topbar-donate { font-size:0.6rem; letter-spacing:0.1em; text-transform:uppercase; color:#c9a800; border:1px solid rgba(201,168,0,0.4); padding:4px 10px; border-radius:2px; text-decoration:none; transition:background 0.15s,color 0.15s; }
+    .topbar-donate:hover { background:#c9a800; color:var(--bg); }
+
+    #model-map { flex:1; overflow:hidden; position:relative; }
+  </style>
+</head>
+<body>
+  <div class="model-topbar">
+    <div class="topbar-left">
+      <a href="../index.html" class="back-link">← Home</a>
+      <span class="topbar-title">UK <span>Election</span> Model</span>
+    </div>
+    <div class="topbar-right">
+      <a href="../index.html#about" class="topbar-link">About</a>
+      <a href="https://ko-fi.com/YOUR_KOFI" target="_blank" rel="noopener" class="topbar-donate">Support ☕</a>
+    </div>
+  </div>
+
+  <div id="model-map"></div>
+  <script src="../uk-model-map.js"></script>
+</body>
+</html>
