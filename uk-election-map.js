@@ -20,7 +20,7 @@
   "use strict";
 
   /* ─── Year / era config ─────────────────────────────────────────── */
-  const YEARS = [2024, 2019, 2017, 2015, 2010, 2005, 2001, 1997, 1992, 1987, 1983, "ref2016"];
+  const YEARS = [2024, 2019, 2017, "ref2016", 2015, 2010, 2005, 2001, 1997, 1992, 1987, 1983];
 
   const YEAR_TO_ERA = {
     2024: "2024",
@@ -383,12 +383,12 @@
   function refColour(data) {
     if (!data) return "#1a2035";
     const t = Math.min(1, data.margin / 0.40);
-    if (data.winner === "Leave") return d3.interpolateRgb("#e8a83c", "#7a2000")(t);
-    return d3.interpolateRgb("#5b9ec9", "#0a2244")(t);
+    if (data.winner === "Leave") return d3.interpolateRgb("#5b9ec9", "#0a2244")(t);  // Leave = blue
+    return d3.interpolateRgb("#e8c93c", "#7a5a00")(t);  // Remain = yellow/gold
   }
 
   function refAccent(winner) {
-    return winner === "Leave" ? "#e8a83c" : "#5b9ec9";
+    return winner === "Leave" ? "#5b9ec9" : "#e8c93c";
   }
 
   /* ─── 5. Load election data ─────────────────────────────────────── */
@@ -556,7 +556,7 @@
         </div>`;
       } else if (elecData.remain !== undefined) {
         // Referendum tooltip
-        const leaveColour = "#e8a83c", remainColour = "#5b9ec9";
+        const leaveColour = "#5b9ec9", remainColour = "#e8c93c";
         const winnerColour = elecData.winner === "Leave" ? leaveColour : remainColour;
         tooltip.style.borderLeftColor = winnerColour;
         const leaveBar = Math.round((elecData.pctLeave / Math.max(elecData.pctLeave, elecData.pctRemain)) * 100);
@@ -718,7 +718,7 @@
           highlightG.append("path").attr("class","region-selected-ring")
             .datum(d).attr("d", path).attr("fill","none").attr("stroke","#ffffff")
             .attr("stroke-width", 3).attr("stroke-opacity", 0.9).attr("pointer-events","none");
-          if (ridingsData && !isRefMode(activeYear)) showRidings(code);
+          if (ridingsData) showRidings(code);  // works for both election and ref modes
           // Move zoomedRidingG above regionsLayer so it intercepts events inside the region,
           // but regionPaths still intercept events outside it for hover rings.
           regionsLayer.node().parentNode.insertBefore(zoomedRidingG.node(), regionsLayer.node().nextSibling);
@@ -767,7 +767,7 @@
 
       if (isRefMode(year)) {
         // ── Referendum mode ──
-        regionsLayer.style("display", "none");  // hide region overlay
+        // Keep region overlay visible in ref mode for zoom interaction
         Promise.all([
           d3.json(refBoundaryFile()),
           loadRefData(),
@@ -788,7 +788,7 @@
         });
       } else {
         // ── Election mode ──
-        regionsLayer.style("display", null);  // restore region overlay
+        // Region overlay always visible
         const era = YEAR_TO_ERA[year];
         Promise.all([
           d3.json(ridingsFile(era)),
@@ -853,22 +853,33 @@
       mapG.append(() => highlightG.node());
     }
 
-    /* ── Show clipped riding fills above the region layer when zoomed in ── */
+    /* ── Show clipped fills above the region layer when zoomed in ── */
     function showRidings(regionCode) {
       zoomedRidingG.selectAll("*").remove();
       if (!ridingsData) return;
 
-      const regionStr = Object.keys(RIDING_REGION_MAP)
-        .find(k => RIDING_REGION_MAP[k] === regionCode);
+      // Get the TopoJSON object (ridings for elections, authorities for referendum)
+      const topoObjName = isRefMode(activeYear)
+        ? (ridingsData.objects.authorities ? "authorities" : Object.keys(ridingsData.objects)[0])
+        : "ridings";
+      const topoObj = ridingsData.objects[topoObjName];
+
+      // For elections, filter by underscore region string; for ref, filter by ONS code directly
+      const regionFilter = isRefMode(activeYear)
+        ? (g => g.properties.region === regionCode)
+        : (function() {
+            const regionStr = Object.keys(RIDING_REGION_MAP).find(k => RIDING_REGION_MAP[k] === regionCode);
+            return g => g.properties.region === regionStr;
+          })();
 
       const regionRidings = allRidings.features.filter(r =>
-        r.properties.region === regionStr
+        isRefMode(activeYear)
+          ? r.properties.region === regionCode
+          : r.properties.region === Object.keys(RIDING_REGION_MAP).find(k => RIDING_REGION_MAP[k] === regionCode)
       );
 
-      const filteredGeoms = ridingsData.objects.ridings.geometries
-        .filter(g => g.properties.region === regionStr);
-
-      const subObject = Object.assign({}, ridingsData.objects.ridings, { geometries: filteredGeoms });
+      const filteredGeoms = topoObj.geometries.filter(regionFilter);
+      const subObject = Object.assign({}, topoObj, { geometries: filteredGeoms });
 
       const interiorMesh = topojson.mesh(ridingsData, subObject, (a, b) => a !== b);
       const outerBoundary = topojson.mesh(ridingsData, subObject, (a, b) => a === b);
@@ -898,7 +909,8 @@
         .on("mousemove touchstart", function(event, d) {
           event.preventDefault && event.preventDefault();
           const data = ridingData[d.properties.code] || ridingData[normName(d.properties.name)];
-          setTooltip(d.properties.name, "Constituency", data);
+          const areaLabel = isRefMode(activeYear) ? "Local Authority" : "Constituency";
+          setTooltip(d.properties.name, areaLabel, data);
           if (!isMobile) { tooltip.style.left = (event.clientX + 14) + "px"; tooltip.style.top = (event.clientY - 36) + "px"; }
           highlightG.selectAll(".riding-hover").remove();
           highlightG.append("path").attr("class", "riding-hover")
@@ -995,12 +1007,12 @@
       leg.innerHTML = `
         <div class="leg-title">EU Referendum 2016</div>
         <div class="leg-bar">
-          <div class="leg-swatch" style="background:linear-gradient(to right,#e8a83c,#7a2000)"></div>
-          <span style="color:#e8a83c">Leave</span>
+          <div class="leg-swatch" style="background:linear-gradient(to right,#5b9ec9,#0a2244)"></div>
+          <span style="color:#5b9ec9">Leave</span>
         </div>
         <div class="leg-bar">
-          <div class="leg-swatch" style="background:linear-gradient(to right,#5b9ec9,#0a2244)"></div>
-          <span style="color:#5b9ec9">Remain</span>
+          <div class="leg-swatch" style="background:linear-gradient(to right,#e8c93c,#7a5a00)"></div>
+          <span style="color:#e8c93c">Remain</span>
         </div>
         <div style="margin-top:6px;font-size:0.6rem;color:#3a4460">Darker = larger margin</div>`;
       return;
@@ -1055,12 +1067,12 @@
   function refColour(data) {
     if (!data) return "#1a2035";
     const t = Math.min(1, data.margin / 0.40);
-    if (data.winner === "Leave") return d3.interpolateRgb("#e8a83c", "#7a2000")(t);
-    return d3.interpolateRgb("#5b9ec9", "#0a2244")(t);
+    if (data.winner === "Leave") return d3.interpolateRgb("#5b9ec9", "#0a2244")(t);  // Leave = blue
+    return d3.interpolateRgb("#e8c93c", "#7a5a00")(t);  // Remain = yellow/gold
   }
 
   function refAccent(winner) {
-    return winner === "Leave" ? "#e8a83c" : "#5b9ec9";
+    return winner === "Leave" ? "#5b9ec9" : "#e8c93c";
   }
 
   /* ─── 8. Bootstrap ──────────────────────────────────────────────── */
@@ -1096,7 +1108,7 @@
     if (!document.getElementById("year-selector")) {
       const sel = document.createElement("div");
       sel.id = "year-selector";
-      const years = [2024, 2019, 2017, 2015, 2010, 2005, 2001, 1997, 1992, 1987, 1983];
+      const years = [2024, 2019, 2017, "ref2016", 2015, 2010, 2005, 2001, 1997, 1992, 1987, 1983];
       years.forEach((yr, i) => {
         const btn = document.createElement("button");
         btn.className = "year-btn" + (i === 0 ? " active" : "");

@@ -130,7 +130,15 @@
   <!-- Map script — paths assume atlas/ is one level below site root -->
   <script>
     // Pass ?year=2019 from URL to the map's initial year
-    window.ATLAS_INITIAL_YEAR = parseInt(new URLSearchParams(location.search).get('year')) || 2024;
+    (function() {
+      const yr = new URLSearchParams(location.search).get('year');
+      if (yr === 'ref2016') {
+        window.ATLAS_INITIAL_YEAR = 'ref2016';
+      } else {
+        const n = parseInt(yr);
+        window.ATLAS_INITIAL_YEAR = isNaN(n) ? 2024 : n;
+      }
+    })();
   </script>
   <script src="../uk-election-map.js"></script>
 
