@@ -20,7 +20,7 @@
   "use strict";
 
   /* ─── Year / era config ─────────────────────────────────────────── */
-  const YEARS = [2024, 2019, 2017, "ref2016", 2015, 2010, 2005, 2001, 1997, 1992, 1987, 1983];
+  const YEARS = [2024, 2019, 2017, "ref2016", 2015, 2010, 2005, 2001, 1997, 1992, 1987, 1983, 1979, "1974O", "1974F"];
 
   const YEAR_TO_ERA = {
     2024: "2024",
@@ -30,6 +30,9 @@
     1992: "1992",
     1987: "1983", 1983: "1983",
     "ref2016": "ref2016",
+    1979:     "1979",
+    "1974O":  "1979",
+    "1974F":  "1979",
   };
 
   function isRefMode(year)   { return year === "ref2016"; }
@@ -52,7 +55,8 @@
   function regionsFile() { return BASE_URL + "uk-regions.json"; }
   function resultsFile(year) {
     if (isRefMode(year)) return BASE_URL + "referendum_results.xlsx";
-    return BASE_URL + (year === 2024 ? "election_results_uk.xlsx" : `election_results_${year}.xlsx`);
+    if (year === 2024) return BASE_URL + "election_results_uk.xlsx";
+    return BASE_URL + `election_results_${year}.xlsx`;
   }
   function refBoundaryFile() { return BASE_URL + "uk-referendum-authorities.json"; }
 
@@ -728,7 +732,8 @@
 
       /* ── Initial load ── */
       document.querySelectorAll(".year-btn").forEach(b => {
-        const bYear = b.dataset.year === "ref2016" ? "ref2016" : +b.dataset.year;
+        const bYear = (b.dataset.year === "ref2016" || b.dataset.year === "1974O" || b.dataset.year === "1974F")
+          ? b.dataset.year : +b.dataset.year;
         const isActive = bYear === activeYear;
         b.classList.toggle("active", isActive);
         if (isActive) setTimeout(() => b.scrollIntoView({ block: "nearest", inline: "center" }), 100);
@@ -739,7 +744,8 @@
       const yearSel = document.getElementById("year-selector");
       yearSel.querySelectorAll(".year-btn").forEach(btn => {
         btn.addEventListener("click", function() {
-          const yr = this.dataset.year === "ref2016" ? "ref2016" : +this.dataset.year;
+          const yr = (this.dataset.year === "ref2016" || this.dataset.year === "1974O" || this.dataset.year === "1974F")
+            ? this.dataset.year : +this.dataset.year;
           if (yr === activeYear) return;
           activeYear = yr;
           yearSel.querySelectorAll(".year-btn").forEach(b => b.classList.remove("active"));
@@ -1107,12 +1113,15 @@
     if (!document.getElementById("year-selector")) {
       const sel = document.createElement("div");
       sel.id = "year-selector";
-      const years = [2024, 2019, 2017, "ref2016", 2015, 2010, 2005, 2001, 1997, 1992, 1987, 1983];
+      const years = [2024, 2019, 2017, "ref2016", 2015, 2010, 2005, 2001, 1997, 1992, 1987, 1983, 1979, "1974O", "1974F"];
       years.forEach((yr, i) => {
         const btn = document.createElement("button");
         btn.className = "year-btn" + (i === 0 ? " active" : "");
         btn.dataset.year = yr;
-        btn.textContent = yr === "ref2016" ? "2016 Ref" : yr;
+        btn.textContent = yr === "ref2016" ? "2016 Ref"
+          : yr === "1974O" ? "Oct 1974"
+          : yr === "1974F" ? "Feb 1974"
+          : yr;
         sel.appendChild(btn);
       });
       document.body.appendChild(sel);
