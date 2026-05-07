@@ -129,14 +129,16 @@
 
   <!-- Map script — paths assume atlas/ is one level below site root -->
   <script>
-    // Pass ?year=2019 from URL to the map's initial year
+    // Pass ?year=2019, ?year=ref2016, ?year=1974O, ?year=1974F from URL
     (function() {
+      const STRING_YEARS = ['ref2016', 'model', '1974O', '1974F'];
+      const VALID_YEARS = [2024,2019,2017,2015,2010,2005,2001,1997,1992,1987,1983,1979,1970,1966,1964,1959,1955,1951,1950,1945,1935,1931,1929,1924,1923,1922,1918];
       const yr = new URLSearchParams(location.search).get('year');
-      if (yr === 'ref2016') {
-        window.ATLAS_INITIAL_YEAR = 'ref2016';
+      if (STRING_YEARS.includes(yr)) {
+        window.ATLAS_INITIAL_YEAR = yr;
       } else {
         const n = parseInt(yr);
-        window.ATLAS_INITIAL_YEAR = isNaN(n) ? 2024 : n;
+        window.ATLAS_INITIAL_YEAR = (!isNaN(n) && VALID_YEARS.includes(n)) ? n : 2024;
       }
     })();
   </script>

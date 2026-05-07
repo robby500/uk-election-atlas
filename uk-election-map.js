@@ -20,7 +20,7 @@
   "use strict";
 
   /* ─── Year / era config ─────────────────────────────────────────── */
-  const YEARS = [2024, 2019, 2017, "ref2016", 2015, 2010, 2005, 2001, 1997, 1992, 1987, 1983, 1979, "1974O", "1974F"];
+  const YEARS = [2024, 2019, 2017, "ref2016", 2015, 2010, 2005, 2001, 1997, 1992, 1987, 1983, 1979, "1974O", "1974F", 1970, 1966, 1964, 1959, 1955, 1951, 1950, 1945, 1935, 1931, 1929, 1924, 1923, 1922, 1918];
 
   const YEAR_TO_ERA = {
     2024: "2024",
@@ -33,6 +33,11 @@
     1979:     "1979",
     "1974O":  "1979",
     "1974F":  "1979",
+    1970: "1955", 1966: "1955", 1964: "1955", 1959: "1955", 1955: "1955",
+    1951: "1950", 1950: "1950",
+    1945: "1945",
+    1935: "1922", 1931: "1922", 1929: "1922", 1924: "1922", 1923: "1922", 1922: "1922",
+    1918: "1918",
   };
 
   function isRefMode(year)   { return year === "ref2016"; }
@@ -82,6 +87,24 @@
     1992: {Con:336,Lab:271,LD:20,SNP:3,PC:4,UUP:9,DUP:3,SDLP:4,ALL:0},
     1987: {Con:376,Lab:229,Lib:22,SNP:3,PC:3,UUP:9,DUP:3,SDLP:3,SF:1,ALL:1},
     1983: {Con:397,Lab:209,Lib:23,SNP:2,PC:2,UUP:11,DUP:3,SDLP:1,SF:1,ALL:1},
+    1979: {Con:339,Lab:269,Lib:11,SNP:2,PC:2,UUP:5,DUP:3,SDLP:1,Other:3},
+    "1974O": {Lab:319,Con:277,Lib:13,SNP:11,PC:3,SDLP:1,UUP:6,ALL:1,Other:3},
+    "1974F": {Con:297,Lab:301,Lib:14,SNP:7,PC:2,SDLP:1,UUP:7,ALL:1,Other:2},
+    1970: {Con:330,Lab:287,Lib:6,UUP:9,Other:8},
+    1966: {Lab:363,Con:253,Lib:12,UUP:9,Other:3},
+    1964: {Lab:317,Con:304,Lib:9,UUP:9,Other:1},
+    1959: {Con:365,Lab:258,Lib:6,UUP:9,Other:2},
+    1955: {Con:344,Lab:277,Lib:6,UUP:9,Other:2},
+    1951: {Con:321,Lab:295,Lib:6,UUP:9,Other:4},
+    1950: {Lab:315,Con:298,Lib:9,UUP:9,Other:4},
+    1945: {Lab:393,Con:197,Lib:12,UUP:9,Other:29},
+    1935: {Con:429,Lab:154,Lib:21,UUP:9,Other:2},
+    1931: {Con:470,Lab:52,Lib:37,UUP:9,Other:7},
+    1929: {Lab:288,Con:260,Lib:59,UUP:9,Other:9},
+    1924: {Con:412,Lab:151,Lib:40,UUP:9,Other:3},
+    1923: {Con:258,Lab:191,Lib:159,UUP:9,Other:8},
+    1922: {Con:344,Lab:142,Lib:115,UUP:9,Other:45},
+    1918: {Con:382,Lab:57,Lib:36,UUP:22,Other:160},
   };
 
   /* ─── 1. Load dependencies ──────────────────────────────────────── */
@@ -148,55 +171,37 @@
       }
       .riding-mesh { pointer-events: none; }
 
-      /* ── Year selector ── */
+      /* ── Year selector dropdown ── */
       #year-selector {
         position: fixed;
         top: calc(var(--topbar-height, 0px) + 10px);
         left: 50%;
         transform: translateX(-50%);
         z-index: 10000;
-        display: flex;
-        align-items: center;
-        gap: 0;
+        pointer-events: all;
+      }
+
+      #year-select {
         background: #13161e;
         border: 1px solid #2a3350;
         border-radius: 6px;
-        overflow-x: auto;
-        overflow-y: hidden;
-        pointer-events: all;
-        -webkit-overflow-scrolling: touch;
-        scrollbar-width: none;
-        max-width: calc(100vw - 24px);
-      }
-
-      #year-selector::-webkit-scrollbar { display: none; }
-
-      .year-btn {
-        background: transparent;
-        border: none;
-        border-right: 1px solid #1e2330;
-        color: #5a6280;
+        color: #4e7cff;
         font-family: 'DM Mono', monospace;
         font-size: 0.68rem;
         letter-spacing: 0.05em;
-        padding: 7px 11px;
+        padding: 7px 32px 7px 14px;
         cursor: pointer;
-        transition: background 0.15s, color 0.15s;
-        white-space: nowrap;
-        flex-shrink: 0;
-        -webkit-tap-highlight-color: transparent;
-        touch-action: manipulation;
+        appearance: none;
+        -webkit-appearance: none;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M0 0l5 6 5-6z' fill='%234e7cff'/%3E%3C/svg%3E");
+        background-repeat: no-repeat;
+        background-position: right 10px center;
+        outline: none;
+        transition: border-color 0.15s;
       }
 
-      .year-btn:last-child { border-right: none; }
-
-      .year-btn:hover { background: #1a2035; color: #e8eaf0; }
-
-      .year-btn.active {
-        background: #4e7cff22;
-        color: #4e7cff;
-        border-color: #4e7cff44;
-      }
+      #year-select:hover { border-color: #4e7cff; }
+      #year-select option { background: #13161e; color: #e8eaf0; }
 
       #loading-indicator {
         position: fixed;
@@ -362,23 +367,30 @@
   function colourPair(winner) {
     const pairs = {
       Lab:    ["#db6b5f","#5e0909"], Con:    ["#5b9ec9","#0a2244"],
-      LD:     ["#e8a83c","#6b3300"], Lib:    ["#e8a83c","#6b3300"],
+      LD:     ["#e8a83c","#6b3300"], Lib:    ["#f5c842","#7a5e00"],
+      NatLib: ["#d4a017","#6b3d00"],
       SNP:    ["#dfc440","#5a4700"], PC:     ["#4aaa74","#083d1c"],
       Reform: ["#12b6cf","#00415a"], RUK:    ["#12b6cf","#00415a"], Grn:    ["#5cb85c","#1a4a1a"],
       SF:     ["#4a9e6e","#0d3320"], DUP:    ["#8e44ad","#3d1060"],
       SDLP:   ["#2ecc71","#0a4a25"], UUP:    ["#5b8ed4","#1a3560"],
       ALL:    ["#e67e22","#7a3a00"], UKIP:   ["#6b2fa0","#2d1045"],
       Brexit: ["#12b6cf","#065a69"], IND:    ["#95a5a6","#2c3e50"],
+      Ind:    ["#95a5a6","#2c3e50"], NatLab: ["#c0392b","#6b0000"],
+      Nat:    ["#8b9e6e","#3a4a2a"], Com:    ["#c0392b","#4a0000"],
+      ILP:    ["#e05050","#7a0000"], CW:     ["#7c8290","#2d3035"],
+      NILP:   ["#c0392b","#5e0909"],
     };
     return pairs[winner] || ["#7c8290","#2d3035"];
   }
 
   function partyColourAccent(party) {
     const map = {
-      Lab:"#db6b5f", Con:"#5b9ec9", LD:"#e8a83c", Lib:"#e8a83c",
-      SNP:"#dfc440", PC:"#4aaa74", Reform:"#12b6cf", RUK:"#12b6cf", Grn:"#5cb85c",
+      Lab:"#db6b5f", Con:"#5b9ec9", LD:"#e8a83c", Lib:"#f5c842",
+      NatLib:"#d4a017", SNP:"#dfc440", PC:"#4aaa74", Reform:"#12b6cf", RUK:"#12b6cf", Grn:"#5cb85c",
       SF:"#4a9e6e", DUP:"#8e44ad", SDLP:"#2ecc71", UUP:"#5b8ed4",
       ALL:"#e67e22", UKIP:"#9b59b6", Brexit:"#12b6cf", IND:"#95a5a6",
+      Ind:"#95a5a6", NatLab:"#e05050", Nat:"#a0b07e", Com:"#d43f3f",
+      ILP:"#e05050", CW:"#7c8290", NILP:"#e05050",
     };
     return map[party] || "#7c8290";
   }
@@ -398,7 +410,7 @@
   /* ─── 5. Load election data ─────────────────────────────────────── */
   function normName(s) {
     if (!s) return '';
-    return String(s).trim().toLowerCase().replace(/\s*&\s*/g, ' and ').replace(/\s+/g, ' ');
+    return String(s).trim().toLowerCase().replace(/\s*&\s*/g, ' and ').replace(/[()]/g, '').replace(/\s+/g, ' ').trim();
   }
 
   /* ─── Load referendum results ────────────────────────────────────── */
@@ -454,9 +466,12 @@
           };
           // Index by ONS code (2010+/2024)
           if (r["Riding Code"]) ridingData[r["Riding Code"]] = entry;
-          // Index by normalised name (all years)
-          const norm = r["Norm Name"] || normName(r["Constituency"]);
-          if (norm) ridingData[norm] = entry;
+          // Index by Norm Name column (preferred)
+          if (r["Norm Name"]) ridingData[r["Norm Name"]] = entry;
+          // Also index by normName(Constituency) — catches paren-stripping mismatches
+          // between the Norm Name column and what normName() produces from the GeoJSON name
+          const computed = normName(r["Constituency"]);
+          if (computed) ridingData[computed] = entry;
         });
         const regionRows = XLSX.utils.sheet_to_json(wb.Sheets["Regions"]);
         const regionData = {};
@@ -625,7 +640,7 @@
     }
 
     /* State */
-    let activeYear = (window.ATLAS_INITIAL_YEAR && [2024,2019,2017,2015,2010,2005,2001,1997,1992,1987,1983].includes(window.ATLAS_INITIAL_YEAR)) ? window.ATLAS_INITIAL_YEAR : 2024;
+    let activeYear = (window.ATLAS_INITIAL_YEAR && [2024,2019,2017,2015,2010,2005,2001,1997,1992,1987,1983,1979,1970,1966,1964,1959,1955,1951,1950,1945,1935,1931,1929,1924,1923,1922,1918,"ref2016","1974O","1974F"].includes(window.ATLAS_INITIAL_YEAR)) ? window.ATLAS_INITIAL_YEAR : 2024;
     let activeRegionCode = null;
     let ridingsData = null;
     let allRidings = null;
@@ -731,43 +746,76 @@
         });
 
       /* ── Initial load ── */
-      document.querySelectorAll(".year-btn").forEach(b => {
-        const bYear = (b.dataset.year === "ref2016" || b.dataset.year === "1974O" || b.dataset.year === "1974F")
-          ? b.dataset.year : +b.dataset.year;
-        const isActive = bYear === activeYear;
-        b.classList.toggle("active", isActive);
-        if (isActive) setTimeout(() => b.scrollIntoView({ block: "nearest", inline: "center" }), 100);
-      });
+      const yearSelect = document.getElementById("year-select");
+      if (yearSelect) yearSelect.value = String(activeYear);
       loadYear(activeYear, regionPaths);
 
-      /* ── Year selector buttons ── */
-      const yearSel = document.getElementById("year-selector");
-      yearSel.querySelectorAll(".year-btn").forEach(btn => {
-        btn.addEventListener("click", function() {
-          const yr = (this.dataset.year === "ref2016" || this.dataset.year === "1974O" || this.dataset.year === "1974F")
-            ? this.dataset.year : +this.dataset.year;
+      /* ── Year dropdown ── */
+      if (yearSelect) {
+        yearSelect.addEventListener("change", function() {
+          const STRING_YEARS = ["ref2016", "1974O", "1974F"];
+          const raw = this.value;
+          const yr = STRING_YEARS.includes(raw) ? raw : +raw;
           if (yr === activeYear) return;
           activeYear = yr;
-          yearSel.querySelectorAll(".year-btn").forEach(b => b.classList.remove("active"));
-          this.classList.add("active");
-          // Scroll active button into view on mobile
-          this.scrollIntoView({ behavior: "smooth", block: "nearest", inline: "center" });
-          // Reset map state
-          activeRegionCode = null;
-          regionPaths.classed("selected", false);
+
           ridingG.selectAll("*").remove();
           zoomedRidingG.selectAll("*").remove();
-          highlightG.selectAll("*").remove();
-          resetBtn.classList.remove("visible");
-          svg.transition().duration(400).call(zoom.transform, d3.zoomIdentity);
-          loadYear(yr, regionPaths);
+          highlightG.selectAll(".region-hover-ring").remove();
+
+          if (activeRegionCode) {
+            // Stay zoomed on the active region — just reload data for new year
+            loadYear(yr, regionPaths, activeRegionCode);
+          } else {
+            highlightG.selectAll("*").remove();
+            resetBtn.classList.remove("visible");
+            svg.transition().duration(400).call(zoom.transform, d3.zoomIdentity);
+            loadYear(yr, regionPaths);
+          }
         });
-      });
+      }
 
     });
 
+    /* ── Extract results embedded in old boundary file properties ── */
+    // Old boundary files (pre-1955) bake results in as year-prefixed keys on each feature,
+    // e.g. "1918_Winner", "1918_Margin". Build a ridingData lookup from those directly,
+    // keyed by normalised name so the render lookups work identically to XLSX data.
+    function extractEmbeddedRidingData(features, era) {
+      const yr = String(era);
+      const data = {};
+      features.forEach(function(f) {
+        const p = f.properties;
+        const rawName = p.Name || p.name || "";
+        const constituency = p[yr + "_Constituency"] || rawName;
+        const entry = {
+          name:          constituency,
+          winner:        p[yr + "_Winner"]          || null,
+          winnerPct:     +(p[yr + "_Winner_Pct"]    || 0),
+          winnerVotes:   p[yr + "_Winner_Votes"]    || null,
+          runnerUp:      p[yr + "_Runner_Up"]       || null,
+          runnerUpPct:   +(p[yr + "_Runner_Up_Pct"] || 0),
+          runnerUpVotes: p[yr + "_Runner_Up_Votes"] || null,
+          p3:            p[yr + "_P3"]              || null,
+          p3Pct:         +(p[yr + "_P3_Pct"]        || 0),
+          p3Votes:       p[yr + "_P3_Votes"]        || null,
+          p4:            p[yr + "_P4"]              || null,
+          p4Pct:         +(p[yr + "_P4_Pct"]        || 0),
+          p4Votes:       p[yr + "_P4_Votes"]        || null,
+          margin:        +(p[yr + "_Margin"]         || 0),
+          electorate:    p[yr + "_Electorate"]      || null,
+          totalVotes:    p[yr + "_Total_Votes"]     || null,
+          mp:            p[yr + "_MP"]              || null,
+          region:        p[yr + "_Region"]          || null,
+        };
+        if (rawName)      data[normName(rawName)]      = entry;
+        if (constituency && constituency !== rawName) data[normName(constituency)] = entry;
+      });
+      return data;
+    }
+
     /* ── Load a year's boundary + results ── */
-    function loadYear(year, regionPaths) {
+    function loadYear(year, regionPaths, savedRegion) {
       loadingEl.style.display = "block";
 
       if (isRefMode(year)) {
@@ -801,9 +849,18 @@
         ]).then(function([rData, elecResults]) {
           ridingsData = rData;
           allRidings = topojson.feature(ridingsData, ridingsData.objects.ridings);
-          ridingData  = elecResults.ridingData;
-          regionData  = elecResults.regionData;
+          // Only use XLSX data if it has meaningful (non-empty) keys — an xlsx with
+          // wrong column names still produces entries keyed by "" which we must ignore.
+          const xlsxKeys = Object.keys(elecResults.ridingData).filter(k => k.length > 0);
+          if (xlsxKeys.length > 0) {
+            ridingData = elecResults.ridingData;
+            regionData = elecResults.regionData;
+          } else {
+            ridingData = extractEmbeddedRidingData(allRidings.features, era);
+            regionData = {};
+          }
           showAllRidings();
+          if (savedRegion) showRidings(savedRegion);
           updateLegend(year);
           loadingEl.style.display = "none";
         }).catch(err => {
@@ -825,18 +882,18 @@
         .attr("class", "riding-fill")
         .attr("d", path)
         .attr("fill", d => {
-          const data = ridingData[d.properties.code] || ridingData[normName(d.properties.name)];
+          const data = ridingData[d.properties.code] || ridingData[normName(d.properties.name || d.properties.Name)] || ridingData[normName(d.properties[YEAR_TO_ERA[activeYear] + "_Constituency"] || "")];
           return isRefMode(activeYear) ? refColour(data) : ridingColour(data);
         })
         .attr("stroke", d => {
-          const data = ridingData[d.properties.code] || ridingData[normName(d.properties.name)];
+          const data = ridingData[d.properties.code] || ridingData[normName(d.properties.name || d.properties.Name)] || ridingData[normName(d.properties[YEAR_TO_ERA[activeYear] + "_Constituency"] || "")];
           return isRefMode(activeYear) ? refColour(data) : ridingColour(data);
         })
         .attr("stroke-width", 0.5)
         .attr("pointer-events", "all")
         .on("mousemove", function(event, d) {
-          const data = ridingData[d.properties.code] || ridingData[normName(d.properties.name)];
-          setTooltip(d.properties.name, "Constituency", data);
+          const data = ridingData[d.properties.code] || ridingData[normName(d.properties.name || d.properties.Name)] || ridingData[normName(d.properties[YEAR_TO_ERA[activeYear] + "_Constituency"] || "")];
+          setTooltip(d.properties.name || d.properties.Name, "Constituency", data);
           tooltip.style.left = (event.clientX + 14) + "px";
           tooltip.style.top  = (event.clientY - 36) + "px";
           highlightG.selectAll(".riding-hover").remove();
@@ -869,18 +926,23 @@
         : "ridings";
       const topoObj = ridingsData.objects[topoObjName];
 
-      // For elections, filter by underscore region string; for ref, filter by ONS code directly
+      // For elections, filter by underscore region string; for ref, filter by ONS code directly.
+      // Old boundary files store region as a year-prefixed key (e.g. "1918_Region") not "region".
+      const era = YEAR_TO_ERA[activeYear];
+      function getRidingRegion(props) {
+        return props.region || props[era + "_Region"] || null;
+      }
       const regionFilter = isRefMode(activeYear)
         ? (g => g.properties.region === regionCode)
         : (function() {
             const regionStr = Object.keys(RIDING_REGION_MAP).find(k => RIDING_REGION_MAP[k] === regionCode);
-            return g => g.properties.region === regionStr;
+            return g => getRidingRegion(g.properties) === regionStr;
           })();
 
       const regionRidings = allRidings.features.filter(r =>
         isRefMode(activeYear)
           ? r.properties.region === regionCode
-          : r.properties.region === Object.keys(RIDING_REGION_MAP).find(k => RIDING_REGION_MAP[k] === regionCode)
+          : getRidingRegion(r.properties) === Object.keys(RIDING_REGION_MAP).find(k => RIDING_REGION_MAP[k] === regionCode)
       );
 
       const filteredGeoms = topoObj.geometries.filter(regionFilter);
@@ -903,19 +965,19 @@
         .attr("class", "zoomed-fill")
         .attr("d", path)
         .attr("fill", d => {
-          const data = ridingData[d.properties.code] || ridingData[normName(d.properties.name)];
+          const data = ridingData[d.properties.code] || ridingData[normName(d.properties.name || d.properties.Name)] || ridingData[normName(d.properties[YEAR_TO_ERA[activeYear] + "_Constituency"] || "")];
           return isRefMode(activeYear) ? refColour(data) : ridingColour(data);
         })
         .attr("stroke", d => {
-          const data = ridingData[d.properties.code] || ridingData[normName(d.properties.name)];
+          const data = ridingData[d.properties.code] || ridingData[normName(d.properties.name || d.properties.Name)] || ridingData[normName(d.properties[YEAR_TO_ERA[activeYear] + "_Constituency"] || "")];
           return isRefMode(activeYear) ? refColour(data) : ridingColour(data);
         })
         .attr("stroke-width", 0.5 / currentK)
         .on("mousemove touchstart", function(event, d) {
           event.preventDefault && event.preventDefault();
-          const data = ridingData[d.properties.code] || ridingData[normName(d.properties.name)];
+          const data = ridingData[d.properties.code] || ridingData[normName(d.properties.name || d.properties.Name)] || ridingData[normName(d.properties[YEAR_TO_ERA[activeYear] + "_Constituency"] || "")];
           const areaLabel = isRefMode(activeYear) ? "Local Authority" : "Constituency";
-          setTooltip(d.properties.name, areaLabel, data);
+          setTooltip(d.properties.name || d.properties.Name, areaLabel, data);
           if (!isMobile) { tooltip.style.left = (event.clientX + 14) + "px"; tooltip.style.top = (event.clientY - 36) + "px"; }
           highlightG.selectAll(".riding-hover").remove();
           highlightG.append("path").attr("class", "riding-hover")
@@ -1027,19 +1089,26 @@
     const sorted = Object.entries(totals).sort((a,b) => b[1]-a[1]);
     const pairs = {
       Lab:["#c0392b","#5e0909"], Con:["#2471a3","#0a2244"],
-      LD:["#d68910","#6b3300"], Lib:["#d68910","#6b3300"],
+      LD:["#d68910","#6b3300"], Lib:["#f5c842","#7a5e00"],
+      NatLib:["#d4a017","#6b3d00"],
       SNP:["#c9a800","#5a4700"], PC:["#1e8449","#083d1c"],
       Reform:["#12b6cf","#00415a"], RUK:["#12b6cf","#00415a"], Grn:["#5cb85c","#1a4a1a"],
       SF:["#4a9e6e","#0d3320"], DUP:["#8e44ad","#3d1060"],
       SDLP:["#2ecc71","#0a4a25"], UUP:["#5b8ed4","#1a3560"],
       ALL:["#e67e22","#7a3a00"], UKIP:["#9b59b6","#2d1045"],
       Brexit:["#12b6cf","#065a69"], IND:["#95a5a6","#2c3e50"],
+      Ind:["#95a5a6","#2c3e50"], NatLab:["#c0392b","#6b0000"],
+      Nat:["#8b9e6e","#3a4a2a"], Com:["#c0392b","#4a0000"],
+      ILP:["#e05050","#7a0000"], CW:["#7c8290","#2d3035"], NILP:["#c0392b","#5e0909"],
     };
     const displayNames = {
-      Lab:"Labour", Con:"Conservative", LD:"Lib Dem", Lib:"Lib Dem",
-      SNP:"SNP", PC:"Plaid Cymru", Grn:"Green", Reform:"Reform", RUK:"Reform UK",
-      SF:"Sinn Féin", DUP:"DUP", SDLP:"SDLP", UUP:"UUP",
-      ALL:"Alliance", UKIP:"UKIP", Brexit:"Brexit", IND:"Independent",
+      Lab:"Labour", Con:"Conservative", LD:"Lib Dem", Lib:"Liberal",
+      NatLib:"National Liberal", SNP:"SNP", PC:"Plaid Cymru", Grn:"Green",
+      Reform:"Reform", RUK:"Reform UK", SF:"Sinn Féin", DUP:"DUP",
+      SDLP:"SDLP", UUP:"UUP", ALL:"Alliance", UKIP:"UKIP",
+      Brexit:"Brexit", IND:"Independent", Ind:"Independent",
+      NatLab:"National Labour", Nat:"National", Com:"Communist",
+      ILP:"Ind. Labour", CW:"Co-operative", NILP:"NI Labour",
     };
 
     const yearLabel = year === 1974 ? "Feb 1974" : `${year}`;
@@ -1060,10 +1129,12 @@
 
   function partyColourAccent(party) {
     const map = {
-      Lab:"#db6b5f", Con:"#5b9ec9", LD:"#e8a83c", Lib:"#e8a83c",
-      SNP:"#dfc440", PC:"#4aaa74", Reform:"#12b6cf", RUK:"#12b6cf", Grn:"#5cb85c",
+      Lab:"#db6b5f", Con:"#5b9ec9", LD:"#e8a83c", Lib:"#f5c842",
+      NatLib:"#d4a017", SNP:"#dfc440", PC:"#4aaa74", Reform:"#12b6cf", RUK:"#12b6cf", Grn:"#5cb85c",
       SF:"#4a9e6e", DUP:"#8e44ad", SDLP:"#2ecc71", UUP:"#5b8ed4",
       ALL:"#e67e22", UKIP:"#9b59b6", Brexit:"#12b6cf", IND:"#95a5a6",
+      Ind:"#95a5a6", NatLab:"#e05050", Nat:"#a0b07e", Com:"#d43f3f",
+      ILP:"#e05050", CW:"#7c8290", NILP:"#e05050",
     };
     return map[party] || "#7c8290";
   }
@@ -1111,20 +1182,22 @@
     }
 
     if (!document.getElementById("year-selector")) {
-      const sel = document.createElement("div");
-      sel.id = "year-selector";
-      const years = [2024, 2019, 2017, "ref2016", 2015, 2010, 2005, 2001, 1997, 1992, 1987, 1983, 1979, "1974O", "1974F"];
-      years.forEach((yr, i) => {
-        const btn = document.createElement("button");
-        btn.className = "year-btn" + (i === 0 ? " active" : "");
-        btn.dataset.year = yr;
-        btn.textContent = yr === "ref2016" ? "2016 Ref"
+      const wrap = document.createElement("div");
+      wrap.id = "year-selector";
+      const sel = document.createElement("select");
+      sel.id = "year-select";
+      const years = [2024, 2019, 2017, "ref2016", 2015, 2010, 2005, 2001, 1997, 1992, 1987, 1983, 1979, "1974O", "1974F", 1970, 1966, 1964, 1959, 1955, 1951, 1950, 1945, 1935, 1931, 1929, 1924, 1923, 1922, 1918];
+      years.forEach(yr => {
+        const opt = document.createElement("option");
+        opt.value = yr;
+        opt.textContent = yr === "ref2016" ? "2016 Referendum"
           : yr === "1974O" ? "Oct 1974"
           : yr === "1974F" ? "Feb 1974"
           : yr;
-        sel.appendChild(btn);
+        sel.appendChild(opt);
       });
-      document.body.appendChild(sel);
+      wrap.appendChild(sel);
+      document.body.appendChild(wrap);
     }
 
     init();

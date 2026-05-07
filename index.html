@@ -3,942 +3,568 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>UK Election Atlas</title>
-  <meta name="description" content="Interactive maps of every UK general election since 1983. Explore constituency results, regional breakdowns, and vote shares across four decades of British politics.">
+  <title>LeanTossup.ca — Electoral Intelligence</title>
+  <meta name="description" content="Every seat. Every swing. Every election — mapped to the riding. UK results 1918–2024. US & UK models coming soon.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Mono:wght@400;500&family=Newsreader:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,700;1,400&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --bg:       #0d0f14;
-      --panel:    #13161e;
-      --border:   #1e2330;
-      --accent:   #4e7cff;
-      --accent2:  #c9a800;  /* gold for election results */
-      --text:     #e8eaf0;
-      --muted:    #5a6280;
-      --dim:      #2a3050;
-      --lab:      #db6b5f;
-      --con:      #5b9ec9;
-      --ld:       #e8a83c;
-      --model:    #4e7cff;
+      --bg: #1b1f2b;
+      --border-dim: rgba(78,124,255,0.12);
+      --border: rgba(78,124,255,0.15);
+      --accent: #4e7cff;
+      --red-ca: #bf0000;
+      --gold: #c9a800;
+      --text: #dde0ee;
+      --text-bright: #f2f4fa;
+      --muted: #5a6280;
+      --dim: #3a4060;
     }
 
-    html { scroll-behavior: smooth; }
+    html, body { height: 100%; }
 
     body {
       background: var(--bg);
       color: var(--text);
-      font-family: 'Newsreader', Georgia, serif;
-      font-weight: 300;
-      line-height: 1.7;
+      font-family: 'DM Mono', monospace;
+      min-height: 100vh;
       overflow-x: hidden;
     }
 
-    /* ── NAV ── */
-    nav {
+    body::before {
+      content: '';
       position: fixed;
-      top: 0; left: 0; right: 0;
-      z-index: 1000;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 0 40px;
-      height: 56px;
-      background: rgba(13,15,20,0.92);
-      backdrop-filter: blur(12px);
-      border-bottom: 1px solid var(--border);
-    }
-
-    .nav-logo {
-      font-family: 'DM Mono', monospace;
-      font-size: 0.72rem;
-      font-weight: 500;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: var(--text);
-      text-decoration: none;
-    }
-
-    .nav-logo span { color: var(--accent); }
-
-    .nav-links {
-      display: flex;
-      gap: 32px;
-      list-style: none;
-    }
-
-    .nav-links a {
-      font-family: 'DM Mono', monospace;
-      font-size: 0.68rem;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--muted);
-      text-decoration: none;
-      transition: color 0.15s;
-    }
-
-    .nav-links a:hover { color: var(--text); }
-
-    .nav-donate {
-      font-family: 'DM Mono', monospace;
-      font-size: 0.65rem;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--accent2);
-      border: 1px solid var(--accent2);
-      padding: 6px 14px;
-      border-radius: 3px;
-      text-decoration: none;
-      transition: background 0.15s, color 0.15s;
-    }
-
-    .nav-donate:hover {
-      background: var(--accent2);
-      color: var(--bg);
-    }
-
-    /* ── HERO ── */
-    .hero {
-      min-height: 100vh;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      padding-top: 56px;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .hero::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background:
-        radial-gradient(ellipse 60% 50% at 70% 50%, rgba(78,124,255,0.06) 0%, transparent 70%),
-        radial-gradient(ellipse 40% 60% at 20% 80%, rgba(201,168,0,0.04) 0%, transparent 60%);
-      pointer-events: none;
-    }
-
-    /* Vertical rule dividing hero columns */
-    .hero::after {
-      content: '';
-      position: absolute;
-      left: 50%;
-      top: 10%;
-      bottom: 10%;
-      width: 1px;
-      background: linear-gradient(to bottom, transparent, var(--border) 20%, var(--border) 80%, transparent);
-    }
-
-    .hero-left {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      padding: 80px 60px 80px 80px;
-    }
-
-    .hero-eyebrow {
-      font-family: 'DM Mono', monospace;
-      font-size: 0.65rem;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: var(--accent);
-      margin-bottom: 24px;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-
-    .hero-eyebrow::before {
-      content: '';
-      display: block;
-      width: 28px;
-      height: 1px;
-      background: var(--accent);
-    }
-
-    h1 {
-      font-family: 'Playfair Display', Georgia, serif;
-      font-size: clamp(3rem, 5vw, 5.5rem);
-      font-weight: 700;
-      line-height: 1.05;
-      letter-spacing: -0.02em;
-      color: var(--text);
-      margin-bottom: 28px;
-    }
-
-    h1 em {
-      font-style: italic;
-      color: var(--accent);
-    }
-
-    .hero-desc {
-      font-size: 1.15rem;
-      color: var(--muted);
-      line-height: 1.8;
-      max-width: 420px;
-      margin-bottom: 48px;
-    }
-
-    .hero-actions {
-      display: flex;
-      gap: 16px;
-      flex-wrap: wrap;
-    }
-
-    .btn-primary {
-      font-family: 'DM Mono', monospace;
-      font-size: 0.72rem;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      background: var(--accent);
-      color: #fff;
-      border: none;
-      padding: 14px 28px;
-      border-radius: 3px;
-      cursor: pointer;
-      text-decoration: none;
-      transition: opacity 0.15s, transform 0.15s;
-      display: inline-block;
-    }
-
-    .btn-primary:hover { opacity: 0.85; transform: translateY(-1px); }
-
-    .btn-secondary {
-      font-family: 'DM Mono', monospace;
-      font-size: 0.72rem;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      background: transparent;
-      color: var(--text);
-      border: 1px solid var(--border);
-      padding: 14px 28px;
-      border-radius: 3px;
-      cursor: pointer;
-      text-decoration: none;
-      transition: border-color 0.15s, transform 0.15s;
-      display: inline-block;
-    }
-
-    .btn-secondary:hover { border-color: var(--muted); transform: translateY(-1px); }
-
-    /* Hero right — stat cards */
-    .hero-right {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      padding: 80px 80px 80px 60px;
-      gap: 2px;
-    }
-
-    .election-row {
-      display: grid;
-      grid-template-columns: 80px 1fr 80px;
-      align-items: center;
-      padding: 14px 0;
-      border-bottom: 1px solid var(--border);
-      opacity: 0;
-      transform: translateX(20px);
-      animation: slideIn 0.4s forwards;
-      cursor: pointer;
-      text-decoration: none;
-      transition: background 0.12s;
-      border-radius: 3px;
-      padding-left: 12px;
-      padding-right: 12px;
-    }
-
-    .election-row:hover { background: rgba(255,255,255,0.02); }
-
-    .election-row:nth-child(1) { animation-delay: 0.1s; }
-    .election-row:nth-child(2) { animation-delay: 0.15s; }
-    .election-row:nth-child(3) { animation-delay: 0.2s; }
-    .election-row:nth-child(4) { animation-delay: 0.25s; }
-    .election-row:nth-child(5) { animation-delay: 0.3s; }
-    .election-row:nth-child(6) { animation-delay: 0.35s; }
-    .election-row:nth-child(7) { animation-delay: 0.4s; }
-    .election-row:nth-child(8) { animation-delay: 0.45s; }
-    .election-row:nth-child(9) { animation-delay: 0.5s; }
-    .election-row:nth-child(10) { animation-delay: 0.55s; }
-    .election-row:nth-child(11) { animation-delay: 0.6s; }
-    .election-row:nth-child(12) { animation-delay: 0.65s; }
-    .election-row:nth-child(13) { animation-delay: 0.7s; }
-
-    @keyframes slideIn {
-      to { opacity: 1; transform: translateX(0); }
-    }
-
-    .election-year {
-      font-family: 'DM Mono', monospace;
-      font-size: 0.85rem;
-      font-weight: 500;
-      color: var(--muted);
-    }
-
-    .election-winner {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-
-    .winner-dot {
-      width: 8px;
-      height: 8px;
-      border-radius: 50%;
-      flex-shrink: 0;
-    }
-
-    .winner-name {
-      font-size: 0.9rem;
-      color: var(--text);
-    }
-
-    .winner-seats {
-      font-family: 'DM Mono', monospace;
-      font-size: 0.75rem;
-      color: var(--muted);
-      text-align: right;
-    }
-
-    /* Seat bar */
-    .seat-bar-wrap {
-      grid-column: 1 / -1;
-      height: 3px;
-      background: var(--border);
-      border-radius: 2px;
-      margin-top: 6px;
-      overflow: hidden;
-    }
-
-    .seat-bar {
-      height: 100%;
-      border-radius: 2px;
-      transition: width 1s cubic-bezier(0.4, 0, 0.2, 1);
-    }
-
-    /* ── MAPS SECTION ── */
-    .section {
-      padding: 120px 80px;
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-
-    .section-label {
-      font-family: 'DM Mono', monospace;
-      font-size: 0.62rem;
-      letter-spacing: 0.22em;
-      text-transform: uppercase;
-      color: var(--accent);
-      margin-bottom: 16px;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-
-    .section-label::before {
-      content: '';
-      display: block;
-      width: 20px;
-      height: 1px;
-      background: var(--accent);
-    }
-
-    .section h2 {
-      font-family: 'Playfair Display', Georgia, serif;
-      font-size: clamp(2rem, 3.5vw, 3rem);
-      font-weight: 400;
-      line-height: 1.2;
-      margin-bottom: 16px;
-      color: var(--text);
-    }
-
-    .section-intro {
-      font-size: 1.05rem;
-      color: var(--muted);
-      max-width: 560px;
-      margin-bottom: 60px;
-      line-height: 1.8;
-    }
-
-    /* Map cards */
-    .map-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1px;
-      background: var(--border);
-      border: 1px solid var(--border);
-      border-radius: 6px;
-      overflow: hidden;
-    }
-
-    .map-card {
-      background: var(--panel);
-      padding: 32px 28px;
-      text-decoration: none;
-      transition: background 0.15s;
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .map-card::before {
-      content: '';
-      position: absolute;
-      top: 0; left: 0; right: 0;
-      height: 2px;
-      background: var(--accent);
-      transform: scaleX(0);
-      transform-origin: left;
-      transition: transform 0.2s ease;
-    }
-
-    .map-card:hover { background: #161920; }
-    .map-card:hover::before { transform: scaleX(1); }
-
-    .map-card.coming-soon {
-      opacity: 0.45;
-      cursor: default;
-      pointer-events: none;
-    }
-
-    .card-tag {
-      font-family: 'DM Mono', monospace;
-      font-size: 0.58rem;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-      color: var(--accent);
-      display: inline-block;
-    }
-
-    .card-tag.soon { color: var(--muted); }
-
-    .card-title {
-      font-family: 'Playfair Display', Georgia, serif;
-      font-size: 1.35rem;
-      font-weight: 700;
-      color: var(--text);
-      line-height: 1.25;
-    }
-
-    .card-desc {
-      font-size: 0.88rem;
-      color: var(--muted);
-      line-height: 1.65;
-      flex: 1;
-    }
-
-    .card-meta {
-      font-family: 'DM Mono', monospace;
-      font-size: 0.62rem;
-      color: var(--dim);
-      letter-spacing: 0.08em;
-      display: flex;
-      gap: 12px;
-      flex-wrap: wrap;
-      margin-top: 4px;
-    }
-
-    .card-meta span {
-      display: flex;
-      align-items: center;
-      gap: 4px;
-    }
-
-    .card-meta span::before {
-      content: '·';
-      color: var(--dim);
-    }
-
-    .card-meta span:first-child::before { display: none; }
-
-    .card-arrow {
-      font-size: 1rem;
-      color: var(--accent);
-      align-self: flex-end;
-      margin-top: 8px;
-      transition: transform 0.15s;
-    }
-
-    .map-card:hover .card-arrow { transform: translateX(4px); }
-
-    /* ── ABOUT / METHODOLOGY ── */
-    .about-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 80px;
-      align-items: start;
-    }
-
-    .about-text h3 {
-      font-family: 'Playfair Display', Georgia, serif;
-      font-size: 1.5rem;
-      font-weight: 400;
-      margin-bottom: 16px;
-      color: var(--text);
-    }
-
-    .about-text p {
-      font-size: 0.95rem;
-      color: var(--muted);
-      line-height: 1.85;
-      margin-bottom: 16px;
-    }
-
-    .about-text a {
-      color: var(--accent);
-      text-decoration: none;
-      border-bottom: 1px solid rgba(78,124,255,0.3);
-      transition: border-color 0.15s;
-    }
-
-    .about-text a:hover { border-color: var(--accent); }
-
-    .data-sources {
-      display: flex;
-      flex-direction: column;
-      gap: 1px;
-      background: var(--border);
-      border: 1px solid var(--border);
-      border-radius: 4px;
-      overflow: hidden;
-    }
-
-    .source-row {
-      background: var(--panel);
-      padding: 16px 20px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .source-name {
-      font-size: 0.88rem;
-      color: var(--text);
-    }
-
-    .source-type {
-      font-family: 'DM Mono', monospace;
-      font-size: 0.6rem;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--muted);
-      background: var(--border);
-      padding: 3px 8px;
-      border-radius: 2px;
-    }
-
-    /* ── DONATE ── */
-    .donate-section {
-      background: var(--panel);
-      border-top: 1px solid var(--border);
-      border-bottom: 1px solid var(--border);
-      padding: 80px;
-      text-align: center;
-    }
-
-    .donate-section h2 {
-      font-family: 'Playfair Display', Georgia, serif;
-      font-size: 2.2rem;
-      font-weight: 400;
-      margin-bottom: 16px;
-    }
-
-    .donate-section p {
-      font-size: 1rem;
-      color: var(--muted);
-      max-width: 480px;
-      margin: 0 auto 36px;
-      line-height: 1.8;
-    }
-
-    .btn-donate {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      font-family: 'DM Mono', monospace;
-      font-size: 0.72rem;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      background: transparent;
-      color: var(--accent2);
-      border: 1px solid var(--accent2);
-      padding: 14px 32px;
-      border-radius: 3px;
-      text-decoration: none;
-      transition: background 0.15s, color 0.15s;
-    }
-
-    .btn-donate:hover {
-      background: var(--accent2);
-      color: var(--bg);
-    }
-
-    .donate-note {
-      margin-top: 16px;
-      font-family: 'DM Mono', monospace;
-      font-size: 0.62rem;
-      color: var(--dim);
-      letter-spacing: 0.08em;
-    }
-
-    /* ── FOOTER ── */
-    footer {
-      padding: 40px 80px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      border-top: 1px solid var(--border);
-    }
-
-    .footer-copy {
-      font-family: 'DM Mono', monospace;
-      font-size: 0.62rem;
-      color: var(--dim);
-      letter-spacing: 0.08em;
-    }
-
-    .footer-links {
-      display: flex;
-      gap: 24px;
-    }
-
-    .footer-links a {
-      font-family: 'DM Mono', monospace;
-      font-size: 0.62rem;
-      color: var(--dim);
-      text-decoration: none;
-      letter-spacing: 0.08em;
-      transition: color 0.15s;
-    }
-
-    .footer-links a:hover { color: var(--muted); }
-
-    /* ── DIVIDER ── */
-    .rule {
-      border: none;
-      border-top: 1px solid var(--border);
-      margin: 0;
-    }
-
-    /* Subtle grid texture on hero */
-    .hero-grid-bg {
-      position: absolute;
       inset: 0;
       background-image:
-        linear-gradient(var(--border) 1px, transparent 1px),
-        linear-gradient(90deg, var(--border) 1px, transparent 1px);
-      background-size: 60px 60px;
-      opacity: 0.25;
+        linear-gradient(rgba(78,124,255,0.045) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(78,124,255,0.045) 1px, transparent 1px);
+      background-size: 32px 32px;
       pointer-events: none;
+      z-index: 0;
     }
 
-    /* Responsive */
-    @media (max-width: 900px) {
-      .hero { grid-template-columns: 1fr; min-height: auto; }
-      .hero::after { display: none; }
-      .hero-left { padding: 60px 32px 40px; }
-      .hero-right { padding: 0 32px 60px; }
-      .map-grid { grid-template-columns: 1fr; }
-      .about-grid { grid-template-columns: 1fr; gap: 48px; }
-      .section { padding: 80px 32px; }
-      nav { padding: 0 24px; }
+    /* ── Nav ── */
+    .nav {
+      position: sticky; top: 0; z-index: 100;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 clamp(20px, 4vw, 64px);
+      height: 44px;
+      border-bottom: 1px solid var(--border);
+      background: rgba(27,31,43,0.97);
+      backdrop-filter: blur(6px);
+    }
+    .nav-brand { font-size: 0.72rem; font-weight: 500; color: var(--text-bright); text-decoration: none; }
+    .nav-brand .ca { color: var(--red-ca); }
+    .nav-links { display: flex; gap: 24px; }
+    .nav-link { font-size: 0.55rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); text-decoration: none; transition: color 0.15s; }
+    .nav-link:hover { color: var(--text); }
+    .nav-donate { font-size: 0.55rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--red-ca); border: 1px solid rgba(191,0,0,0.4); padding: 4px 12px; text-decoration: none; transition: background 0.15s, color 0.15s; }
+    .nav-donate:hover { background: var(--red-ca); color: #fff; }
+
+    /* ── Hero ── */
+    .hero {
+      position: relative; z-index: 1;
+      display: grid;
+      grid-template-columns: 1fr clamp(320px, 38vw, 500px);
+      border-bottom: 1px solid var(--border-dim);
+    }
+    .hero-left {
+      padding: clamp(32px, 4vw, 64px) clamp(24px, 4vw, 64px) clamp(32px, 4vw, 56px);
+      border-right: 1px solid var(--border-dim);
+    }
+    .eyebrow {
+      font-size: 0.57rem; letter-spacing: 0.22em; text-transform: uppercase;
+      color: var(--accent); display: flex; align-items: center; gap: 10px; margin-bottom: 16px;
+    }
+    .eyebrow::before { content: ''; width: 18px; height: 1px; background: var(--accent); display: block; }
+    .brand {
+      font-family: 'Libre Baskerville', serif;
+      font-size: clamp(36px, 5vw, 62px);
+      font-weight: 700; color: var(--text-bright); line-height: 1.05; letter-spacing: -0.5px;
+    }
+    .brand .tossup { font-style: italic; color: #8aa4ff; }
+    .brand .ca {
+      font-family: 'DM Mono', monospace;
+      font-size: clamp(14px, 1.8vw, 22px);
+      font-weight: 500; color: var(--red-ca); vertical-align: super; margin-left: 3px; font-style: normal;
+    }
+    .tagline {
+      font-size: 0.88rem; color: #bcc2d8; line-height: 1.8;
+      margin: 20px 0 12px; max-width: 480px;
+      border-left: 2px solid rgba(191,0,0,0.35); padding-left: 16px;
+    }
+    .tagline .soon { color: var(--gold); }
+    .coords { font-size: 0.6rem; color: #5a6280; letter-spacing: 0.1em; margin-bottom: 36px; }
+    .cta-row { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
+    .btn-primary {
+      font-family: 'DM Mono', monospace; font-size: 0.62rem; letter-spacing: 0.1em; text-transform: uppercase;
+      padding: 11px 24px; background: var(--accent); color: #0d0f14;
+      border: none; cursor: pointer; font-weight: 500; text-decoration: none; display: inline-block;
+      transition: opacity 0.15s;
+    }
+    .btn-primary:hover { opacity: 0.85; }
+    .btn-ghost {
+      font-family: 'DM Mono', monospace; font-size: 0.62rem; letter-spacing: 0.1em; text-transform: uppercase;
+      padding: 11px 18px; background: transparent; border: 1px solid rgba(78,124,255,0.4);
+      color: var(--accent); cursor: pointer; transition: background 0.15s, border-color 0.15s;
+    }
+    .btn-ghost:hover { background: rgba(78,124,255,0.08); border-color: var(--accent); }
+
+    /* ── Carousel panel ── */
+    .hero-right { padding: 24px 24px 18px; display: flex; flex-direction: column; gap: 10px; }
+    .panel-header {
+      font-size: 0.6rem; letter-spacing: 0.16em; text-transform: uppercase;
+      color: var(--muted); border-bottom: 1px solid var(--border-dim); padding-bottom: 9px;
+      display: flex; justify-content: space-between; align-items: center;
+    }
+    .panel-year { color: #8aa4ff; font-size: 0.85rem; }
+    .panel-winner { color: #9aa0b8; font-size: 0.62rem; }
+    .carousel-controls { display: flex; align-items: center; gap: 5px; }
+    .cnav {
+      background: transparent; border: 1px solid rgba(78,124,255,0.25); color: var(--muted);
+      font-size: 0.7rem; width: 22px; height: 22px; cursor: pointer;
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'DM Mono', monospace; padding: 0; transition: all 0.15s;
+    }
+    .cnav:hover { border-color: var(--accent); color: var(--accent); }
+    .pause-btn {
+      background: transparent; border: 1px solid rgba(78,124,255,0.25); color: var(--muted);
+      font-size: 0.48rem; width: 22px; height: 22px; cursor: pointer;
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'DM Mono', monospace; padding: 0; transition: all 0.15s;
+    }
+    .pause-btn:hover { border-color: var(--accent); color: var(--accent); }
+
+    /* Seat chart */
+    .chart-area { flex: 1; }
+    .chart-area svg { display: block; width: 100%; overflow: visible; }
+
+    /* Referendum */
+    .ref-wrap { display: flex; flex-direction: column; gap: 8px; justify-content: center; padding: 10px 0; }
+    .ref-bar { display: flex; height: 22px; overflow: hidden; }
+    .ref-labels { display: flex; justify-content: space-between; font-size: 0.52rem; }
+
+    /* Seat rows */
+    .seat-rows { display: flex; flex-direction: column; gap: 6px; }
+    .seat-row { display: flex; align-items: center; gap: 8px; }
+    .seat-row-lbl { font-size: 0.65rem; min-width: 84px; }
+    .seat-row-bar-wrap { flex: 1; height: 9px; background: rgba(255,255,255,0.06); overflow: hidden; }
+    .seat-row-bar { height: 100%; }
+    .seat-row-num { font-size: 0.72rem; font-weight: 500; min-width: 36px; text-align: right; }
+
+    /* Progress & dots */
+    .progress-wrap { height: 2px; background: rgba(78,124,255,0.1); overflow: hidden; }
+    .progress-bar { height: 100%; background: var(--accent); width: 0%; }
+    .year-dots { display: flex; gap: 3px; flex-wrap: wrap; justify-content: center; padding-top: 2px; }
+    .ydot {
+      width: 5px; height: 5px; border-radius: 50%;
+      background: rgba(78,124,255,0.2); cursor: pointer;
+      transition: background 0.15s; flex-shrink: 0;
+    }
+    .ydot.active { background: var(--accent); }
+    .ydot:hover { background: rgba(78,124,255,0.5); }
+
+    /* ── Atlas cards ── */
+    .atlases {
+      position: relative; z-index: 1;
+      padding: clamp(28px, 3vw, 48px) clamp(24px, 4vw, 64px);
+    }
+    .section-label {
+      font-size: 0.57rem; letter-spacing: 0.2em; text-transform: uppercase;
+      color: var(--dim); margin-bottom: 20px; display: flex; align-items: center; gap: 14px;
+    }
+    .section-label::after { content: ''; flex: 1; height: 1px; background: var(--border-dim); }
+    .cards { display: grid; grid-template-columns: repeat(4,1fr); gap: 12px; }
+    .card {
+      background: rgba(255,255,255,0.02); border: 1px solid rgba(78,124,255,0.14);
+      padding: 20px; position: relative; transition: border-color 0.2s, background 0.2s;
+    }
+    .card.live { border-color: rgba(78,124,255,0.28); cursor: pointer; text-decoration: none; display: block; color: inherit; }
+    .card.live:hover { border-color: var(--accent); background: rgba(78,124,255,0.05); }
+    .card.soon { opacity: 0.45; }
+    .card-flag { font-size: 1.3rem; margin-bottom: 10px; line-height: 1; }
+    .card-type { font-size: 0.56rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--muted); margin-bottom: 5px; }
+    .card-title { font-family: 'Libre Baskerville', serif; font-size: 1.05rem; font-weight: 700; color: var(--text-bright); line-height: 1.2; margin-bottom: 8px; }
+    .card-title em { font-style: italic; color: #8aa4ff; }
+    .card-desc { font-size: 0.7rem; color: #9da4bc; line-height: 1.7; }
+    .card-arrow { position: absolute; bottom: 14px; right: 14px; font-size: 0.58rem; color: var(--accent); }
+    .badge-soon {
+      position: absolute; top: 11px; right: 11px;
+      font-size: 0.46rem; letter-spacing: 0.14em; text-transform: uppercase;
+      background: rgba(201,168,0,0.1); color: var(--gold);
+      border: 1px solid rgba(201,168,0,0.28); padding: 3px 8px;
+    }
+    .badge-live {
+      position: absolute; top: 11px; right: 11px;
+      font-size: 0.46rem; letter-spacing: 0.14em; text-transform: uppercase;
+      background: rgba(78,124,255,0.1); color: var(--accent);
+      border: 1px solid rgba(78,124,255,0.28); padding: 3px 8px;
+    }
+
+    /* ── Footer ── */
+    footer {
+      position: relative; z-index: 1;
+      border-top: 1px solid var(--border-dim);
+      padding: 12px clamp(24px, 4vw, 64px);
+      display: flex; justify-content: space-between; align-items: center;
+      font-size: 0.52rem; color: var(--dim);
+    }
+
+    /* ── Responsive ── */
+    @media (max-width: 960px) {
+      .hero { grid-template-columns: 1fr; }
+      .hero-left { border-right: none; border-bottom: 1px solid var(--border-dim); }
+      .hero-right { max-width: 560px; }
+      .cards { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 520px) {
+      .cards { grid-template-columns: 1fr; }
       .nav-links { display: none; }
-      footer { flex-direction: column; gap: 16px; padding: 32px; text-align: center; }
-      .donate-section { padding: 60px 32px; }
+      footer { flex-direction: column; gap: 6px; text-align: center; }
     }
   </style>
 </head>
 <body>
 
-  <!-- NAV -->
-  <nav>
-    <a href="/" class="nav-logo">UK <span>Election</span> Atlas</a>
-    <ul class="nav-links">
-      <li><a href="#maps">Maps</a></li>
-      <li><a href="#about">About</a></li>
-      <li><a href="atlas/index.html">Atlas</a></li>
-    </ul>
-    <a href="https://ko-fi.com/YOUR_KOFI" target="_blank" rel="noopener" class="nav-donate">Support ↗</a>
+  <nav class="nav">
+    <a href="index.html" class="nav-brand">LeanTossup<span class="ca">.ca</span></a>
   </nav>
 
-  <!-- HERO -->
   <section class="hero">
-    <div class="hero-grid-bg"></div>
-
     <div class="hero-left">
-      <div class="hero-eyebrow">Interactive Political Maps</div>
-      <h1>Four decades of<br><em>British elections</em>,<br>mapped.</h1>
-      <p class="hero-desc">
-        Constituency-level results from every UK general election since 1983.
-        Explore regional swings, vote shares, and the long arc of political change.
+
+      <div class="brand">Lean<span class="tossup">Tossup</span><span class="ca">.ca</span></div>
+      <p class="tagline">
+        Every seat. Every swing. Every election — mapped to the riding.<br>
+        UK results 1918–2024. US &amp; UK models <span class="soon">coming soon</span>.
       </p>
-      <div class="hero-actions">
-        <a href="atlas/index.html" class="btn-primary">Open the Atlas →</a>
-        <a href="#maps" class="btn-secondary">Explore maps</a>
+      <p class="coords">51°30′N 0°7′W &nbsp;·&nbsp; 38°53′N 77°02′W &nbsp;·&nbsp; 45°25′N 75°41′W</p>
+      <div class="cta-row">
+        <a href="atlas/index.html" class="btn-primary" id="open-atlas-btn">Open UK Atlas →</a>
+        <button class="btn-ghost" id="browse-btn">Browse elections</button>
       </div>
     </div>
 
     <div class="hero-right">
-      <!-- Election results timeline -->
-      <a href="model/index.html" class="election-row" style="border-bottom:1px solid #2a3350;background:rgba(78,124,255,0.04)">
-        <div class="election-year" style="color:var(--model)">Model</div>
-        <div class="election-winner">
-          <div class="winner-dot" style="background:var(--model);box-shadow:0 0 6px var(--model)"></div>
-          <span class="winner-name" style="color:var(--model)">Current projection</span>
+      <div class="panel-header">
+        <div>
+          <span class="panel-year" id="panel-year">2024</span>
+          <span class="panel-winner" id="panel-winner"> · Labour landslide</span>
         </div>
-        <div class="winner-seats" style="color:var(--model)">↗</div>
-        <div class="seat-bar-wrap">
-          <div class="seat-bar" style="width:100%;background:linear-gradient(to right,#1a2a5a,#4e7cff)"></div>
+        <div class="carousel-controls">
+          <button class="cnav" id="prev-btn" aria-label="Previous election">&#x2039;</button>
+          <button class="pause-btn" id="pause-btn" aria-label="Pause auto-cycle">⏸</button>
+          <button class="cnav" id="next-btn" aria-label="Next election">&#x203a;</button>
         </div>
-      </a>
-      <a href="atlas/index.html?year=2024" class="election-row">
-        <div class="election-year">2024</div>
-        <div class="election-winner">
-          <div class="winner-dot" style="background:var(--lab)"></div>
-          <span class="winner-name">Labour majority</span>
-        </div>
-        <div class="winner-seats">411</div>
-        <div class="seat-bar-wrap">
-          <div class="seat-bar" style="width:63%;background:var(--lab)"></div>
-        </div>
-      </a>
-      <a href="atlas/index.html?year=2019" class="election-row">
-        <div class="election-year">2019</div>
-        <div class="election-winner">
-          <div class="winner-dot" style="background:var(--con)"></div>
-          <span class="winner-name">Conservative majority</span>
-        </div>
-        <div class="winner-seats">365</div>
-        <div class="seat-bar-wrap">
-          <div class="seat-bar" style="width:56%;background:var(--con)"></div>
-        </div>
-      </a>
-      <a href="atlas/index.html?year=2017" class="election-row">
-        <div class="election-year">2017</div>
-        <div class="election-winner">
-          <div class="winner-dot" style="background:var(--con)"></div>
-          <span class="winner-name">Conservative minority</span>
-        </div>
-        <div class="winner-seats">317</div>
-        <div class="seat-bar-wrap">
-          <div class="seat-bar" style="width:49%;background:var(--con)"></div>
-        </div>
-      </a>
-      <a href="atlas/index.html?year=ref2016" class="election-row">
-        <div class="election-year">2016</div>
-        <div class="election-winner">
-          <div class="winner-dot" style="background:#5b9ec9"></div>
-          <span class="winner-name">Leave — EU Referendum</span>
-        </div>
-        <div class="winner-seats" style="color:#5b9ec9">51.9%</div>
-        <div class="seat-bar-wrap">
-          <div class="seat-bar" style="width:52%;background:linear-gradient(to right,#5b9ec9,#0a2244)"></div>
-        </div>
-      </a>
-      <a href="atlas/index.html?year=2015" class="election-row">
-        <div class="election-year">2015</div>
-        <div class="election-winner">
-          <div class="winner-dot" style="background:var(--con)"></div>
-          <span class="winner-name">Conservative majority</span>
-        </div>
-        <div class="winner-seats">331</div>
-        <div class="seat-bar-wrap">
-          <div class="seat-bar" style="width:51%;background:var(--con)"></div>
-        </div>
-      </a>
-      <a href="atlas/index.html?year=2010" class="election-row">
-        <div class="election-year">2010</div>
-        <div class="election-winner">
-          <div class="winner-dot" style="background:var(--con)"></div>
-          <span class="winner-name">Conservative minority</span>
-        </div>
-        <div class="winner-seats">306</div>
-        <div class="seat-bar-wrap">
-          <div class="seat-bar" style="width:47%;background:var(--con)"></div>
-        </div>
-      </a>
-      <a href="atlas/index.html?year=2005" class="election-row">
-        <div class="election-year">2005</div>
-        <div class="election-winner">
-          <div class="winner-dot" style="background:var(--lab)"></div>
-          <span class="winner-name">Labour majority</span>
-        </div>
-        <div class="winner-seats">355</div>
-        <div class="seat-bar-wrap">
-          <div class="seat-bar" style="width:55%;background:var(--lab)"></div>
-        </div>
-      </a>
-      <a href="atlas/index.html?year=1997" class="election-row">
-        <div class="election-year">1997</div>
-        <div class="election-winner">
-          <div class="winner-dot" style="background:var(--lab)"></div>
-          <span class="winner-name">Labour landslide</span>
-        </div>
-        <div class="winner-seats">418</div>
-        <div class="seat-bar-wrap">
-          <div class="seat-bar" style="width:64%;background:var(--lab)"></div>
-        </div>
-      </a>
-      <a href="atlas/index.html?year=1992" class="election-row">
-        <div class="election-year">1992</div>
-        <div class="election-winner">
-          <div class="winner-dot" style="background:var(--con)"></div>
-          <span class="winner-name">Conservative majority</span>
-        </div>
-        <div class="winner-seats">336</div>
-        <div class="seat-bar-wrap">
-          <div class="seat-bar" style="width:52%;background:var(--con)"></div>
-        </div>
-      </a>
-      <a href="atlas/index.html?year=1987" class="election-row">
-        <div class="election-year">1987</div>
-        <div class="election-winner">
-          <div class="winner-dot" style="background:var(--con)"></div>
-          <span class="winner-name">Conservative majority</span>
-        </div>
-        <div class="winner-seats">376</div>
-        <div class="seat-bar-wrap">
-          <div class="seat-bar" style="width:58%;background:var(--con)"></div>
-        </div>
-      </a>
-      <a href="atlas/index.html?year=1983" class="election-row">
-        <div class="election-year">1983</div>
-        <div class="election-winner">
-          <div class="winner-dot" style="background:var(--con)"></div>
-          <span class="winner-name">Conservative landslide</span>
-        </div>
-        <div class="winner-seats">397</div>
-        <div class="seat-bar-wrap">
-          <div class="seat-bar" style="width:61%;background:var(--con)"></div>
-        </div>
-      </a>
+      </div>
+
+      <div class="chart-area" id="chart-area"></div>
+      <div class="seat-rows" id="seat-rows"></div>
+
+      <div class="progress-wrap">
+        <div class="progress-bar" id="progress-bar"></div>
+      </div>
+      <div class="year-dots" id="dots-container"></div>
     </div>
   </section>
 
-  <hr class="rule">
+  <section class="atlases" id="atlases">
+    <div class="section-label">Atlases &amp; Models</div>
+    <div class="cards">
 
-  <!-- MAPS SECTION -->
-  <section class="section" id="maps">
-    <div class="section-label">Projects</div>
-    <h2>Maps & tools</h2>
-    <p class="section-intro">
-      Each project uses official ONS boundary data and House of Commons results, presented at constituency level.
-    </p>
-
-    <div class="map-grid">
-      <!-- Atlas card -->
-      <a href="atlas/index.html" class="map-card">
-        <span class="card-tag">Live</span>
-        <div class="card-title">Election Atlas</div>
-        <p class="card-desc">
-          Interactive constituency map of every UK general election from 1983 to 2024. Click any region to drill down to individual seats, with vote shares and candidate breakdowns.
-        </p>
-        <div class="card-meta">
-          <span>1983–2024</span>
-          <span>650 constituencies</span>
-          <span>11 elections</span>
-        </div>
+      <a href="atlas/index.html" class="card live">
+        <div class="badge-live">Live</div>
+        <div class="card-flag">🇬🇧</div>
+        <div class="card-type">Atlas</div>
+        <div class="card-title">UK <em>Election</em> Atlas</div>
+        <p class="card-desc">Every general election 1918–2024. Constituency results, swings, and boundary changes across six eras.</p>
         <div class="card-arrow">→</div>
       </a>
 
-      <!-- Model card — live -->
-      <a href="model/index.html" class="map-card">
-        <span class="card-tag">Live</span>
-        <div class="card-title">Election Model</div>
-        <p class="card-desc">
-          Poll-to-seat projections using regional swing and demographic modelling. 5,000 simulations per run, updated with the latest polling.
-        </p>
-        <div class="card-meta">
-          <span>2024 boundaries</span>
-          <span>650 constituencies</span>
-          <span>5,000 simulations</span>
-        </div>
-        <div class="card-arrow">→</div>
-      </a>
-
-      <!-- Historical swings — coming soon -->
-      <div class="map-card coming-soon">
-        <span class="card-tag soon">Coming soon</span>
-        <div class="card-title">Swing Analysis</div>
-        <p class="card-desc">
-          Compare any two elections side by side. See which constituencies swung most, which held firm, and where the big shifts happened.
-        </p>
-        <div class="card-meta">
-          <span>Comparison tool</span>
-          <span>Any two elections</span>
-        </div>
-        <div class="card-arrow" style="color:var(--dim)">→</div>
+      <div class="card soon">
+        <div class="badge-soon">Coming soon</div>
+        <div class="card-flag">🇺🇸</div>
+        <div class="card-type">Atlas</div>
+        <div class="card-title">US <em>Election</em> Atlas</div>
+        <p class="card-desc">Coming soon.</p>
       </div>
+
+      <div class="card soon">
+        <div class="badge-soon">Coming soon</div>
+        <div class="card-flag">🇺🇸</div>
+        <div class="card-type">Model</div>
+        <div class="card-title">US <em>Election</em> Model</div>
+        <p class="card-desc">Coming soon.</p>
+      </div>
+
+      <div class="card soon">
+        <div class="badge-soon">Coming soon</div>
+        <div class="card-flag">🇬🇧</div>
+        <div class="card-type">Model</div>
+        <div class="card-title">UK <em>Election</em> Model</div>
+        <p class="card-desc">Coming soon.</p>
+      </div>
+
     </div>
+
+    <div style="margin-top:20px; padding:14px 18px; border:1px solid rgba(78,124,255,0.12); background:rgba(255,255,255,0.02); font-size:0.7rem; color:#9da4bc; line-height:1.7;">
+      <span style="color:#bcc2d8; font-weight:500;">Historical boundary maps</span> — The UK Election Atlas uses historical constituency boundary data from
+      <a href="https://parlconst.org" target="_blank" rel="noopener" style="color:#8aa4ff; text-decoration:underline;">parlconst.org</a>.
+      Many thanks to them for making this data publicly available.
+    </div>
+
   </section>
 
-  <hr class="rule">
-
-  <!-- ABOUT -->
-  <section class="section" id="about">
-    <div class="section-label">About</div>
-    <div class="about-grid">
-      <div class="about-text">
-        <h3>How this is built</h3>
-        <p>
-          All maps use official boundary data from the <a href="https://geoportal.statistics.gov.uk" target="_blank" rel="noopener">ONS Geography Portal</a> and the <a href="https://ukdataservice.ac.uk" target="_blank" rel="noopener">UK Data Service</a>, converted to TopoJSON and rendered with <a href="https://d3js.org" target="_blank" rel="noopener">D3.js</a>. Election results come from the House of Commons Library.
-        </p>
-        <p>
-          Boundaries are matched to their correct era — 1983 and 1987 use the 1983 boundary set, 2010 through 2019 use the 2010 set, and so on. Constituency names are normalised across boundary eras to ensure consistent matching.
-        </p>
-        <p>
-          This is a personal project. If you find errors or have suggestions, please get in touch.
-        </p>
-      </div>
-
-      <div>
-        <div class="section-label" style="margin-bottom:20px">Data sources</div>
-        <div class="data-sources">
-          <div class="source-row">
-            <span class="source-name">House of Commons Library</span>
-            <span class="source-type">Results</span>
-          </div>
-          <div class="source-row">
-            <span class="source-name">ONS Geography Portal</span>
-            <span class="source-type">Boundaries</span>
-          </div>
-          <div class="source-row">
-            <span class="source-name">UK Data Service</span>
-            <span class="source-type">Historical boundaries</span>
-          </div>
-          <div class="source-row">
-            <span class="source-name">D3.js + TopoJSON</span>
-            <span class="source-type">Rendering</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- DONATE -->
-  <div class="donate-section">
-    <h2>Keep this free</h2>
-    <p>
-      This site has no ads and no paywalls. If you find it useful, a small contribution helps cover hosting and development time.
-    </p>
-    <a href="https://ko-fi.com/YOUR_KOFI" target="_blank" rel="noopener" class="btn-donate">
-      ☕ Buy me a coffee on Ko-fi
-    </a>
-    <p class="donate-note">No account needed · Pay what you like · Powered by Ko-fi</p>
-  </div>
-
-  <!-- FOOTER -->
   <footer>
-    <span class="footer-copy">© 2025 UK Election Atlas</span>
-    <div class="footer-links">
-      <a href="#maps">Maps</a>
-      <a href="#about">About</a>
-      <a href="https://ko-fi.com/YOUR_KOFI" target="_blank" rel="noopener">Support</a>
-    </div>
+    <span>LeanTossup.ca — Electoral Intelligence</span>
+    <span>Data from official UK electoral returns</span>
+    <span>GitHub Pages</span>
   </footer>
+
+  <script>
+    const ELECTIONS = [
+      { year:'2024', yParam:2024, seats:[{n:411,c:'#c0334f',l:'Labour'},{n:121,c:'#0087DC',l:'Conservative'},{n:72,c:'#FDBB30',l:'Lib Dem'},{n:9,c:'#FDF38E',l:'SNP'},{n:37,c:'#777',l:'Other'}], winner:'Labour landslide', total:650 },
+      { year:'2019', yParam:2019, seats:[{n:365,c:'#0087DC',l:'Conservative'},{n:202,c:'#c0334f',l:'Labour'},{n:48,c:'#FDF38E',l:'SNP'},{n:11,c:'#FDBB30',l:'Lib Dem'},{n:24,c:'#777',l:'Other'}], winner:'Conservative majority', total:650 },
+      { year:'2017', yParam:2017, seats:[{n:317,c:'#0087DC',l:'Conservative'},{n:262,c:'#c0334f',l:'Labour'},{n:35,c:'#FDF38E',l:'SNP'},{n:12,c:'#FDBB30',l:'Lib Dem'},{n:24,c:'#777',l:'Other'}], winner:'Hung parliament', total:650 },
+      { year:'EU Ref 2016', yParam:'ref2016', seats:[{n:17410742,c:'#00338D',l:'Leave'},{n:16141241,c:'#FFCC00',l:'Remain'}], winner:'Leave 51.9%', isRef:true },
+      { year:'2015', yParam:2015, seats:[{n:331,c:'#0087DC',l:'Conservative'},{n:232,c:'#c0334f',l:'Labour'},{n:56,c:'#FDF38E',l:'SNP'},{n:8,c:'#FDBB30',l:'Lib Dem'},{n:23,c:'#777',l:'Other'}], winner:'Conservative majority', total:650 },
+      { year:'2010', yParam:2010, seats:[{n:306,c:'#0087DC',l:'Conservative'},{n:258,c:'#c0334f',l:'Labour'},{n:57,c:'#FDBB30',l:'Lib Dem'},{n:29,c:'#777',l:'Other'}], winner:'Hung parliament', total:650 },
+      { year:'2005', yParam:2005, seats:[{n:356,c:'#c0334f',l:'Labour'},{n:198,c:'#0087DC',l:'Conservative'},{n:62,c:'#FDBB30',l:'Lib Dem'},{n:34,c:'#777',l:'Other'}], winner:'Labour majority', total:650 },
+      { year:'2001', yParam:2001, seats:[{n:413,c:'#c0334f',l:'Labour'},{n:166,c:'#0087DC',l:'Conservative'},{n:52,c:'#FDBB30',l:'Lib Dem'},{n:28,c:'#777',l:'Other'}], winner:'Labour landslide', total:659 },
+      { year:'1997', yParam:1997, seats:[{n:418,c:'#c0334f',l:'Labour'},{n:165,c:'#0087DC',l:'Conservative'},{n:46,c:'#FDBB30',l:'Lib Dem'},{n:30,c:'#777',l:'Other'}], winner:'Labour landslide', total:659 },
+      { year:'1992', yParam:1992, seats:[{n:336,c:'#0087DC',l:'Conservative'},{n:271,c:'#c0334f',l:'Labour'},{n:20,c:'#FDBB30',l:'Lib Dem'},{n:24,c:'#777',l:'Other'}], winner:'Conservative majority', total:651 },
+      { year:'1987', yParam:1987, seats:[{n:376,c:'#0087DC',l:'Conservative'},{n:229,c:'#c0334f',l:'Labour'},{n:22,c:'#FDBB30',l:'Alliance'},{n:23,c:'#777',l:'Other'}], winner:'Conservative majority', total:650 },
+      { year:'1983', yParam:1983, seats:[{n:397,c:'#0087DC',l:'Conservative'},{n:209,c:'#c0334f',l:'Labour'},{n:23,c:'#FDBB30',l:'Alliance'},{n:21,c:'#777',l:'Other'}], winner:'Conservative landslide', total:650 },
+      { year:'1979', yParam:1979, seats:[{n:339,c:'#0087DC',l:'Conservative'},{n:269,c:'#c0334f',l:'Labour'},{n:11,c:'#FDBB30',l:'Liberal'},{n:16,c:'#777',l:'Other'}], winner:'Conservative majority', total:635 },
+      { year:'1974 Oct', yParam:'1974O', seats:[{n:319,c:'#c0334f',l:'Labour'},{n:277,c:'#0087DC',l:'Conservative'},{n:13,c:'#FDBB30',l:'Liberal'},{n:26,c:'#777',l:'Other'}], winner:'Labour majority', total:635 },
+      { year:'1974 Feb', yParam:'1974F', seats:[{n:301,c:'#c0334f',l:'Labour'},{n:301,c:'#0087DC',l:'Conservative'},{n:14,c:'#FDBB30',l:'Liberal'},{n:19,c:'#777',l:'Other'}], winner:'Hung parliament', total:635 },
+      { year:'1970', yParam:1970, seats:[{n:330,c:'#0087DC',l:'Conservative'},{n:287,c:'#c0334f',l:'Labour'},{n:6,c:'#FDBB30',l:'Liberal'},{n:7,c:'#777',l:'Other'}], winner:'Conservative majority', total:630 },
+      { year:'1966', yParam:1966, seats:[{n:363,c:'#c0334f',l:'Labour'},{n:253,c:'#0087DC',l:'Conservative'},{n:12,c:'#FDBB30',l:'Liberal'},{n:2,c:'#777',l:'Other'}], winner:'Labour majority', total:630 },
+      { year:'1964', yParam:1964, seats:[{n:317,c:'#c0334f',l:'Labour'},{n:304,c:'#0087DC',l:'Conservative'},{n:9,c:'#FDBB30',l:'Liberal'}], winner:'Labour majority', total:630 },
+      { year:'1959', yParam:1959, seats:[{n:365,c:'#0087DC',l:'Conservative'},{n:258,c:'#c0334f',l:'Labour'},{n:6,c:'#FDBB30',l:'Liberal'},{n:1,c:'#777',l:'Other'}], winner:'Conservative majority', total:630 },
+      { year:'1955', yParam:1955, seats:[{n:345,c:'#0087DC',l:'Conservative'},{n:277,c:'#c0334f',l:'Labour'},{n:6,c:'#FDBB30',l:'Liberal'},{n:2,c:'#777',l:'Other'}], winner:'Conservative majority', total:630 },
+      { year:'1951', yParam:1951, seats:[{n:321,c:'#0087DC',l:'Conservative'},{n:295,c:'#c0334f',l:'Labour'},{n:6,c:'#FDBB30',l:'Liberal'},{n:3,c:'#777',l:'Other'}], winner:'Conservative majority', total:625 },
+      { year:'1950', yParam:1950, seats:[{n:315,c:'#c0334f',l:'Labour'},{n:299,c:'#0087DC',l:'Conservative'},{n:9,c:'#FDBB30',l:'Liberal'},{n:2,c:'#777',l:'Other'}], winner:'Labour majority', total:625 },
+      { year:'1945', yParam:1945, seats:[{n:393,c:'#c0334f',l:'Labour'},{n:197,c:'#0087DC',l:'Conservative'},{n:12,c:'#FDBB30',l:'Liberal'},{n:28,c:'#777',l:'Other'}], winner:'Labour landslide', total:640 },
+      { year:'1935', yParam:1935, seats:[{n:387,c:'#0087DC',l:'Conservative'},{n:154,c:'#c0334f',l:'Labour'},{n:21,c:'#FDBB30',l:'Liberal'},{n:53,c:'#777',l:'Other'}], winner:'National Government', total:615 },
+      { year:'1931', yParam:1931, seats:[{n:470,c:'#0087DC',l:'Conservative'},{n:52,c:'#c0334f',l:'Labour'},{n:37,c:'#FDBB30',l:'Liberal'},{n:56,c:'#777',l:'Other'}], winner:'National Government', total:615 },
+      { year:'1929', yParam:1929, seats:[{n:287,c:'#c0334f',l:'Labour'},{n:260,c:'#0087DC',l:'Conservative'},{n:59,c:'#FDBB30',l:'Liberal'},{n:9,c:'#777',l:'Other'}], winner:'Hung parliament', total:615 },
+      { year:'1924', yParam:1924, seats:[{n:412,c:'#0087DC',l:'Conservative'},{n:151,c:'#c0334f',l:'Labour'},{n:40,c:'#FDBB30',l:'Liberal'},{n:12,c:'#777',l:'Other'}], winner:'Conservative majority', total:615 },
+      { year:'1923', yParam:1923, seats:[{n:258,c:'#0087DC',l:'Conservative'},{n:191,c:'#c0334f',l:'Labour'},{n:158,c:'#FDBB30',l:'Liberal'},{n:8,c:'#777',l:'Other'}], winner:'Hung parliament', total:615 },
+      { year:'1922', yParam:1922, seats:[{n:344,c:'#0087DC',l:'Conservative'},{n:142,c:'#c0334f',l:'Labour'},{n:116,c:'#FDBB30',l:'Liberal'},{n:13,c:'#777',l:'Other'}], winner:'Conservative majority', total:615 },
+      { year:'1918', yParam:1918, seats:[{n:332,c:'#0087DC',l:'Coalition'},{n:63,c:'#c0334f',l:'Labour'},{n:73,c:'#FDBB30',l:'Liberal'},{n:79,c:'#777',l:'Other'}], winner:'Coalition majority', total:707 },
+    ];
+
+    const CYCLE_MS = 8000;
+    let current = 0, paused = false, cycleTimer = null, progressRaf = null, progressStart = null;
+
+    function drawChart(el) {
+      const area = document.getElementById('chart-area');
+      const rowsEl = document.getElementById('seat-rows');
+      area.innerHTML = '';
+      rowsEl.innerHTML = '';
+
+      if (el.isRef) {
+        const tot = el.seats[0].n + el.seats[1].n;
+        const leavePct = (el.seats[0].n / tot * 100).toFixed(1);
+        const remainPct = (el.seats[1].n / tot * 100).toFixed(1);
+        const ns2 = 'http://www.w3.org/2000/svg';
+        const W2 = 400, barY2 = 16, barH2 = 30;
+        const svg2 = document.createElementNS(ns2, 'svg');
+        svg2.setAttribute('viewBox', `0 0 ${W2} ${barY2 + barH2 + 20}`);
+        svg2.setAttribute('preserveAspectRatio', 'none');
+        svg2.style.cssText = 'width:100%;display:block;overflow:visible;';
+        /* Leave bar */
+        const r1 = document.createElementNS(ns2, 'rect');
+        const leaveW = (el.seats[0].n / tot) * W2;
+        r1.setAttribute('x', 0); r1.setAttribute('y', barY2);
+        r1.setAttribute('width', leaveW); r1.setAttribute('height', barH2);
+        r1.setAttribute('fill', '#00338D');
+        svg2.appendChild(r1);
+        /* Remain bar */
+        const r2 = document.createElementNS(ns2, 'rect');
+        r2.setAttribute('x', leaveW); r2.setAttribute('y', barY2);
+        r2.setAttribute('width', W2 - leaveW); r2.setAttribute('height', barH2);
+        r2.setAttribute('fill', '#FFCC00');
+        svg2.appendChild(r2);
+        /* Seat counts inside bars */
+        [['#a8c4e8', leavePct + '%', leaveW / 2], ['#664400', remainPct + '%', leaveW + (W2 - leaveW) / 2]].forEach(([fill, label, cx]) => {
+          const t = document.createElementNS(ns2, 'text');
+          t.setAttribute('x', cx); t.setAttribute('y', barY2 + barH2 / 2 + 4);
+          t.setAttribute('text-anchor', 'middle');
+          t.setAttribute('fill', fill);
+          t.setAttribute('font-size', '10'); t.setAttribute('font-weight', '500');
+          t.setAttribute('font-family', 'DM Mono, monospace');
+          t.textContent = label;
+          svg2.appendChild(t);
+        });
+        /* 50% majority line */
+        const majX2 = W2 * 0.5;
+        const ml = document.createElementNS(ns2, 'line');
+        ml.setAttribute('x1', majX2); ml.setAttribute('x2', majX2);
+        ml.setAttribute('y1', barY2 - 9); ml.setAttribute('y2', barY2 + barH2 + 5);
+        ml.setAttribute('stroke', 'rgba(255,255,255,0.65)');
+        ml.setAttribute('stroke-width', '1.5');
+        ml.setAttribute('stroke-dasharray', '3,2');
+        svg2.appendChild(ml);
+        /* Majority label */
+        const mt = document.createElementNS(ns2, 'text');
+        mt.setAttribute('x', majX2); mt.setAttribute('y', barY2 - 12);
+        mt.setAttribute('text-anchor', 'middle');
+        mt.setAttribute('fill', 'rgba(255,255,255,0.42)');
+        mt.setAttribute('font-size', '7.5');
+        mt.setAttribute('font-family', 'DM Mono, monospace');
+        mt.textContent = 'maj. 50%';
+        svg2.appendChild(mt);
+        area.appendChild(svg2);
+        /* Labels row */
+        const labRow = document.createElement('div');
+        labRow.className = 'ref-labels';
+        labRow.innerHTML = `<span style="color:#5b8fd4">Leave</span><span style="color:#FFCC00">Remain</span>`;
+        document.getElementById('seat-rows').innerHTML = '';
+        document.getElementById('seat-rows').appendChild(labRow);
+        const note = document.createElement('div');
+        note.style.cssText = 'font-size:0.5rem;color:#5a6280;text-align:center;margin-top:4px;';
+        note.textContent = `${(tot/1e6).toFixed(2)}M votes cast`;
+        document.getElementById('seat-rows').appendChild(note);
+        return;
+      }
+
+      const total = el.total;
+      const majority = Math.floor(total / 2) + 1;
+      const sorted = [...el.seats].sort((a, b) => b.n - a.n);
+
+      const ns = 'http://www.w3.org/2000/svg';
+      const W = 400, H = 88, padX = 4, barY = 16, barH = 30, gap = 1;
+      const availW = W - padX * 2;
+
+      const svg = document.createElementNS(ns, 'svg');
+      svg.setAttribute('viewBox', `0 0 ${W} ${H}`);
+      svg.setAttribute('preserveAspectRatio', 'none');
+      svg.style.cssText = 'width:100%;display:block;overflow:visible;';
+
+      /* coloured bars */
+      let x = padX;
+      sorted.forEach((s, i) => {
+        const w = Math.max(1, (s.n / total) * availW - (i < sorted.length - 1 ? gap : 0));
+        const rect = document.createElementNS(ns, 'rect');
+        rect.setAttribute('x', x); rect.setAttribute('y', barY);
+        rect.setAttribute('width', w); rect.setAttribute('height', barH);
+        rect.setAttribute('fill', s.c);
+        svg.appendChild(rect);
+        /* seat count label inside bar */
+        if (w > 26) {
+          const t = document.createElementNS(ns, 'text');
+          t.setAttribute('x', x + w / 2); t.setAttribute('y', barY + barH / 2 + 4);
+          t.setAttribute('text-anchor', 'middle');
+          t.setAttribute('fill', s.c === '#FDF38E' ? '#222' : 'rgba(255,255,255,0.9)');
+          t.setAttribute('font-size', '9'); t.setAttribute('font-weight', '500');
+          t.setAttribute('font-family', 'DM Mono, monospace');
+          t.textContent = s.n;
+          svg.appendChild(t);
+        }
+        x += w + gap;
+      });
+
+      /* majority line */
+      const majX = padX + (majority / total) * availW;
+      const line = document.createElementNS(ns, 'line');
+      line.setAttribute('x1', majX); line.setAttribute('x2', majX);
+      line.setAttribute('y1', barY - 9); line.setAttribute('y2', barY + barH + 5);
+      line.setAttribute('stroke', 'rgba(255,255,255,0.65)');
+      line.setAttribute('stroke-width', '1.5');
+      line.setAttribute('stroke-dasharray', '3,2');
+      svg.appendChild(line);
+
+      const majTxt = document.createElementNS(ns, 'text');
+      majTxt.setAttribute('x', majX);
+      majTxt.setAttribute('y', barY - 12);
+      majTxt.setAttribute('text-anchor', 'middle');
+      majTxt.setAttribute('fill', 'rgba(255,255,255,0.42)');
+      majTxt.setAttribute('font-size', '7.5');
+      majTxt.setAttribute('font-family', 'DM Mono, monospace');
+      majTxt.textContent = `maj. ${majority}`;
+      svg.appendChild(majTxt);
+
+      area.appendChild(svg);
+
+      /* breakdown rows */
+      sorted.forEach(s => {
+        const pct = (s.n / total * 100).toFixed(1);
+        const row = document.createElement('div');
+        row.className = 'seat-row';
+        row.innerHTML = `
+          <div class="seat-row-lbl" style="color:${s.c}">${s.l}</div>
+          <div class="seat-row-bar-wrap"><div class="seat-row-bar" style="width:${pct}%;background:${s.c}"></div></div>
+          <div class="seat-row-num" style="color:${s.c}">${s.n}</div>`;
+        rowsEl.appendChild(row);
+      });
+    }
+
+    function renderSlide(idx) {
+      const el = ELECTIONS[idx];
+      document.getElementById('panel-year').textContent = el.year;
+      document.getElementById('panel-winner').textContent = ' · ' + el.winner;
+      document.getElementById('open-atlas-btn').href = `atlas/index.html?year=${el.yParam}`;
+      drawChart(el);
+      document.querySelectorAll('.ydot').forEach((d, i) => d.classList.toggle('active', i === idx));
+    }
+
+    function startProgress() {
+      cancelAnimationFrame(progressRaf);
+      const bar = document.getElementById('progress-bar');
+      bar.style.transition = 'none';
+      bar.style.width = '0%';
+      void bar.offsetWidth;
+      progressStart = performance.now();
+      function tick(now) {
+        if (paused) return;
+        const pct = Math.min(100, ((now - progressStart) / CYCLE_MS) * 100);
+        bar.style.width = pct + '%';
+        if (pct < 100) progressRaf = requestAnimationFrame(tick);
+      }
+      progressRaf = requestAnimationFrame(tick);
+    }
+
+    function goTo(idx) {
+      current = ((idx % ELECTIONS.length) + ELECTIONS.length) % ELECTIONS.length;
+      renderSlide(current);
+      if (!paused) startProgress();
+    }
+
+    function startCycle() {
+      clearInterval(cycleTimer);
+      cycleTimer = setInterval(() => { if (!paused) goTo(current + 1); }, CYCLE_MS);
+    }
+
+    /* dots */
+    const dotsEl = document.getElementById('dots-container');
+    ELECTIONS.forEach((el, i) => {
+      const d = document.createElement('div');
+      d.className = 'ydot';
+      d.title = el.year;
+      d.addEventListener('click', () => { clearInterval(cycleTimer); goTo(i); startCycle(); });
+      dotsEl.appendChild(d);
+    });
+
+    document.getElementById('prev-btn').addEventListener('click', () => { clearInterval(cycleTimer); goTo(current - 1); startCycle(); });
+    document.getElementById('next-btn').addEventListener('click', () => { clearInterval(cycleTimer); goTo(current + 1); startCycle(); });
+    document.getElementById('pause-btn').addEventListener('click', () => {
+      paused = !paused;
+      document.getElementById('pause-btn').textContent = paused ? '▶' : '⏸';
+      if (!paused) { startProgress(); startCycle(); }
+      else { clearInterval(cycleTimer); cancelAnimationFrame(progressRaf); }
+    });
+    document.getElementById('browse-btn').addEventListener('click', () => {
+      document.getElementById('atlases').scrollIntoView({ behavior: 'smooth' });
+    });
+
+    renderSlide(0);
+    startProgress();
+    startCycle();
+  </script>
 
 </body>
 </html>
