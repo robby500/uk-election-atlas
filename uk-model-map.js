@@ -48,15 +48,15 @@
   /* ─── Colours ─────────────────────────────────────────────────────── */
   function colourPair(winner) {
     const pairs = {
-      Lab:   ["#db6b5f","#5e0909"], Con:   ["#5b9ec9","#0a2244"],
-      LD:    ["#e8a83c","#6b3300"], Grn:   ["#5cb85c","#1a4a1a"],
-      RUK:   ["#12b6cf","#00415a"], Reform:["#12b6cf","#00415a"],
-      SNP:   ["#dfc440","#5a4700"], PC:    ["#4aaa74","#083d1c"],
-      SF:    ["#4a9e6e","#0d3320"], DUP:   ["#8e44ad","#3d1060"],
-      SDLP:  ["#2ecc71","#0a4a25"], UUP:   ["#5b8ed4","#1a3560"],
-      ALL:   ["#e67e22","#7a3a00"], IND:   ["#95a5a6","#2c3e50"],
+      Lab:   ["#f28b80","#b03030"], Con:   ["#82bfdf","#1e4e8c"],
+      LD:    ["#f5c842","#a06010"], Grn:   ["#72d572","#2a7a2a"],
+      RUK:   ["#30d4e8","#0a7090"], Reform:["#30d4e8","#0a7090"],
+      SNP:   ["#f0d94a","#8a6a00"], PC:    ["#5fcc90","#0f6035"],
+      SF:    ["#5fc48a","#0f5030"], DUP:   ["#b06ad4","#6020a0"],
+      SDLP:  ["#48e890","#0a6035"], UUP:   ["#7ab0e8","#1a4880"],
+      ALL:   ["#f09040","#904000"], IND:   ["#b0b8c0","#505a64"],
     };
-    return pairs[winner] || ["#7c8290","#2d3035"];
+    return pairs[winner] || ["#909aa4","#404850"];
   }
 
   function constituencyColour(data) {
@@ -69,12 +69,12 @@
 
   function partyAccent(abbr) {
     const m = {
-      Lab:"#db6b5f",Con:"#5b9ec9",LD:"#e8a83c",Grn:"#5cb85c",
-      RUK:"#12b6cf",Reform:"#12b6cf",SNP:"#dfc440",PC:"#4aaa74",
-      SF:"#4a9e6e",DUP:"#8e44ad",SDLP:"#2ecc71",UUP:"#5b8ed4",
-      ALL:"#e67e22",IND:"#95a5a6",
+      Lab:"#f28b80",Con:"#82bfdf",LD:"#f5c842",Grn:"#72d572",
+      RUK:"#30d4e8",Reform:"#30d4e8",SNP:"#f0d94a",PC:"#5fcc90",
+      SF:"#5fc48a",DUP:"#b06ad4",SDLP:"#48e890",UUP:"#7ab0e8",
+      ALL:"#f09040",IND:"#b0b8c0",
     };
-    return m[abbr] || "#7c8290";
+    return m[abbr] || "#909aa4";
   }
 
   /* ─── Rating helper ────────────────────────────────────────────────── */
@@ -235,8 +235,9 @@
             region:     r["Region"] || "",
             party1Win:  +r["Party_1_Win"],
           };
-          if (r["ID"]) data[String(r["ID"])] = entry;
-          data[normName(r["Riding"])] = entry;
+          if (r["Riding"]) {
+            data[normName(r["Riding"])] = entry;
+          }
           // Tally projected seats (based on rating)
           if (r["Rating"]) {
             seats[abbr] = (seats[abbr] || 0) + 1;
@@ -247,7 +248,33 @@
   }
 
   function normName(s) {
-    return String(s||"").trim().toLowerCase().replace(/\s*&\s*/g," and ").replace(/\s+/g," ");
+    return String(s||"").trim().toLowerCase()
+      .replace(/\s*&\s*/g, " and ")      // & → and
+      .replace(/['']/g, "'")             // smart quotes → straight
+      .replace(/\s*,\s*/g, ", ")         // normalise comma spacing
+      .replace(/\s+/g, " ")             // collapse whitespace
+      .replace(/é/g, "e")               // accents (e.g. Sinn Féin areas)
+      .replace(/ô/g, "o")
+      .replace(/â/g, "a")
+      .replace(/î/g, "i")
+      .replace(/û/g, "u");
+  }
+
+  // Normalise ONS constituency codes — handles numeric-only IDs from Excel
+  // e.g. 7000102 → "W07000102", 1000001 → "E14001668" won't match but at least
+  // Welsh codes (7xxxxxxx) get W0 prefix restored.
+  function normCode(raw) {
+    const s = String(raw || "").trim();
+    // Already looks like a full ONS code
+    if (/^[EWSN]\d{8}$/.test(s)) return s;
+    // Numeric only — attempt to reconstruct
+    const n = parseInt(s, 10);
+    if (!isNaN(n)) {
+      if (n >= 7000000 && n <= 7999999) return "W0" + n;   // Wales W07xxxxxx
+      if (n >= 6000000 && n <= 6999999) return "S1" + n;   // Scotland S1xxxxxxx (rare)
+      if (n >= 9000000 && n <= 9999999) return "N0" + n;   // NI N09xxxxxx
+    }
+    return s;
   }
 
   /* ─── Build map ────────────────────────────────────────────────────── */
@@ -365,7 +392,7 @@
     }
 
     function getData(d) {
-      return modelData[d.properties.code] || modelData[normName(d.properties.name)];
+      return modelData[normName(d.properties.name)];
     }
 
     function showAllRidings() {
@@ -543,6 +570,14 @@
         });
 
       showAllRidings();
+      // DEBUG: log any ridings with no model data match — remove once confirmed working
+      const unmatched = allRidings.features.filter(d => !modelData[normName(d.properties.name)]);
+      if (unmatched.length) {
+        console.warn(`[model] ${unmatched.length} unmatched ridings:`);
+        unmatched.forEach(d => console.warn(`  TopoJSON: "${d.properties.name}"  →  norm: "${normName(d.properties.name)}"`));
+      } else {
+        console.log("[model] All 650 ridings matched.");
+      }
       updateSeatBar(seats);
       updateLegend(seats);
       loadingEl.style.display = "none";
@@ -556,19 +591,19 @@
       const bar = document.getElementById("seat-bar");
       if (!bar) return;
       const order = [
-        {abbr:"Lab",   label:"Labour",       colour:"#db6b5f"},
-        {abbr:"Con",   label:"Conservative", colour:"#5b9ec9"},
-        {abbr:"RUK",   label:"Reform",       colour:"#12b6cf"},
-        {abbr:"LD",    label:"Lib Dem",      colour:"#e8a83c"},
-        {abbr:"SNP",   label:"SNP",          colour:"#dfc440"},
-        {abbr:"Grn",   label:"Green",        colour:"#5cb85c"},
-        {abbr:"PC",    label:"PC",           colour:"#4aaa74"},
-        {abbr:"SF",    label:"SF",           colour:"#4a9e6e"},
-        {abbr:"DUP",   label:"DUP",          colour:"#8e44ad"},
-        {abbr:"SDLP",  label:"SDLP",         colour:"#2ecc71"},
-        {abbr:"UUP",   label:"UUP",          colour:"#5b8ed4"},
-        {abbr:"ALL",   label:"Alliance",     colour:"#e67e22"},
-        {abbr:"IND",   label:"Ind",          colour:"#95a5a6"},
+        {abbr:"Lab",   label:"Labour",       colour:"#f28b80"},
+        {abbr:"Con",   label:"Conservative", colour:"#82bfdf"},
+        {abbr:"RUK",   label:"Reform",       colour:"#30d4e8"},
+        {abbr:"LD",    label:"Lib Dem",      colour:"#f5c842"},
+        {abbr:"SNP",   label:"SNP",          colour:"#f0d94a"},
+        {abbr:"Grn",   label:"Green",        colour:"#72d572"},
+        {abbr:"PC",    label:"PC",           colour:"#5fcc90"},
+        {abbr:"SF",    label:"SF",           colour:"#5fc48a"},
+        {abbr:"DUP",   label:"DUP",          colour:"#b06ad4"},
+        {abbr:"SDLP",  label:"SDLP",         colour:"#48e890"},
+        {abbr:"UUP",   label:"UUP",          colour:"#7ab0e8"},
+        {abbr:"ALL",   label:"Alliance",     colour:"#f09040"},
+        {abbr:"IND",   label:"Ind",          colour:"#b0b8c0"},
       ].filter(p => seats[p.abbr] > 0)
        .sort((a, b) => (seats[b.abbr] || 0) - (seats[a.abbr] || 0));
 
@@ -585,19 +620,19 @@
       const leg = document.getElementById("model-legend");
       if (!leg) return;
       const order = [
-        {abbr:"Lab", label:"Labour",       c:["#db6b5f","#5e0909"]},
-        {abbr:"Con", label:"Conservative", c:["#5b9ec9","#0a2244"]},
-        {abbr:"RUK", label:"Reform UK",    c:["#12b6cf","#00415a"]},
-        {abbr:"LD",  label:"Lib Dem",      c:["#e8a83c","#6b3300"]},
-        {abbr:"SNP", label:"SNP",          c:["#dfc440","#5a4700"]},
-        {abbr:"Grn", label:"Green",        c:["#5cb85c","#1a4a1a"]},
-        {abbr:"PC",  label:"Plaid Cymru",  c:["#4aaa74","#083d1c"]},
-        {abbr:"SF",  label:"Sinn Féin",    c:["#4a9e6e","#0d3320"]},
-        {abbr:"DUP", label:"DUP",          c:["#8e44ad","#3d1060"]},
-        {abbr:"SDLP",label:"SDLP",         c:["#2ecc71","#0a4a25"]},
-        {abbr:"UUP", label:"UUP",          c:["#5b8ed4","#1a3560"]},
-        {abbr:"ALL", label:"Alliance",     c:["#e67e22","#7a3a00"]},
-        {abbr:"IND", label:"Independent",  c:["#95a5a6","#2c3e50"]},
+        {abbr:"Lab", label:"Labour",       c:["#f28b80","#b03030"]},
+        {abbr:"Con", label:"Conservative", c:["#82bfdf","#1e4e8c"]},
+        {abbr:"RUK", label:"Reform UK",    c:["#30d4e8","#0a7090"]},
+        {abbr:"LD",  label:"Lib Dem",      c:["#f5c842","#a06010"]},
+        {abbr:"SNP", label:"SNP",          c:["#f0d94a","#8a6a00"]},
+        {abbr:"Grn", label:"Green",        c:["#72d572","#2a7a2a"]},
+        {abbr:"PC",  label:"Plaid Cymru",  c:["#5fcc90","#0f6035"]},
+        {abbr:"SF",  label:"Sinn Féin",    c:["#5fc48a","#0f5030"]},
+        {abbr:"DUP", label:"DUP",          c:["#b06ad4","#6020a0"]},
+        {abbr:"SDLP",label:"SDLP",         c:["#48e890","#0a6035"]},
+        {abbr:"UUP", label:"UUP",          c:["#7ab0e8","#1a4880"]},
+        {abbr:"ALL", label:"Alliance",     c:["#f09040","#904000"]},
+        {abbr:"IND", label:"Independent",  c:["#b0b8c0","#505a64"]},
       ].filter(p => seats[p.abbr] > 0)
        .sort((a, b) => (seats[b.abbr] || 0) - (seats[a.abbr] || 0));
 
