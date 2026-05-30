@@ -1,0 +1,881 @@
+Region,Group,Dimension,Party,Vote_Pct_Regional
+London,ABC1,ipsos_grade,Con,21.38
+London,ABC1,ipsos_grade,Green,10.1
+London,ABC1,ipsos_grade,IND,4.81
+London,ABC1,ipsos_grade,LD,13.91
+London,ABC1,ipsos_grade,Lab,41.63
+London,ABC1,ipsos_grade,Reform,8.18
+London,Age 18-24,yg_age,Con,23.2
+London,Age 18-24,yg_age,Green,1.27
+London,Age 18-24,yg_age,IND,14.83
+London,Age 18-24,yg_age,LD,32.49
+London,Age 18-24,yg_age,Lab,25.92
+London,Age 18-24,yg_age,Reform,2.29
+London,Age 25-49,yg_age,Con,17.22
+London,Age 25-49,yg_age,Green,13.1
+London,Age 25-49,yg_age,IND,7.64
+London,Age 25-49,yg_age,LD,3.24
+London,Age 25-49,yg_age,Lab,50.91
+London,Age 25-49,yg_age,Reform,7.88
+London,Age 50-64,yg_age,Con,21.84
+London,Age 50-64,yg_age,Green,8.8
+London,Age 50-64,yg_age,IND,3.38
+London,Age 50-64,yg_age,LD,15.82
+London,Age 50-64,yg_age,Lab,38.38
+London,Age 50-64,yg_age,Reform,11.78
+London,Age 65+,yg_age,Con,26.48
+London,Age 65+,yg_age,Green,7.21
+London,Age 65+,yg_age,IND,3.0
+London,Age 65+,yg_age,LD,16.3
+London,Age 65+,yg_age,Lab,34.12
+London,Age 65+,yg_age,Reform,12.89
+London,C2DE,ipsos_grade,Con,18.39
+London,C2DE,ipsos_grade,Green,10.51
+London,C2DE,ipsos_grade,IND,9.67
+London,C2DE,ipsos_grade,LD,6.18
+London,C2DE,ipsos_grade,Lab,46.28
+London,C2DE,ipsos_grade,Reform,8.97
+London,Degree,education,Con,5.71
+London,Degree,education,Green,11.71
+London,Degree,education,IND,9.54
+London,Degree,education,LD,19.41
+London,Degree,education,Lab,50.92
+London,Degree,education,Reform,2.7
+London,Detached,housing,Con,42.38
+London,Detached,housing,Green,7.72
+London,Detached,housing,IND,1.52
+London,Detached,housing,LD,12.63
+London,Detached,housing,Lab,27.93
+London,Detached,housing,Reform,7.83
+London,Flat,housing,Con,15.07
+London,Flat,housing,Green,11.58
+London,Flat,housing,IND,8.21
+London,Flat,housing,LD,9.91
+London,Flat,housing,Lab,47.67
+London,Flat,housing,Reform,7.56
+London,Ipsos 18-34,ipsos_age,Con,20.37
+London,Ipsos 18-34,ipsos_age,Green,9.08
+London,Ipsos 18-34,ipsos_age,IND,12.8
+London,Ipsos 18-34,ipsos_age,LD,8.26
+London,Ipsos 18-34,ipsos_age,Lab,45.06
+London,Ipsos 18-34,ipsos_age,Reform,4.43
+London,Ipsos 35-54,ipsos_age,Con,16.24
+London,Ipsos 35-54,ipsos_age,Green,12.22
+London,Ipsos 35-54,ipsos_age,IND,5.05
+London,Ipsos 35-54,ipsos_age,LD,11.25
+London,Ipsos 35-54,ipsos_age,Lab,45.79
+London,Ipsos 35-54,ipsos_age,Reform,9.44
+London,Ipsos 55+,ipsos_age,Con,24.33
+London,Ipsos 55+,ipsos_age,Green,9.18
+London,Ipsos 55+,ipsos_age,IND,3.26
+London,Ipsos 55+,ipsos_age,LD,11.08
+London,Ipsos 55+,ipsos_age,Lab,39.9
+London,Ipsos 55+,ipsos_age,Reform,12.25
+London,NS-SeC Higher,yg_nsec,Con,19.38
+London,NS-SeC Higher,yg_nsec,Green,10.86
+London,NS-SeC Higher,yg_nsec,IND,5.44
+London,NS-SeC Higher,yg_nsec,LD,14.61
+London,NS-SeC Higher,yg_nsec,Lab,43.21
+London,NS-SeC Higher,yg_nsec,Reform,6.5
+London,NS-SeC Intermediate,yg_nsec,Con,23.28
+London,NS-SeC Intermediate,yg_nsec,Green,9.27
+London,NS-SeC Intermediate,yg_nsec,IND,5.09
+London,NS-SeC Intermediate,yg_nsec,LD,11.83
+London,NS-SeC Intermediate,yg_nsec,Lab,40.96
+London,NS-SeC Intermediate,yg_nsec,Reform,9.56
+London,NS-SeC Routine,yg_nsec,Con,16.03
+London,NS-SeC Routine,yg_nsec,Green,11.28
+London,NS-SeC Routine,yg_nsec,IND,10.64
+London,NS-SeC Routine,yg_nsec,LD,5.81
+London,NS-SeC Routine,yg_nsec,Lab,47.85
+London,NS-SeC Routine,yg_nsec,Reform,8.38
+London,No Degree,education,Con,31.94
+London,No Degree,education,Green,9.1
+London,No Degree,education,IND,5.13
+London,No Degree,education,LD,2.42
+London,No Degree,education,Lab,37.92
+London,No Degree,education,Reform,13.49
+London,Non-White,eth_binary,Con,14.32
+London,Non-White,eth_binary,Green,12.26
+London,Non-White,eth_binary,IND,11.51
+London,Non-White,eth_binary,LD,6.67
+London,Non-White,eth_binary,Lab,53.7
+London,Non-White,eth_binary,Reform,1.53
+London,Owner,tenure,Con,31.04
+London,Owner,tenure,Green,8.11
+London,Owner,tenure,IND,5.98
+London,Owner,tenure,LD,4.87
+London,Owner,tenure,Lab,38.3
+London,Owner,tenure,Reform,11.7
+London,Renter,tenure,Con,11.09
+London,Renter,tenure,Green,12.03
+London,Renter,tenure,IND,8.08
+London,Renter,tenure,LD,14.45
+London,Renter,tenure,Lab,48.3
+London,Renter,tenure,Reform,6.05
+London,White,eth_binary,Con,24.59
+London,White,eth_binary,Green,8.67
+London,White,eth_binary,IND,3.54
+London,White,eth_binary,LD,13.11
+London,White,eth_binary,Lab,35.71
+London,White,eth_binary,Reform,14.37
+Midlands,ABC1,ipsos_grade,Con,31.75
+Midlands,ABC1,ipsos_grade,Green,6.39
+Midlands,ABC1,ipsos_grade,IND,2.67
+Midlands,ABC1,ipsos_grade,LD,9.54
+Midlands,ABC1,ipsos_grade,Lab,32.64
+Midlands,ABC1,ipsos_grade,Reform,17.01
+Midlands,Age 18-24,yg_age,Con,22.3
+Midlands,Age 18-24,yg_age,Green,7.44
+Midlands,Age 18-24,yg_age,IND,10.79
+Midlands,Age 18-24,yg_age,LD,8.28
+Midlands,Age 18-24,yg_age,Lab,33.08
+Midlands,Age 18-24,yg_age,Reform,18.11
+Midlands,Age 25-49,yg_age,Con,20.0
+Midlands,Age 25-49,yg_age,Green,6.85
+Midlands,Age 25-49,yg_age,IND,6.82
+Midlands,Age 25-49,yg_age,LD,2.72
+Midlands,Age 25-49,yg_age,Lab,48.52
+Midlands,Age 25-49,yg_age,Reform,15.09
+Midlands,Age 50-64,yg_age,Con,35.94
+Midlands,Age 50-64,yg_age,Green,5.66
+Midlands,Age 50-64,yg_age,IND,2.22
+Midlands,Age 50-64,yg_age,LD,11.4
+Midlands,Age 50-64,yg_age,Lab,22.24
+Midlands,Age 50-64,yg_age,Reform,22.54
+Midlands,Age 65+,yg_age,Con,36.7
+Midlands,Age 65+,yg_age,Green,5.71
+Midlands,Age 65+,yg_age,IND,1.92
+Midlands,Age 65+,yg_age,LD,11.86
+Midlands,Age 65+,yg_age,Lab,21.64
+Midlands,Age 65+,yg_age,Reform,22.17
+Midlands,C2DE,ipsos_grade,Con,23.49
+Midlands,C2DE,ipsos_grade,Green,6.46
+Midlands,C2DE,ipsos_grade,IND,7.33
+Midlands,C2DE,ipsos_grade,LD,5.18
+Midlands,C2DE,ipsos_grade,Lab,37.9
+Midlands,C2DE,ipsos_grade,Reform,19.64
+Midlands,Degree,education,Con,13.56
+Midlands,Degree,education,Green,8.55
+Midlands,Degree,education,IND,4.19
+Midlands,Degree,education,LD,19.99
+Midlands,Degree,education,Lab,47.76
+Midlands,Degree,education,Reform,5.94
+Midlands,Detached,housing,Con,31.08
+Midlands,Detached,housing,Green,6.16
+Midlands,Detached,housing,IND,2.59
+Midlands,Detached,housing,LD,9.87
+Midlands,Detached,housing,Lab,30.79
+Midlands,Detached,housing,Reform,19.5
+Midlands,Flat,housing,Con,22.07
+Midlands,Flat,housing,Green,7.27
+Midlands,Flat,housing,IND,9.35
+Midlands,Flat,housing,LD,2.46
+Midlands,Flat,housing,Lab,43.03
+Midlands,Flat,housing,Reform,15.82
+Midlands,Ipsos 18-34,ipsos_age,Con,14.58
+Midlands,Ipsos 18-34,ipsos_age,Green,7.3
+Midlands,Ipsos 18-34,ipsos_age,IND,9.62
+Midlands,Ipsos 18-34,ipsos_age,LD,2.24
+Midlands,Ipsos 18-34,ipsos_age,Lab,54.42
+Midlands,Ipsos 18-34,ipsos_age,Reform,11.83
+Midlands,Ipsos 35-54,ipsos_age,Con,28.41
+Midlands,Ipsos 35-54,ipsos_age,Green,6.24
+Midlands,Ipsos 35-54,ipsos_age,IND,5.38
+Midlands,Ipsos 35-54,ipsos_age,LD,7.36
+Midlands,Ipsos 35-54,ipsos_age,Lab,32.08
+Midlands,Ipsos 35-54,ipsos_age,Reform,20.52
+Midlands,Ipsos 55+,ipsos_age,Con,34.63
+Midlands,Ipsos 55+,ipsos_age,Green,5.98
+Midlands,Ipsos 55+,ipsos_age,IND,2.21
+Midlands,Ipsos 55+,ipsos_age,LD,10.21
+Midlands,Ipsos 55+,ipsos_age,Lab,25.68
+Midlands,Ipsos 55+,ipsos_age,Reform,21.3
+Midlands,NS-SeC Higher,yg_nsec,Con,30.88
+Midlands,NS-SeC Higher,yg_nsec,Green,6.66
+Midlands,NS-SeC Higher,yg_nsec,IND,3.05
+Midlands,NS-SeC Higher,yg_nsec,LD,9.81
+Midlands,NS-SeC Higher,yg_nsec,Lab,33.5
+Midlands,NS-SeC Higher,yg_nsec,Reform,16.11
+Midlands,NS-SeC Intermediate,yg_nsec,Con,31.32
+Midlands,NS-SeC Intermediate,yg_nsec,Green,6.38
+Midlands,NS-SeC Intermediate,yg_nsec,IND,2.92
+Midlands,NS-SeC Intermediate,yg_nsec,LD,9.14
+Midlands,NS-SeC Intermediate,yg_nsec,Lab,32.15
+Midlands,NS-SeC Intermediate,yg_nsec,Reform,18.09
+Midlands,NS-SeC Routine,yg_nsec,Con,22.29
+Midlands,NS-SeC Routine,yg_nsec,Green,6.41
+Midlands,NS-SeC Routine,yg_nsec,IND,8.02
+Midlands,NS-SeC Routine,yg_nsec,LD,4.53
+Midlands,NS-SeC Routine,yg_nsec,Lab,39.3
+Midlands,NS-SeC Routine,yg_nsec,Reform,19.44
+Midlands,No Degree,education,Con,32.48
+Midlands,No Degree,education,Green,5.6
+Midlands,No Degree,education,IND,5.67
+Midlands,No Degree,education,LD,2.09
+Midlands,No Degree,education,Lab,30.79
+Midlands,No Degree,education,Reform,23.37
+Midlands,Non-White,eth_binary,Con,14.7
+Midlands,Non-White,eth_binary,Green,7.66
+Midlands,Non-White,eth_binary,IND,18.89
+Midlands,Non-White,eth_binary,LD,6.59
+Midlands,Non-White,eth_binary,Lab,40.62
+Midlands,Non-White,eth_binary,Reform,11.55
+Midlands,Owner,tenure,Con,31.77
+Midlands,Owner,tenure,Green,5.7
+Midlands,Owner,tenure,IND,3.5
+Midlands,Owner,tenure,LD,3.21
+Midlands,Owner,tenure,Lab,35.87
+Midlands,Owner,tenure,Reform,19.95
+Midlands,Renter,tenure,Con,17.62
+Midlands,Renter,tenure,Green,7.93
+Midlands,Renter,tenure,IND,8.88
+Midlands,Renter,tenure,LD,15.24
+Midlands,Renter,tenure,Lab,34.91
+Midlands,Renter,tenure,Reform,15.42
+Midlands,White,eth_binary,Con,29.99
+Midlands,White,eth_binary,Green,6.15
+Midlands,White,eth_binary,IND,2.16
+Midlands,White,eth_binary,LD,7.24
+Midlands,White,eth_binary,Lab,34.42
+Midlands,White,eth_binary,Reform,20.05
+NI,ABC1,ipsos_grade,ALL,21.81
+NI,ABC1,ipsos_grade,DUP,23.31
+NI,ABC1,ipsos_grade,IND,11.85
+NI,ABC1,ipsos_grade,SDLP,13.08
+NI,ABC1,ipsos_grade,SF,16.81
+NI,ABC1,ipsos_grade,UUP,13.15
+NI,Age 18-24,yg_age,ALL,2.91
+NI,Age 18-24,yg_age,DUP,17.59
+NI,Age 18-24,yg_age,IND,8.69
+NI,Age 18-24,yg_age,SDLP,34.37
+NI,Age 18-24,yg_age,SF,29.14
+NI,Age 18-24,yg_age,UUP,7.31
+NI,Age 25-49,yg_age,ALL,19.95
+NI,Age 25-49,yg_age,DUP,24.19
+NI,Age 25-49,yg_age,IND,11.76
+NI,Age 25-49,yg_age,SDLP,7.07
+NI,Age 25-49,yg_age,SF,26.6
+NI,Age 25-49,yg_age,UUP,10.42
+NI,Age 50-64,yg_age,ALL,11.75
+NI,Age 50-64,yg_age,DUP,22.18
+NI,Age 50-64,yg_age,IND,11.68
+NI,Age 50-64,yg_age,SDLP,10.19
+NI,Age 50-64,yg_age,SF,29.94
+NI,Age 50-64,yg_age,UUP,14.27
+NI,Age 65+,yg_age,ALL,14.51
+NI,Age 65+,yg_age,DUP,22.49
+NI,Age 65+,yg_age,IND,12.37
+NI,Age 65+,yg_age,SDLP,8.94
+NI,Age 65+,yg_age,SF,25.15
+NI,Age 65+,yg_age,UUP,16.53
+NI,C2DE,ipsos_grade,ALL,10.03
+NI,C2DE,ipsos_grade,DUP,22.08
+NI,C2DE,ipsos_grade,IND,11.18
+NI,C2DE,ipsos_grade,SDLP,10.49
+NI,C2DE,ipsos_grade,SF,35.12
+NI,C2DE,ipsos_grade,UUP,11.09
+NI,Degree,education,ALL,28.16
+NI,Degree,education,DUP,21.2
+NI,Degree,education,IND,10.7
+NI,Degree,education,SDLP,14.6
+NI,Degree,education,SF,13.48
+NI,Degree,education,UUP,11.85
+NI,Detached,housing,ALL,13.19
+NI,Detached,housing,DUP,21.82
+NI,Detached,housing,IND,11.11
+NI,Detached,housing,SDLP,9.17
+NI,Detached,housing,SF,30.33
+NI,Detached,housing,UUP,14.38
+NI,Flat,housing,ALL,21.98
+NI,Flat,housing,DUP,22.37
+NI,Flat,housing,IND,11.56
+NI,Flat,housing,SDLP,21.21
+NI,Flat,housing,SF,15.75
+NI,Flat,housing,UUP,7.12
+NI,Ipsos 18-34,ipsos_age,ALL,14.65
+NI,Ipsos 18-34,ipsos_age,DUP,22.88
+NI,Ipsos 18-34,ipsos_age,IND,10.79
+NI,Ipsos 18-34,ipsos_age,SDLP,21.09
+NI,Ipsos 18-34,ipsos_age,SF,23.71
+NI,Ipsos 18-34,ipsos_age,UUP,6.87
+NI,Ipsos 35-54,ipsos_age,ALL,12.84
+NI,Ipsos 35-54,ipsos_age,DUP,22.11
+NI,Ipsos 35-54,ipsos_age,IND,11.14
+NI,Ipsos 35-54,ipsos_age,SDLP,8.66
+NI,Ipsos 35-54,ipsos_age,SF,32.07
+NI,Ipsos 35-54,ipsos_age,UUP,13.18
+NI,Ipsos 55+,ipsos_age,ALL,17.64
+NI,Ipsos 55+,ipsos_age,DUP,22.89
+NI,Ipsos 55+,ipsos_age,IND,12.29
+NI,Ipsos 55+,ipsos_age,SDLP,7.58
+NI,Ipsos 55+,ipsos_age,SF,25.07
+NI,Ipsos 55+,ipsos_age,UUP,14.54
+NI,NS-SeC Higher,yg_nsec,ALL,21.49
+NI,NS-SeC Higher,yg_nsec,DUP,22.77
+NI,NS-SeC Higher,yg_nsec,IND,11.43
+NI,NS-SeC Higher,yg_nsec,SDLP,15.9
+NI,NS-SeC Higher,yg_nsec,SF,16.13
+NI,NS-SeC Higher,yg_nsec,UUP,12.28
+NI,NS-SeC Intermediate,yg_nsec,ALL,19.18
+NI,NS-SeC Intermediate,yg_nsec,DUP,23.16
+NI,NS-SeC Intermediate,yg_nsec,IND,11.84
+NI,NS-SeC Intermediate,yg_nsec,SDLP,11.02
+NI,NS-SeC Intermediate,yg_nsec,SF,20.87
+NI,NS-SeC Intermediate,yg_nsec,UUP,13.93
+NI,NS-SeC Routine,yg_nsec,ALL,9.87
+NI,NS-SeC Routine,yg_nsec,DUP,22.07
+NI,NS-SeC Routine,yg_nsec,IND,11.15
+NI,NS-SeC Routine,yg_nsec,SDLP,11.13
+NI,NS-SeC Routine,yg_nsec,SF,35.67
+NI,NS-SeC Routine,yg_nsec,UUP,10.11
+NI,No Degree,education,ALL,8.23
+NI,No Degree,education,DUP,23.36
+NI,No Degree,education,IND,11.89
+NI,No Degree,education,SDLP,10.03
+NI,No Degree,education,SF,34.44
+NI,No Degree,education,UUP,12.05
+NI,Non-White,eth_binary,ALL,34.15
+NI,Non-White,eth_binary,DUP,18.56
+NI,Non-White,eth_binary,IND,5.98
+NI,Non-White,eth_binary,SDLP,25.69
+NI,Non-White,eth_binary,SF,10.18
+NI,Non-White,eth_binary,UUP,5.43
+NI,Owner,tenure,ALL,19.68
+NI,Owner,tenure,DUP,23.94
+NI,Owner,tenure,IND,12.19
+NI,Owner,tenure,SDLP,3.71
+NI,Owner,tenure,SF,24.7
+NI,Owner,tenure,UUP,15.77
+NI,Renter,tenure,ALL,6.69
+NI,Renter,tenure,DUP,20.18
+NI,Renter,tenure,IND,10.14
+NI,Renter,tenure,SDLP,26.48
+NI,Renter,tenure,SF,31.64
+NI,Renter,tenure,UUP,4.87
+NI,White,eth_binary,ALL,14.29
+NI,White,eth_binary,DUP,22.8
+NI,White,eth_binary,IND,11.71
+NI,White,eth_binary,SDLP,10.99
+NI,White,eth_binary,SF,27.93
+NI,White,eth_binary,UUP,12.28
+North,ABC1,ipsos_grade,Con,22.15
+North,ABC1,ipsos_grade,Green,7.6
+North,ABC1,ipsos_grade,IND,4.08
+North,ABC1,ipsos_grade,LD,9.16
+North,ABC1,ipsos_grade,Lab,42.24
+North,ABC1,ipsos_grade,Reform,14.78
+North,Age 18-24,yg_age,Con,3.42
+North,Age 18-24,yg_age,Green,14.33
+North,Age 18-24,yg_age,IND,5.94
+North,Age 18-24,yg_age,LD,13.01
+North,Age 18-24,yg_age,Lab,48.1
+North,Age 18-24,yg_age,Reform,15.21
+North,Age 25-49,yg_age,Con,18.59
+North,Age 25-49,yg_age,Green,8.03
+North,Age 25-49,yg_age,IND,7.76
+North,Age 25-49,yg_age,LD,2.64
+North,Age 25-49,yg_age,Lab,46.43
+North,Age 25-49,yg_age,Reform,16.56
+North,Age 50-64,yg_age,Con,23.01
+North,Age 50-64,yg_age,Green,4.79
+North,Age 50-64,yg_age,IND,3.11
+North,Age 50-64,yg_age,LD,9.32
+North,Age 50-64,yg_age,Lab,40.5
+North,Age 50-64,yg_age,Reform,19.27
+North,Age 65+,yg_age,Con,25.63
+North,Age 65+,yg_age,Green,4.24
+North,Age 65+,yg_age,IND,2.66
+North,Age 65+,yg_age,LD,10.6
+North,Age 65+,yg_age,Lab,38.2
+North,Age 65+,yg_age,Reform,18.69
+North,C2DE,ipsos_grade,Con,16.84
+North,C2DE,ipsos_grade,Green,7.13
+North,C2DE,ipsos_grade,IND,6.8
+North,C2DE,ipsos_grade,LD,4.92
+North,C2DE,ipsos_grade,Lab,44.9
+North,C2DE,ipsos_grade,Reform,19.4
+North,Degree,education,Con,5.61
+North,Degree,education,Green,11.87
+North,Degree,education,IND,4.99
+North,Degree,education,LD,15.6
+North,Degree,education,Lab,59.86
+North,Degree,education,Reform,2.08
+North,Detached,housing,Con,29.22
+North,Detached,housing,Green,3.82
+North,Detached,housing,IND,4.3
+North,Detached,housing,LD,4.24
+North,Detached,housing,Lab,39.85
+North,Detached,housing,Reform,18.56
+North,Flat,housing,Con,8.01
+North,Flat,housing,Green,12.58
+North,Flat,housing,IND,6.4
+North,Flat,housing,LD,11.68
+North,Flat,housing,Lab,47.31
+North,Flat,housing,Reform,14.02
+North,Ipsos 18-34,ipsos_age,Con,7.39
+North,Ipsos 18-34,ipsos_age,Green,13.05
+North,Ipsos 18-34,ipsos_age,IND,9.27
+North,Ipsos 18-34,ipsos_age,LD,3.85
+North,Ipsos 18-34,ipsos_age,Lab,51.65
+North,Ipsos 18-34,ipsos_age,Reform,14.79
+North,Ipsos 35-54,ipsos_age,Con,20.49
+North,Ipsos 35-54,ipsos_age,Green,6.12
+North,Ipsos 35-54,ipsos_age,IND,5.73
+North,Ipsos 35-54,ipsos_age,LD,7.11
+North,Ipsos 35-54,ipsos_age,Lab,42.42
+North,Ipsos 35-54,ipsos_age,Reform,18.13
+North,Ipsos 55+,ipsos_age,Con,26.32
+North,Ipsos 55+,ipsos_age,Green,4.38
+North,Ipsos 55+,ipsos_age,IND,2.95
+North,Ipsos 55+,ipsos_age,LD,8.59
+North,Ipsos 55+,ipsos_age,Lab,39.29
+North,Ipsos 55+,ipsos_age,Reform,18.48
+North,NS-SeC Higher,yg_nsec,Con,22.14
+North,NS-SeC Higher,yg_nsec,Green,8.36
+North,NS-SeC Higher,yg_nsec,IND,4.04
+North,NS-SeC Higher,yg_nsec,LD,10.02
+North,NS-SeC Higher,yg_nsec,Lab,41.98
+North,NS-SeC Higher,yg_nsec,Reform,13.46
+North,NS-SeC Intermediate,yg_nsec,Con,22.51
+North,NS-SeC Intermediate,yg_nsec,Green,6.95
+North,NS-SeC Intermediate,yg_nsec,IND,4.43
+North,NS-SeC Intermediate,yg_nsec,LD,8.41
+North,NS-SeC Intermediate,yg_nsec,Lab,41.73
+North,NS-SeC Intermediate,yg_nsec,Reform,15.98
+North,NS-SeC Routine,yg_nsec,Con,15.41
+North,NS-SeC Routine,yg_nsec,Green,7.44
+North,NS-SeC Routine,yg_nsec,IND,7.06
+North,NS-SeC Routine,yg_nsec,LD,4.5
+North,NS-SeC Routine,yg_nsec,Lab,45.99
+North,NS-SeC Routine,yg_nsec,Reform,19.6
+North,No Degree,education,Con,26.26
+North,No Degree,education,Green,4.99
+North,No Degree,education,IND,5.9
+North,No Degree,education,LD,2.24
+North,No Degree,education,Lab,35.34
+North,No Degree,education,Reform,25.26
+North,Non-White,eth_binary,Con,13.66
+North,Non-White,eth_binary,Green,17.05
+North,Non-White,eth_binary,IND,18.98
+North,Non-White,eth_binary,LD,0.95
+North,Non-White,eth_binary,Lab,42.5
+North,Non-White,eth_binary,Reform,6.85
+North,Owner,tenure,Con,21.86
+North,Owner,tenure,Green,4.44
+North,Owner,tenure,IND,4.17
+North,Owner,tenure,LD,8.49
+North,Owner,tenure,Lab,44.15
+North,Owner,tenure,Reform,16.88
+North,Renter,tenure,Con,14.61
+North,Renter,tenure,Green,12.38
+North,Renter,tenure,IND,8.05
+North,Renter,tenure,LD,3.87
+North,Renter,tenure,Lab,42.94
+North,Renter,tenure,Reform,18.15
+North,White,eth_binary,Con,20.08
+North,White,eth_binary,Green,5.82
+North,White,eth_binary,IND,3.48
+North,White,eth_binary,LD,7.72
+North,White,eth_binary,Lab,43.91
+North,White,eth_binary,Reform,19.0
+Scotland,ABC1,ipsos_grade,Con,11.75
+Scotland,ABC1,ipsos_grade,Green,4.64
+Scotland,ABC1,ipsos_grade,IND,1.49
+Scotland,ABC1,ipsos_grade,LD,11.42
+Scotland,ABC1,ipsos_grade,Lab,36.01
+Scotland,ABC1,ipsos_grade,Reform,5.95
+Scotland,ABC1,ipsos_grade,SNP,28.75
+Scotland,Age 18-24,yg_age,Con,2.56
+Scotland,Age 18-24,yg_age,Green,4.32
+Scotland,Age 18-24,yg_age,IND,1.47
+Scotland,Age 18-24,yg_age,LD,15.56
+Scotland,Age 18-24,yg_age,Lab,41.68
+Scotland,Age 18-24,yg_age,Reform,5.76
+Scotland,Age 18-24,yg_age,SNP,28.65
+Scotland,Age 25-49,yg_age,Con,10.37
+Scotland,Age 25-49,yg_age,Green,5.68
+Scotland,Age 25-49,yg_age,IND,1.51
+Scotland,Age 25-49,yg_age,LD,5.1
+Scotland,Age 25-49,yg_age,Lab,39.96
+Scotland,Age 25-49,yg_age,Reform,6.72
+Scotland,Age 25-49,yg_age,SNP,30.66
+Scotland,Age 50-64,yg_age,Con,16.24
+Scotland,Age 50-64,yg_age,Green,1.89
+Scotland,Age 50-64,yg_age,IND,1.53
+Scotland,Age 50-64,yg_age,LD,10.56
+Scotland,Age 50-64,yg_age,Lab,31.32
+Scotland,Age 50-64,yg_age,Reform,7.71
+Scotland,Age 50-64,yg_age,SNP,30.75
+Scotland,Age 65+,yg_age,Con,17.95
+Scotland,Age 65+,yg_age,Green,1.72
+Scotland,Age 65+,yg_age,IND,1.5
+Scotland,Age 65+,yg_age,LD,13.26
+Scotland,Age 65+,yg_age,Lab,28.15
+Scotland,Age 65+,yg_age,Reform,7.59
+Scotland,Age 65+,yg_age,SNP,29.82
+Scotland,C2DE,ipsos_grade,Con,12.87
+Scotland,C2DE,ipsos_grade,Green,3.26
+Scotland,C2DE,ipsos_grade,IND,1.52
+Scotland,C2DE,ipsos_grade,LD,6.94
+Scotland,C2DE,ipsos_grade,Lab,35.71
+Scotland,C2DE,ipsos_grade,Reform,7.98
+Scotland,C2DE,ipsos_grade,SNP,31.71
+Scotland,Degree,education,Con,20.17
+Scotland,Degree,education,Green,6.05
+Scotland,Degree,education,IND,1.5
+Scotland,Degree,education,LD,3.55
+Scotland,Degree,education,Lab,35.41
+Scotland,Degree,education,Reform,4.55
+Scotland,Degree,education,SNP,28.77
+Scotland,Detached,housing,Con,12.91
+Scotland,Detached,housing,Green,2.36
+Scotland,Detached,housing,IND,1.53
+Scotland,Detached,housing,LD,17.22
+Scotland,Detached,housing,Lab,27.82
+Scotland,Detached,housing,Reform,8.29
+Scotland,Detached,housing,SNP,29.87
+Scotland,Flat,housing,Con,11.75
+Scotland,Flat,housing,Green,5.85
+Scotland,Flat,housing,IND,1.55
+Scotland,Flat,housing,LD,3.0
+Scotland,Flat,housing,Lab,41.66
+Scotland,Flat,housing,Reform,5.63
+Scotland,Flat,housing,SNP,30.55
+Scotland,Ipsos 18-34,ipsos_age,Con,2.67
+Scotland,Ipsos 18-34,ipsos_age,Green,7.98
+Scotland,Ipsos 18-34,ipsos_age,IND,1.51
+Scotland,Ipsos 18-34,ipsos_age,LD,7.24
+Scotland,Ipsos 18-34,ipsos_age,Lab,44.58
+Scotland,Ipsos 18-34,ipsos_age,Reform,6.02
+Scotland,Ipsos 18-34,ipsos_age,SNP,30.01
+Scotland,Ipsos 35-54,ipsos_age,Con,13.77
+Scotland,Ipsos 35-54,ipsos_age,Green,2.97
+Scotland,Ipsos 35-54,ipsos_age,IND,1.51
+Scotland,Ipsos 35-54,ipsos_age,LD,7.47
+Scotland,Ipsos 35-54,ipsos_age,Lab,36.37
+Scotland,Ipsos 35-54,ipsos_age,Reform,7.14
+Scotland,Ipsos 35-54,ipsos_age,SNP,30.78
+Scotland,Ipsos 55+,ipsos_age,Con,17.44
+Scotland,Ipsos 55+,ipsos_age,Green,2.08
+Scotland,Ipsos 55+,ipsos_age,IND,1.51
+Scotland,Ipsos 55+,ipsos_age,LD,11.65
+Scotland,Ipsos 55+,ipsos_age,Lab,29.83
+Scotland,Ipsos 55+,ipsos_age,Reform,7.5
+Scotland,Ipsos 55+,ipsos_age,SNP,30.01
+Scotland,NS-SeC Higher,yg_nsec,Con,11.49
+Scotland,NS-SeC Higher,yg_nsec,Green,5.68
+Scotland,NS-SeC Higher,yg_nsec,IND,1.46
+Scotland,NS-SeC Higher,yg_nsec,LD,11.45
+Scotland,NS-SeC Higher,yg_nsec,Lab,35.89
+Scotland,NS-SeC Higher,yg_nsec,Reform,5.63
+Scotland,NS-SeC Higher,yg_nsec,SNP,28.39
+Scotland,NS-SeC Intermediate,yg_nsec,Con,13.61
+Scotland,NS-SeC Intermediate,yg_nsec,Green,3.71
+Scotland,NS-SeC Intermediate,yg_nsec,IND,1.5
+Scotland,NS-SeC Intermediate,yg_nsec,LD,11.52
+Scotland,NS-SeC Intermediate,yg_nsec,Lab,33.61
+Scotland,NS-SeC Intermediate,yg_nsec,Reform,6.72
+Scotland,NS-SeC Intermediate,yg_nsec,SNP,29.33
+Scotland,NS-SeC Routine,yg_nsec,Con,11.23
+Scotland,NS-SeC Routine,yg_nsec,Green,3.63
+Scotland,NS-SeC Routine,yg_nsec,IND,1.53
+Scotland,NS-SeC Routine,yg_nsec,LD,5.91
+Scotland,NS-SeC Routine,yg_nsec,Lab,38.19
+Scotland,NS-SeC Routine,yg_nsec,Reform,7.7
+Scotland,NS-SeC Routine,yg_nsec,SNP,31.81
+Scotland,No Degree,education,Con,5.81
+Scotland,No Degree,education,Green,2.19
+Scotland,No Degree,education,IND,1.51
+Scotland,No Degree,education,LD,13.77
+Scotland,No Degree,education,Lab,36.23
+Scotland,No Degree,education,Reform,9.01
+Scotland,No Degree,education,SNP,31.49
+Scotland,Non-White,eth_binary,Con,2.4
+Scotland,Non-White,eth_binary,Green,0.9
+Scotland,Non-White,eth_binary,IND,2.19
+Scotland,Non-White,eth_binary,LD,28.76
+Scotland,Non-White,eth_binary,Lab,29.67
+Scotland,Non-White,eth_binary,Reform,0.41
+Scotland,Non-White,eth_binary,SNP,35.67
+Scotland,Owner,tenure,Con,4.8
+Scotland,Owner,tenure,Green,3.0
+Scotland,Owner,tenure,IND,1.64
+Scotland,Owner,tenure,LD,13.73
+Scotland,Owner,tenure,Lab,37.17
+Scotland,Owner,tenure,Reform,8.3
+Scotland,Owner,tenure,SNP,31.36
+Scotland,Renter,tenure,Con,23.51
+Scotland,Renter,tenure,Green,5.35
+Scotland,Renter,tenure,IND,1.31
+Scotland,Renter,tenure,LD,2.22
+Scotland,Renter,tenure,Lab,33.98
+Scotland,Renter,tenure,Reform,5.03
+Scotland,Renter,tenure,SNP,28.6
+Scotland,White,eth_binary,Con,12.9
+Scotland,White,eth_binary,Green,4.12
+Scotland,White,eth_binary,IND,1.47
+Scotland,White,eth_binary,LD,7.98
+Scotland,White,eth_binary,Lab,36.22
+Scotland,White,eth_binary,Reform,7.38
+Scotland,White,eth_binary,SNP,29.94
+South,ABC1,ipsos_grade,Con,30.43
+South,ABC1,ipsos_grade,Green,7.43
+South,ABC1,ipsos_grade,IND,1.68
+South,ABC1,ipsos_grade,LD,24.08
+South,ABC1,ipsos_grade,Lab,23.86
+South,ABC1,ipsos_grade,Reform,12.52
+South,Age 18-24,yg_age,Con,21.92
+South,Age 18-24,yg_age,Green,10.29
+South,Age 18-24,yg_age,IND,0.31
+South,Age 18-24,yg_age,LD,25.7
+South,Age 18-24,yg_age,Lab,26.22
+South,Age 18-24,yg_age,Reform,15.56
+South,Age 25-49,yg_age,Con,24.78
+South,Age 25-49,yg_age,Green,11.63
+South,Age 25-49,yg_age,IND,3.95
+South,Age 25-49,yg_age,LD,8.49
+South,Age 25-49,yg_age,Lab,35.03
+South,Age 25-49,yg_age,Reform,16.11
+South,Age 50-64,yg_age,Con,37.37
+South,Age 50-64,yg_age,Green,0.96
+South,Age 50-64,yg_age,IND,0.86
+South,Age 50-64,yg_age,LD,28.75
+South,Age 50-64,yg_age,Lab,18.46
+South,Age 50-64,yg_age,Reform,13.59
+South,Age 65+,yg_age,Con,37.27
+South,Age 65+,yg_age,Green,0.96
+South,Age 65+,yg_age,IND,0.77
+South,Age 65+,yg_age,LD,29.53
+South,Age 65+,yg_age,Lab,17.63
+South,Age 65+,yg_age,Reform,13.84
+South,C2DE,ipsos_grade,Con,28.65
+South,C2DE,ipsos_grade,Green,6.76
+South,C2DE,ipsos_grade,IND,2.8
+South,C2DE,ipsos_grade,LD,13.83
+South,C2DE,ipsos_grade,Lab,30.23
+South,C2DE,ipsos_grade,Reform,17.73
+South,Degree,education,Con,13.22
+South,Degree,education,Green,19.34
+South,Degree,education,IND,6.13
+South,Degree,education,LD,46.58
+South,Degree,education,Lab,13.5
+South,Degree,education,Reform,1.23
+South,Detached,housing,Con,33.9
+South,Detached,housing,Green,4.26
+South,Detached,housing,IND,2.19
+South,Detached,housing,LD,23.55
+South,Detached,housing,Lab,20.55
+South,Detached,housing,Reform,15.55
+South,Flat,housing,Con,23.15
+South,Flat,housing,Green,11.89
+South,Flat,housing,IND,1.99
+South,Flat,housing,LD,13.81
+South,Flat,housing,Lab,35.35
+South,Flat,housing,Reform,13.8
+South,Ipsos 18-34,ipsos_age,Con,15.69
+South,Ipsos 18-34,ipsos_age,Green,20.85
+South,Ipsos 18-34,ipsos_age,IND,3.71
+South,Ipsos 18-34,ipsos_age,LD,6.0
+South,Ipsos 18-34,ipsos_age,Lab,36.28
+South,Ipsos 18-34,ipsos_age,Reform,17.48
+South,Ipsos 35-54,ipsos_age,Con,34.04
+South,Ipsos 35-54,ipsos_age,Green,1.28
+South,Ipsos 35-54,ipsos_age,IND,2.18
+South,Ipsos 35-54,ipsos_age,LD,23.07
+South,Ipsos 35-54,ipsos_age,Lab,26.83
+South,Ipsos 35-54,ipsos_age,Reform,12.6
+South,Ipsos 55+,ipsos_age,Con,36.51
+South,Ipsos 55+,ipsos_age,Green,1.32
+South,Ipsos 55+,ipsos_age,IND,1.14
+South,Ipsos 55+,ipsos_age,LD,25.78
+South,Ipsos 55+,ipsos_age,Lab,20.01
+South,Ipsos 55+,ipsos_age,Reform,15.24
+South,NS-SeC Higher,yg_nsec,Con,29.21
+South,NS-SeC Higher,yg_nsec,Green,8.16
+South,NS-SeC Higher,yg_nsec,IND,1.86
+South,NS-SeC Higher,yg_nsec,LD,25.75
+South,NS-SeC Higher,yg_nsec,Lab,23.79
+South,NS-SeC Higher,yg_nsec,Reform,11.23
+South,NS-SeC Intermediate,yg_nsec,Con,31.41
+South,NS-SeC Intermediate,yg_nsec,Green,6.78
+South,NS-SeC Intermediate,yg_nsec,IND,1.7
+South,NS-SeC Intermediate,yg_nsec,LD,21.99
+South,NS-SeC Intermediate,yg_nsec,Lab,23.7
+South,NS-SeC Intermediate,yg_nsec,Reform,14.43
+South,NS-SeC Routine,yg_nsec,Con,27.31
+South,NS-SeC Routine,yg_nsec,Green,7.07
+South,NS-SeC Routine,yg_nsec,IND,3.06
+South,NS-SeC Routine,yg_nsec,LD,12.42
+South,NS-SeC Routine,yg_nsec,Lab,32.59
+South,NS-SeC Routine,yg_nsec,Reform,17.54
+South,No Degree,education,Con,37.1
+South,No Degree,education,Green,1.46
+South,No Degree,education,IND,0.42
+South,No Degree,education,LD,6.37
+South,No Degree,education,Lab,33.19
+South,No Degree,education,Reform,21.46
+South,Non-White,eth_binary,Con,14.94
+South,Non-White,eth_binary,Green,10.82
+South,Non-White,eth_binary,IND,1.84
+South,Non-White,eth_binary,LD,6.03
+South,Non-White,eth_binary,Lab,54.21
+South,Non-White,eth_binary,Reform,12.16
+South,Owner,tenure,Con,32.22
+South,Owner,tenure,Green,7.84
+South,Owner,tenure,IND,0.69
+South,Owner,tenure,LD,19.95
+South,Owner,tenure,Lab,21.9
+South,Owner,tenure,Reform,17.39
+South,Renter,tenure,Con,23.74
+South,Renter,tenure,Green,5.49
+South,Renter,tenure,IND,5.58
+South,Renter,tenure,LD,17.11
+South,Renter,tenure,Lab,38.08
+South,Renter,tenure,Reform,9.99
+South,White,eth_binary,Con,31.4
+South,White,eth_binary,Green,6.64
+South,White,eth_binary,IND,2.27
+South,White,eth_binary,LD,20.7
+South,White,eth_binary,Lab,23.56
+South,White,eth_binary,Reform,15.44
+Wales,ABC1,ipsos_grade,Con,19.19
+Wales,ABC1,ipsos_grade,Green,5.54
+Wales,ABC1,ipsos_grade,IND,1.8
+Wales,ABC1,ipsos_grade,LD,6.59
+Wales,ABC1,ipsos_grade,Lab,37.07
+Wales,ABC1,ipsos_grade,PC,13.57
+Wales,ABC1,ipsos_grade,Reform,16.25
+Wales,Age 18-24,yg_age,Con,3.0
+Wales,Age 18-24,yg_age,Green,8.15
+Wales,Age 18-24,yg_age,IND,1.04
+Wales,Age 18-24,yg_age,LD,1.04
+Wales,Age 18-24,yg_age,Lab,56.42
+Wales,Age 18-24,yg_age,PC,15.48
+Wales,Age 18-24,yg_age,Reform,14.87
+Wales,Age 25-49,yg_age,Con,4.28
+Wales,Age 25-49,yg_age,Green,7.25
+Wales,Age 25-49,yg_age,IND,3.31
+Wales,Age 25-49,yg_age,LD,11.2
+Wales,Age 25-49,yg_age,Lab,40.14
+Wales,Age 25-49,yg_age,PC,12.5
+Wales,Age 25-49,yg_age,Reform,21.32
+Wales,Age 50-64,yg_age,Con,30.2
+Wales,Age 50-64,yg_age,Green,2.2
+Wales,Age 50-64,yg_age,IND,1.47
+Wales,Age 50-64,yg_age,LD,3.73
+Wales,Age 50-64,yg_age,Lab,32.59
+Wales,Age 50-64,yg_age,PC,15.43
+Wales,Age 50-64,yg_age,Reform,14.38
+Wales,Age 65+,yg_age,Con,31.04
+Wales,Age 65+,yg_age,Green,2.16
+Wales,Age 65+,yg_age,IND,1.33
+Wales,Age 65+,yg_age,LD,4.09
+Wales,Age 65+,yg_age,Lab,30.93
+Wales,Age 65+,yg_age,PC,16.32
+Wales,Age 65+,yg_age,Reform,14.13
+Wales,C2DE,ipsos_grade,Con,16.12
+Wales,C2DE,ipsos_grade,Green,4.17
+Wales,C2DE,ipsos_grade,IND,2.33
+Wales,C2DE,ipsos_grade,LD,6.3
+Wales,C2DE,ipsos_grade,Lab,38.0
+Wales,C2DE,ipsos_grade,PC,15.41
+Wales,C2DE,ipsos_grade,Reform,17.68
+Wales,Degree,education,Con,10.78
+Wales,Degree,education,Green,9.51
+Wales,Degree,education,IND,1.82
+Wales,Degree,education,LD,0.69
+Wales,Degree,education,Lab,45.66
+Wales,Degree,education,PC,17.55
+Wales,Degree,education,Reform,13.98
+Wales,Detached,housing,Con,18.11
+Wales,Detached,housing,Green,3.62
+Wales,Detached,housing,IND,1.91
+Wales,Detached,housing,LD,7.9
+Wales,Detached,housing,Lab,31.4
+Wales,Detached,housing,PC,18.8
+Wales,Detached,housing,Reform,18.27
+Wales,Flat,housing,Con,20.69
+Wales,Flat,housing,Green,6.94
+Wales,Flat,housing,IND,1.59
+Wales,Flat,housing,LD,4.61
+Wales,Flat,housing,Lab,44.87
+Wales,Flat,housing,PC,8.27
+Wales,Flat,housing,Reform,13.04
+Wales,Ipsos 18-34,ipsos_age,Con,2.64
+Wales,Ipsos 18-34,ipsos_age,Green,10.33
+Wales,Ipsos 18-34,ipsos_age,IND,2.76
+Wales,Ipsos 18-34,ipsos_age,LD,11.16
+Wales,Ipsos 18-34,ipsos_age,Lab,42.31
+Wales,Ipsos 18-34,ipsos_age,PC,12.06
+Wales,Ipsos 18-34,ipsos_age,Reform,18.74
+Wales,Ipsos 35-54,ipsos_age,Con,20.73
+Wales,Ipsos 35-54,ipsos_age,Green,3.63
+Wales,Ipsos 35-54,ipsos_age,IND,2.11
+Wales,Ipsos 35-54,ipsos_age,LD,4.19
+Wales,Ipsos 35-54,ipsos_age,Lab,39.88
+Wales,Ipsos 35-54,ipsos_age,PC,12.73
+Wales,Ipsos 35-54,ipsos_age,Reform,16.73
+Wales,Ipsos 55+,ipsos_age,Con,22.96
+Wales,Ipsos 55+,ipsos_age,Green,2.7
+Wales,Ipsos 55+,ipsos_age,IND,1.73
+Wales,Ipsos 55+,ipsos_age,LD,5.57
+Wales,Ipsos 55+,ipsos_age,Lab,33.44
+Wales,Ipsos 55+,ipsos_age,PC,17.25
+Wales,Ipsos 55+,ipsos_age,Reform,16.36
+Wales,NS-SeC Higher,yg_nsec,Con,19.31
+Wales,NS-SeC Higher,yg_nsec,Green,6.16
+Wales,NS-SeC Higher,yg_nsec,IND,1.66
+Wales,NS-SeC Higher,yg_nsec,LD,6.91
+Wales,NS-SeC Higher,yg_nsec,Lab,37.17
+Wales,NS-SeC Higher,yg_nsec,PC,13.16
+Wales,NS-SeC Higher,yg_nsec,Reform,15.64
+Wales,NS-SeC Intermediate,yg_nsec,Con,20.02
+Wales,NS-SeC Intermediate,yg_nsec,Green,4.75
+Wales,NS-SeC Intermediate,yg_nsec,IND,1.71
+Wales,NS-SeC Intermediate,yg_nsec,LD,7.33
+Wales,NS-SeC Intermediate,yg_nsec,Lab,33.71
+Wales,NS-SeC Intermediate,yg_nsec,PC,16.11
+Wales,NS-SeC Intermediate,yg_nsec,Reform,16.38
+Wales,NS-SeC Routine,yg_nsec,Con,14.55
+Wales,NS-SeC Routine,yg_nsec,Green,4.47
+Wales,NS-SeC Routine,yg_nsec,IND,2.57
+Wales,NS-SeC Routine,yg_nsec,LD,5.42
+Wales,NS-SeC Routine,yg_nsec,Lab,41.54
+Wales,NS-SeC Routine,yg_nsec,PC,13.42
+Wales,NS-SeC Routine,yg_nsec,Reform,18.03
+Wales,No Degree,education,Con,20.45
+Wales,No Degree,education,Green,2.7
+Wales,No Degree,education,IND,2.21
+Wales,No Degree,education,LD,8.95
+Wales,No Degree,education,Lab,34.03
+Wales,No Degree,education,PC,13.27
+Wales,No Degree,education,Reform,18.39
+Wales,Non-White,eth_binary,Con,13.84
+Wales,Non-White,eth_binary,Green,11.07
+Wales,Non-White,eth_binary,IND,0.98
+Wales,Non-White,eth_binary,LD,20.73
+Wales,Non-White,eth_binary,Lab,41.51
+Wales,Non-White,eth_binary,PC,3.12
+Wales,Non-White,eth_binary,Reform,8.75
+Wales,Owner,tenure,Con,7.03
+Wales,Owner,tenure,Green,4.33
+Wales,Owner,tenure,IND,2.59
+Wales,Owner,tenure,LD,3.3
+Wales,Owner,tenure,Lab,42.87
+Wales,Owner,tenure,PC,18.45
+Wales,Owner,tenure,Reform,21.42
+Wales,Renter,tenure,Con,30.28
+Wales,Renter,tenure,Green,5.33
+Wales,Renter,tenure,IND,1.48
+Wales,Renter,tenure,LD,10.24
+Wales,Renter,tenure,Lab,31.14
+Wales,Renter,tenure,PC,9.84
+Wales,Renter,tenure,Reform,11.68
+Wales,White,eth_binary,Con,17.85
+Wales,White,eth_binary,Green,4.17
+Wales,White,eth_binary,IND,2.19
+Wales,White,eth_binary,LD,5.04
+Wales,White,eth_binary,Lab,37.22
+Wales,White,eth_binary,PC,15.69
+Wales,White,eth_binary,Reform,17.84

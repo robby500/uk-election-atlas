@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>US Elections — LeanTossup.ca</title>
+  <meta name="description" content="US presidential and congressional election results atlas. Forecast model coming soon.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,700;1,400&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg: #1b1f2b;
+      --border-dim: rgba(78,124,255,0.12);
+      --border: rgba(78,124,255,0.15);
+      --accent: #4e7cff;
+      --red-ca: #bf0000;
+      --gold: #c9a800;
+      --text: #dde0ee;
+      --text-bright: #f2f4fa;
+      --muted: #5a6280;
+      --dim: #3a4060;
+    }
+    html, body { height: 100%; }
+    body {
+      background: var(--bg); color: var(--text);
+      font-family: 'DM Mono', monospace; min-height: 100vh; overflow-x: hidden;
+    }
+    body::before {
+      content: ''; position: fixed; inset: 0;
+      background-image:
+        linear-gradient(rgba(78,124,255,0.045) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(78,124,255,0.045) 1px, transparent 1px);
+      background-size: 32px 32px; pointer-events: none; z-index: 0;
+    }
+    .nav {
+      position: sticky; top: 0; z-index: 100;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 clamp(20px, 4vw, 64px); height: 44px;
+      border-bottom: 1px solid var(--border);
+      background: rgba(27,31,43,0.97); backdrop-filter: blur(6px);
+    }
+    .nav-brand { font-size: 0.72rem; font-weight: 500; color: var(--text-bright); text-decoration: none; }
+    .nav-brand .ca { color: var(--red-ca); }
+    .nav-links { display: flex; gap: 24px; }
+    .nav-link { font-size: 0.55rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); text-decoration: none; transition: color 0.15s; }
+    .nav-link:hover { color: var(--text); }
+
+    .wrap { position: relative; z-index: 1; padding: clamp(32px, 5vw, 72px) clamp(24px, 4vw, 64px); max-width: 1100px; margin: 0 auto; }
+    .crumb { font-size: 0.55rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); margin-bottom: 24px; }
+    .crumb a { color: var(--muted); text-decoration: none; transition: color 0.15s; }
+    .crumb a:hover { color: var(--text); }
+    .page-flag { font-size: 2rem; line-height: 1; margin-bottom: 14px; }
+    .page-title { font-family: 'Libre Baskerville', serif; font-size: clamp(30px, 4vw, 46px); font-weight: 700; color: var(--text-bright); line-height: 1.1; }
+    .page-title em { font-style: italic; color: #8aa4ff; }
+    .page-sub { font-size: 0.85rem; color: #bcc2d8; line-height: 1.8; margin: 16px 0 40px; max-width: 540px; }
+
+    .cards { display: grid; grid-template-columns: repeat(2,1fr); gap: 16px; }
+    .card {
+      background: rgba(255,255,255,0.02); border: 1px solid rgba(78,124,255,0.14);
+      padding: 24px; position: relative; transition: border-color 0.2s, background 0.2s;
+    }
+    .card.live { border-color: rgba(78,124,255,0.28); cursor: pointer; text-decoration: none; display: block; color: inherit; }
+    .card.live:hover { border-color: var(--accent); background: rgba(78,124,255,0.05); }
+    .card.soon { opacity: 0.45; }
+    .card-type { font-size: 0.56rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--muted); margin-bottom: 6px; }
+    .card-title { font-family: 'Libre Baskerville', serif; font-size: 1.15rem; font-weight: 700; color: var(--text-bright); line-height: 1.2; margin-bottom: 8px; }
+    .card-title em { font-style: italic; color: #8aa4ff; }
+    .card-desc { font-size: 0.7rem; color: #9da4bc; line-height: 1.7; }
+    .card-arrow { position: absolute; bottom: 14px; right: 14px; font-size: 0.58rem; color: var(--accent); }
+    .badge-soon {
+      position: absolute; top: 11px; right: 11px;
+      font-size: 0.46rem; letter-spacing: 0.14em; text-transform: uppercase;
+      background: rgba(201,168,0,0.1); color: var(--gold);
+      border: 1px solid rgba(201,168,0,0.28); padding: 3px 8px;
+    }
+    .badge-live {
+      position: absolute; top: 11px; right: 11px;
+      font-size: 0.46rem; letter-spacing: 0.14em; text-transform: uppercase;
+      background: rgba(78,124,255,0.1); color: var(--accent);
+      border: 1px solid rgba(78,124,255,0.28); padding: 3px 8px;
+    }
+    footer {
+      position: relative; z-index: 1; border-top: 1px solid var(--border-dim);
+      padding: 12px clamp(24px, 4vw, 64px);
+      display: flex; justify-content: space-between; align-items: center;
+      font-size: 0.52rem; color: var(--dim);
+    }
+    @media (max-width: 640px) { .cards { grid-template-columns: 1fr; } .nav-links { display: none; } }
+  </style>
+</head>
+<body>
+
+  <nav class="nav">
+    <a href="../index.html" class="nav-brand">LeanTossup<span class="ca">.ca</span></a>
+    <div class="nav-links">
+      <a href="../index.html" class="nav-link">Home</a>
+      <a href="../index.html#about" class="nav-link">About</a>
+    </div>
+  </nav>
+
+  <div class="wrap">
+    <div class="crumb"><a href="../index.html">Home</a> / United States</div>
+    <div class="page-flag">🇺🇸</div>
+    <h1 class="page-title">US <em>Elections</em></h1>
+    <p class="page-sub">Presidential and congressional results mapped to the state and district. A forecast model is on the way.</p>
+
+    <div class="cards">
+      <a href="atlas/index.html" class="card live">
+        <div class="badge-live">Live</div>
+        <div class="card-type">Atlas</div>
+        <div class="card-title">Election <em>Atlas</em></div>
+        <p class="card-desc">Presidential and congressional results, mapped to the state and district.</p>
+        <div class="card-arrow">→</div>
+      </a>
+
+      <div class="card soon">
+        <div class="badge-soon">Coming soon</div>
+        <div class="card-type">Model</div>
+        <div class="card-title">Forecast <em>Model</em></div>
+        <p class="card-desc">Coming soon.</p>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <span>LeanTossup.ca — Electoral Intelligence</span>
+    <span>United States</span>
+  </footer>
+
+</body>
+</html>

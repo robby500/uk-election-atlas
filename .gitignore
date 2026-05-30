@@ -23,3 +23,12 @@ UK_Elections_1922_1935.geojson
 UK_Elections_1945.geojson
 UK_Elections_1950_1951.geojson
 UK_MP_Scraper.py
+uk_model.py
+UK_Model_Twitter.png
+UK_Model_Archive.xlsx
+run_model.py
+aggregate_crosstabs.py
+parsers
+polls
+data
+uk_polling_v2

@@ -1,0 +1,6335 @@
+{
+  "year": 1912,
+  "states": {
+    "09": {
+      "name": "Connecticut",
+      "ev": 7,
+      "candidates": [
+        {
+          "name": "Thomas Riley Marshall of Indiana",
+          "party": "O",
+          "votes": 74561,
+          "pct": 39.16,
+          "ev": 7
+        },
+        {
+          "name": "Nicholas Murray Butler of New York",
+          "party": "O",
+          "votes": 68324,
+          "pct": 35.88,
+          "ev": 0
+        },
+        {
+          "name": "Hiram Warren Johnson of California",
+          "party": "O",
+          "votes": 34129,
+          "pct": 17.92,
+          "ev": 0
+        },
+        {
+          "name": "Emil Seidel of Wisconsin",
+          "party": "O",
+          "votes": 10056,
+          "pct": 5.28,
+          "ev": 0
+        },
+        {
+          "name": "Aaron Sherman Watkins of Ohio",
+          "party": "O",
+          "votes": 2068,
+          "pct": 1.09,
+          "ev": 0
+        },
+        {
+          "name": "August Gillhaus of New York",
+          "party": "O",
+          "votes": 1260,
+          "pct": 0.65,
+          "ev": 0
+        }
+      ],
+      "counties": {
+        "09001": {
+          "name": "Fairfield",
+          "votes": {
+            "D": 0,
+            "R": 0,
+            "O": 890
+          }
+        },
+        "09003": {
+          "name": "Hartford",
+          "votes": {
+            "D": 0,
+            "R": 0,
+            "O": 17451
+          }
+        },
+        "09005": {
+          "name": "Litchfield",
+          "votes": {
+            "D": 0,
+            "R": 0,
+            "O": 678
+          }
+        },
+        "09009": {
+          "name": "New Haven",
+          "votes": {
+            "D": 0,
+            "R": 0,
+            "O": 21627
+          }
+        },
+        "09011": {
+          "name": "New London",
+          "votes": {
+            "D": 0,
+            "R": 0,
+            "O": 3542
+          }
+        },
+        "09013": {
+          "name": "Tolland",
+          "votes": {
+            "D": 0,
+            "R": 0,
+            "O": 185
+          }
+        },
+        "09015": {
+          "name": "Windham",
+          "votes": {
+            "D": 0,
+            "R": 0,
+            "O": 2015
+          }
+        }
+      }
+    },
+    "12": {
+      "name": "Florida",
+      "ev": 6,
+      "candidates": [
+        {
+          "name": "Thomas R. Marshall of Indiana",
+          "party": "O",
+          "votes": 35343,
+          "pct": 69.52,
+          "ev": 6
+        },
+        {
+          "name": "Emil Seidel of Wisconsin",
+          "party": "O",
+          "votes": 4806,
+          "pct": 9.45,
+          "ev": 0
+        },
+        {
+          "name": "Hiram W. Johnson of California",
+          "party": "O",
+          "votes": 4555,
+          "pct": 8.96,
+          "ev": 0
+        },
+        {
+          "name": "Nicholas Murray Butler of New York",
+          "party": "O",
+          "votes": 4279,
+          "pct": 8.42,
+          "ev": 0
+        },
+        {
+          "name": "Aaron Watkins of Ohio",
+          "party": "O",
+          "votes": 1854,
+          "pct": 3.65,
+          "ev": 0
+        }
+      ],
+      "counties": {
+        "12001": {
+          "name": "Alachua",
+          "votes": {
+            "D": 0,
+            "R": 0,
+            "O": 1731
+          }
+        },
+        "12003": {
+          "name": "Baker",
+          "votes": {
+            "D": 0,
+            "R": 0,
+            "O": 331
+          }
+        },
+        "12007": {
+          "name": "Bradford",
+          "votes": {
+            "D": 0,
+            "R": 0,
+            "O": 857
+          }
+        },
+        "12009": {
+          "name": "Brevard",
+          "votes": {
+            "D": 0,
+            "R": 0,
+            "O": 590
+          }
+        },
+        "12013": {
+          "name": "Calhoun",
+          "votes": {
+            "D": 0,
+            "R": 0,
+            "O": 660
+          }
+        },
+        "12017": {
+          "name": "Citrus",
+          "votes": {
+            "D": 0,
+            "R": 0,
+            "O": 503
+          }
+        },
+        "12019": {
+          "name": "Clay",
+          "votes": {
+            "D": 0,
+            "R": 0,
+            "O": 390
+          }
+        },
+        "12023": {
+          "name": "Columbia",
+          "votes": {
+            "D": 0,
+            "R": 0,
+            "O": 670
+          }
+        },
+        "12027": {
+          "name": "DeSoto",
+          "votes": {
+            "D": 0,
+            "R": 0,
+            "O": 1259
+          }
+        },
+        "12031": {
+          "name": "Duval",
+          "votes": {
+            "D": 0,
+            "R": 0,
+            "O": 4669
+          }
+        },
+        "12033": {
+          "name": "Escambia",
+          "votes": {
+            "D": 0,
+            "R": 0,
+            "O": 2066
+          }
+        },
+        "12037": {
+          "name": "Franklin",
+          "votes": {
+            "D": 0,
+            "R": 0,
+            "O": 390
+          }
+        },
+        "12039": {
+          "name": "Gadsden",
+          "votes": {
+            "D": 0,
+            "R": 0,
+            "O": 771
+          }
+        },
+        "12047": {
+          "name": "Hamilton",
+          "votes": {
+            "D": 0,
+            "R": 0,
+            "O": 557
+          }
+        },
+        "12053": {
+          "name": "Hernando",
+          "votes": {
+            "D": 0,
+            "R": 0,
+            "O": 383
+          }
+        },
+        "12057": {
+          "name": "Hillsborough",
+          "votes": {
+            "D": 0,
+            "R": 0,
+            "O": 3905
+          }
+        },
+        "12059": {
+          "name": "Holmes",
+          "votes": {
+            "D": 0,
+            "R": 0,
+            "O": 672
+          }
+        },
+        "12063": {
+          "name": "Jackson",
+          "votes": {
+            "D": 0,
+            "R": 0,
+            "O": 1697
+          }
+        },
+        "12065": {
+          "name": "Jefferson",
+          "votes": {
+            "D": 0,
+            "R": 0,
+            "O": 556
+          }
+        },
+        "12067": {
+          "name": "Lafayette",
+          "votes": {
+            "D": 0,
+            "R": 0,
+            "O": 616
+          }
+        },
+        "12069": {
+          "name": "Lake",
+          "votes": {
+            "D": 0,
+            "R": 0,
+            "O": 811
+          }
+        },
+        "12071": {
+          "name": "Lee",
+          "votes": {
+            "D": 0,
+            "R": 0,
+            "O": 714
+          }
+        },
+        "12073": {
+          "name": "Leon",
+          "votes": {
+            "D": 0,
+            "R": 0,
+            "O": 666
+          }
+        },
+        "12075": {
+          "name": "Levy",
+          "votes": {
+            "D": 0,
+            "R": 0,
+            "O": 532
+          }
+        },
+        "12077": {
+          "name": "Liberty",
+          "votes": {
+            "D": 0,
+            "R": 0,
+            "O": 265
+          }
+        },
+        "12079": {
+          "name": "Madison",
+          "votes": {
+            "D": 0,
+            "R": 0,
+            "O": 548
+          }
+        },
+        "12081": {
+          "name": "Manatee",
+          "votes": {
+            "D": 0,
+            "R": 0,
+            "O": 1036
+          }
+        },
+        "12083": {
+          "name": "Marion",
+          "votes": {
+            "D": 0,
+            "R": 0,
+            "O": 1647
+          }
+        },
+        "12087": {
+          "name": "Monroe",
+          "votes": {
+            "D": 0,
+            "R": 0,
+            "O": 1836
+          }
+        },
+        "12089": {
+          "name": "Nassau",
+          "votes": {
+            "D": 0,
+            "R": 0,
+            "O": 532
+          }
+        },
+        "12095": {
+          "name": "Orange",
+          "votes": {
+            "D": 0,
+            "R": 0,
+            "O": 1843
+          }
+        },
+        "12097": {
+          "name": "Osceola",
+          "votes": {
+            "D": 0,
+            "R": 0,
+            "O": 889
+          }
+        },
+        "12099": {
+          "name": "Palm Beach",
+          "votes": {
+            "D": 0,
+            "R": 0,
+            "O": 725
+          }
+        },
+        "12101": {
+          "name": "Pasco",
+          "votes": {
+            "D": 0,
+            "R": 0,
+            "O": 719
+          }
+        },
+        "12103": {
+          "name": "Pinellas",
+          "votes": {
+            "D": 0,
+            "R": 0,
+            "O": 1418
+          }
+        },
+        "12105": {
+          "name": "Polk",
+          "votes": {
+            "D": 0,
+            "R": 0,
+            "O": 2128
+          }
+        },
+        "12107": {
+          "name": "Putnam",
+          "votes": {
+            "D": 0,
+            "R": 0,
+            "O": 1174
+          }
+        },
+        "12109": {
+          "name": "St. Johns",
+          "votes": {
+            "D": 0,
+            "R": 0,
+            "O": 1144
+          }
+        },
+        "12111": {
+          "name": "St. Lucie",
+          "votes": {
+            "D": 0,
+            "R": 0,
+            "O": 506
+          }
+        },
+        "12113": {
+          "name": "Santa Rosa",
+          "votes": {
+            "D": 0,
+            "R": 0,
+            "O": 893
+          }
+        },
+        "12119": {
+          "name": "Sumter",
+          "votes": {
+            "D": 0,
+            "R": 0,
+            "O": 558
+          }
+        },
+        "12121": {
+          "name": "Suwannee",
+          "votes": {
+            "D": 0,
+            "R": 0,
+            "O": 1026
+          }
+        },
+        "12123": {
+          "name": "Taylor",
+          "votes": {
+            "D": 0,
+            "R": 0,
+            "O": 363
+          }
+        },
+        "12127": {
+          "name": "Volusia",
+          "votes": {
+            "D": 0,
+            "R": 0,
+            "O": 1396
+          }
+        },
+        "12129": {
+          "name": "Wakulla",
+          "votes": {
+            "D": 0,
+            "R": 0,
+            "O": 279
+          }
+        },
+        "12131": {
+          "name": "Walton",
+          "votes": {
+            "D": 0,
+            "R": 0,
+            "O": 1056
+          }
+        },
+        "12133": {
+          "name": "Washington",
+          "votes": {
+            "D": 0,
+            "R": 0,
+            "O": 1078
+          }
+        }
+      }
+    },
+    "23": {
+      "name": "Maine",
+      "ev": 6,
+      "candidates": [
+        {
+          "name": "Thomas Riley Marshall of Indiana",
+          "party": "O",
+          "votes": 51113,
+          "pct": 39.43,
+          "ev": 6
+        },
+        {
+          "name": "Hiram Warren Johnson of California",
+          "party": "O",
+          "votes": 48495,
+          "pct": 37.41,
+          "ev": 0
+        },
+        {
+          "name": "Nicholas Murray Butler of New York",
+          "party": "O",
+          "votes": 26545,
+          "pct": 20.48,
+          "ev": 0
+        },
+        {
+          "name": "Emil Seidel of Wisconsin",
+          "party": "O",
+          "votes": 2541,
+          "pct": 1.96,
+          "ev": 0
+        },
+        {
+          "name": "Aaron Sherman Watkins of Ohio",
+          "party": "O",
+          "votes": 946,
+          "pct": 0.73,
+          "ev": 0
+        }
+      ],
+      "counties": {
+        "23001": {
+          "name": "Androscoggin",
+          "votes": {
+            "D": 0,
+            "R": 0,
+            "O": 10176
+          }
+        },
+        "23003": {
+          "name": "Aroostook",
+          "votes": {
+            "D": 0,
+            "R": 0,
+            "O": 7813
+          }
+        },
+        "23005": {
+          "name": "Cumberland",
+          "votes": {
+            "D": 0,
+            "R": 0,
+            "O": 20661
+          }
+        },
+        "23007": {
+          "name": "Franklin",
+          "votes": {
+            "D": 0,
+            "R": 0,
+            "O": 3803
+          }
+        },
+        "23009": {
+          "name": "Hancock",
+          "votes": {
+            "D": 0,
+            "R": 0,
+            "O": 6162
+          }
+        },
+        "23011": {
+          "name": "Kennebec",
+          "votes": {
+            "D": 0,
+            "R": 0,
+            "O": 11626
+          }
+        },
+        "23013": {
+          "name": "Knox",
+          "votes": {
+            "D": 0,
+            "R": 0,
+            "O": 5499
+          }
+        },
+        "23015": {
+          "name": "Lincoln",
+          "votes": {
+            "D": 0,
+            "R": 0,
+            "O": 3721
+          }
+        },
+        "23017": {
+          "name": "Oxford",
+          "votes": {
+            "D": 0,
+            "R": 0,
+            "O": 7392
+          }
+        },
+        "23019": {
+          "name": "Penobscot",
+          "votes": {
+            "D": 0,
+            "R": 0,
+            "O": 14082
+          }
+        },
+        "23021": {
+          "name": "Piscataquis",
+          "votes": {
+            "D": 0,
+            "R": 0,
+            "O": 3770
+          }
+        },
+        "23023": {
+          "name": "Sagadahoc",
+          "votes": {
+            "D": 0,
+            "R": 0,
+            "O": 3497
+          }
+        },
+        "23025": {
+          "name": "Somerset",
+          "votes": {
+            "D": 0,
+            "R": 0,
+            "O": 6356
+          }
+        },
+        "23027": {
+          "name": "Waldo",
+          "votes": {
+            "D": 0,
+            "R": 0,
+            "O": 4841
+          }
+        },
+        "23029": {
+          "name": "Washington",
+          "votes": {
+            "D": 0,
+            "R": 0,
+            "O": 7152
+          }
+        },
+        "23031": {
+          "name": "York",
+          "votes": {
+            "D": 0,
+            "R": 0,
+            "O": 13089
+          }
+        }
+      }
+    },
+    "25": {
+      "name": "Massachusetts",
+      "ev": 18,
+      "candidates": [
+        {
+          "name": "Woodrow Wilson",
+          "party": "D",
+          "votes": 173408,
+          "pct": 35.53,
+          "ev": 18
+        },
+        {
+          "name": "William Howard Taft",
+          "party": "R",
+          "votes": 155948,
+          "pct": 31.95,
+          "ev": 0
+        },
+        {
+          "name": "Theodore Roosevelt",
+          "party": "O",
+          "votes": 142228,
+          "pct": 29.14,
+          "ev": 0
+        },
+        {
+          "name": "Eugene V. Debs",
+          "party": "O",
+          "votes": 12616,
+          "pct": 2.58,
+          "ev": 0
+        },
+        {
+          "name": "Eugene W. Chafin",
+          "party": "O",
+          "votes": 2754,
+          "pct": 0.56,
+          "ev": 0
+        },
+        {
+          "name": "Arthur E. Reimer",
+          "party": "O",
+          "votes": 1102,
+          "pct": 0.23,
+          "ev": 0
+        }
+      ],
+      "counties": {
+        "25001": {
+          "name": "Barnstable",
+          "votes": {
+            "D": 1322,
+            "R": 1249,
+            "O": 2404
+          }
+        },
+        "25003": {
+          "name": "Berkshire",
+          "votes": {
+            "D": 6211,
+            "R": 6397,
+            "O": 4595
+          }
+        },
+        "25005": {
+          "name": "Bristol",
+          "votes": {
+            "D": 12420,
+            "R": 13279,
+            "O": 12264
+          }
+        },
+        "25007": {
+          "name": "Dukes",
+          "votes": {
+            "D": 215,
+            "R": 269,
+            "O": 290
+          }
+        },
+        "25009": {
+          "name": "Essex",
+          "votes": {
+            "D": 20691,
+            "R": 21441,
+            "O": 24507
+          }
+        },
+        "25011": {
+          "name": "Franklin",
+          "votes": {
+            "D": 2046,
+            "R": 2636,
+            "O": 2624
+          }
+        },
+        "25013": {
+          "name": "Hampden",
+          "votes": {
+            "D": 10620,
+            "R": 11393,
+            "O": 8409
+          }
+        },
+        "25015": {
+          "name": "Hampshire",
+          "votes": {
+            "D": 3088,
+            "R": 4512,
+            "O": 2032
+          }
+        },
+        "25017": {
+          "name": "Middlesex",
+          "votes": {
+            "D": 36689,
+            "R": 30511,
+            "O": 35667
+          }
+        },
+        "25019": {
+          "name": "Nantucket",
+          "votes": {
+            "D": 247,
+            "R": 123,
+            "O": 194
+          }
+        },
+        "25021": {
+          "name": "Norfolk",
+          "votes": {
+            "D": 9244,
+            "R": 9650,
+            "O": 10537
+          }
+        },
+        "25023": {
+          "name": "Plymouth",
+          "votes": {
+            "D": 6991,
+            "R": 5590,
+            "O": 11072
+          }
+        },
+        "25025": {
+          "name": "Suffolk",
+          "votes": {
+            "D": 46059,
+            "R": 24179,
+            "O": 27613
+          }
+        },
+        "25027": {
+          "name": "Worcester",
+          "votes": {
+            "D": 17565,
+            "R": 24719,
+            "O": 16492
+          }
+        }
+      }
+    },
+    "27": {
+      "name": "Minnesota",
+      "ev": 12,
+      "candidates": [
+        {
+          "name": "Theodore Roosevelt",
+          "party": "O",
+          "votes": 125856,
+          "pct": 37.66,
+          "ev": 12
+        },
+        {
+          "name": "Woodrow Wilson",
+          "party": "D",
+          "votes": 106426,
+          "pct": 31.84,
+          "ev": 0
+        },
+        {
+          "name": "William Howard Taft",
+          "party": "R",
+          "votes": 64334,
+          "pct": 19.25,
+          "ev": 0
+        },
+        {
+          "name": "Eugene V. Debs",
+          "party": "O",
+          "votes": 27505,
+          "pct": 8.23,
+          "ev": 0
+        },
+        {
+          "name": "Eugene W. Chafin",
+          "party": "O",
+          "votes": 7886,
+          "pct": 2.36,
+          "ev": 0
+        },
+        {
+          "name": "Arthur E. Reimer",
+          "party": "O",
+          "votes": 2212,
+          "pct": 0.66,
+          "ev": 0
+        }
+      ],
+      "counties": {
+        "27001": {
+          "name": "Aitkin",
+          "votes": {
+            "D": 413,
+            "R": 362,
+            "O": 1308
+          }
+        },
+        "27003": {
+          "name": "Anoka",
+          "votes": {
+            "D": 591,
+            "R": 562,
+            "O": 926
+          }
+        },
+        "27005": {
+          "name": "Becker",
+          "votes": {
+            "D": 732,
+            "R": 509,
+            "O": 1796
+          }
+        },
+        "27007": {
+          "name": "Beltrami",
+          "votes": {
+            "D": 790,
+            "R": 490,
+            "O": 1745
+          }
+        },
+        "27009": {
+          "name": "Benton",
+          "votes": {
+            "D": 562,
+            "R": 468,
+            "O": 890
+          }
+        },
+        "27011": {
+          "name": "Big Stone",
+          "votes": {
+            "D": 677,
+            "R": 244,
+            "O": 755
+          }
+        },
+        "27013": {
+          "name": "Blue Earth",
+          "votes": {
+            "D": 2025,
+            "R": 1344,
+            "O": 1922
+          }
+        },
+        "27015": {
+          "name": "Brown",
+          "votes": {
+            "D": 943,
+            "R": 472,
+            "O": 1746
+          }
+        },
+        "27017": {
+          "name": "Carlton",
+          "votes": {
+            "D": 631,
+            "R": 283,
+            "O": 1673
+          }
+        },
+        "27019": {
+          "name": "Carver",
+          "votes": {
+            "D": 1008,
+            "R": 742,
+            "O": 1012
+          }
+        },
+        "27021": {
+          "name": "Cass",
+          "votes": {
+            "D": 565,
+            "R": 431,
+            "O": 1101
+          }
+        },
+        "27023": {
+          "name": "Chippewa",
+          "votes": {
+            "D": 870,
+            "R": 412,
+            "O": 1380
+          }
+        },
+        "27025": {
+          "name": "Chisago",
+          "votes": {
+            "D": 435,
+            "R": 346,
+            "O": 1819
+          }
+        },
+        "27027": {
+          "name": "Clay",
+          "votes": {
+            "D": 942,
+            "R": 549,
+            "O": 1561
+          }
+        },
+        "27029": {
+          "name": "Clearwater",
+          "votes": {
+            "D": 123,
+            "R": 125,
+            "O": 847
+          }
+        },
+        "27031": {
+          "name": "Cook",
+          "votes": {
+            "D": 65,
+            "R": 30,
+            "O": 253
+          }
+        },
+        "27033": {
+          "name": "Cottonwood",
+          "votes": {
+            "D": 511,
+            "R": 325,
+            "O": 1181
+          }
+        },
+        "27035": {
+          "name": "Crow Wing",
+          "votes": {
+            "D": 709,
+            "R": 691,
+            "O": 1897
+          }
+        },
+        "27037": {
+          "name": "Dakota",
+          "votes": {
+            "D": 1777,
+            "R": 609,
+            "O": 1904
+          }
+        },
+        "27039": {
+          "name": "Dodge",
+          "votes": {
+            "D": 543,
+            "R": 470,
+            "O": 1000
+          }
+        },
+        "27041": {
+          "name": "Douglas",
+          "votes": {
+            "D": 793,
+            "R": 435,
+            "O": 1684
+          }
+        },
+        "27043": {
+          "name": "Faribault",
+          "votes": {
+            "D": 919,
+            "R": 393,
+            "O": 2045
+          }
+        },
+        "27045": {
+          "name": "Fillmore",
+          "votes": {
+            "D": 990,
+            "R": 1169,
+            "O": 2301
+          }
+        },
+        "27047": {
+          "name": "Freeborn",
+          "votes": {
+            "D": 880,
+            "R": 672,
+            "O": 2392
+          }
+        },
+        "27049": {
+          "name": "Goodhue",
+          "votes": {
+            "D": 1405,
+            "R": 1051,
+            "O": 3283
+          }
+        },
+        "27051": {
+          "name": "Grant",
+          "votes": {
+            "D": 381,
+            "R": 146,
+            "O": 1033
+          }
+        },
+        "27053": {
+          "name": "Hennepin",
+          "votes": {
+            "D": 15530,
+            "R": 14379,
+            "O": 18596
+          }
+        },
+        "27055": {
+          "name": "Houston",
+          "votes": {
+            "D": 762,
+            "R": 659,
+            "O": 1354
+          }
+        },
+        "27057": {
+          "name": "Hubbard",
+          "votes": {
+            "D": 450,
+            "R": 359,
+            "O": 884
+          }
+        },
+        "27059": {
+          "name": "Isanti",
+          "votes": {
+            "D": 333,
+            "R": 314,
+            "O": 1513
+          }
+        },
+        "27061": {
+          "name": "Itasca",
+          "votes": {
+            "D": 699,
+            "R": 446,
+            "O": 1544
+          }
+        },
+        "27063": {
+          "name": "Jackson",
+          "votes": {
+            "D": 913,
+            "R": 468,
+            "O": 1350
+          }
+        },
+        "27065": {
+          "name": "Kanabec",
+          "votes": {
+            "D": 270,
+            "R": 218,
+            "O": 795
+          }
+        },
+        "27067": {
+          "name": "Kandiyohi",
+          "votes": {
+            "D": 855,
+            "R": 484,
+            "O": 1979
+          }
+        },
+        "27069": {
+          "name": "Kittson",
+          "votes": {
+            "D": 362,
+            "R": 185,
+            "O": 903
+          }
+        },
+        "27071": {
+          "name": "Koochiching",
+          "votes": {
+            "D": 638,
+            "R": 239,
+            "O": 1015
+          }
+        },
+        "27073": {
+          "name": "Lac Qui Parle",
+          "votes": {
+            "D": 608,
+            "R": 343,
+            "O": 1587
+          }
+        },
+        "27075": {
+          "name": "Lake",
+          "votes": {
+            "D": 195,
+            "R": 182,
+            "O": 889
+          }
+        },
+        "27079": {
+          "name": "Le Sueur",
+          "votes": {
+            "D": 1488,
+            "R": 886,
+            "O": 1180
+          }
+        },
+        "27081": {
+          "name": "Lincoln",
+          "votes": {
+            "D": 548,
+            "R": 264,
+            "O": 798
+          }
+        },
+        "27083": {
+          "name": "Lyon",
+          "votes": {
+            "D": 1068,
+            "R": 460,
+            "O": 1411
+          }
+        },
+        "27085": {
+          "name": "McLeod",
+          "votes": {
+            "D": 1225,
+            "R": 655,
+            "O": 996
+          }
+        },
+        "27087": {
+          "name": "Mahnomen",
+          "votes": {
+            "D": 293,
+            "R": 68,
+            "O": 264
+          }
+        },
+        "27089": {
+          "name": "Marshall",
+          "votes": {
+            "D": 567,
+            "R": 331,
+            "O": 2032
+          }
+        },
+        "27091": {
+          "name": "Martin",
+          "votes": {
+            "D": 1141,
+            "R": 578,
+            "O": 1591
+          }
+        },
+        "27093": {
+          "name": "Meeker",
+          "votes": {
+            "D": 1099,
+            "R": 560,
+            "O": 1576
+          }
+        },
+        "27095": {
+          "name": "Mille Lacs",
+          "votes": {
+            "D": 449,
+            "R": 392,
+            "O": 1164
+          }
+        },
+        "27097": {
+          "name": "Morrison",
+          "votes": {
+            "D": 1341,
+            "R": 699,
+            "O": 1605
+          }
+        },
+        "27099": {
+          "name": "Mower",
+          "votes": {
+            "D": 1228,
+            "R": 1321,
+            "O": 1628
+          }
+        },
+        "27101": {
+          "name": "Murray",
+          "votes": {
+            "D": 775,
+            "R": 388,
+            "O": 1095
+          }
+        },
+        "27103": {
+          "name": "Nicollet",
+          "votes": {
+            "D": 929,
+            "R": 525,
+            "O": 972
+          }
+        },
+        "27105": {
+          "name": "Nobles",
+          "votes": {
+            "D": 994,
+            "R": 605,
+            "O": 1312
+          }
+        },
+        "27107": {
+          "name": "Norman",
+          "votes": {
+            "D": 510,
+            "R": 329,
+            "O": 1393
+          }
+        },
+        "27109": {
+          "name": "Olmsted",
+          "votes": {
+            "D": 1542,
+            "R": 720,
+            "O": 1691
+          }
+        },
+        "27111": {
+          "name": "Otter Tail",
+          "votes": {
+            "D": 1739,
+            "R": 755,
+            "O": 4052
+          }
+        },
+        "27113": {
+          "name": "Pennington",
+          "votes": {
+            "D": 423,
+            "R": 244,
+            "O": 1205
+          }
+        },
+        "27115": {
+          "name": "Pine",
+          "votes": {
+            "D": 777,
+            "R": 513,
+            "O": 1720
+          }
+        },
+        "27117": {
+          "name": "Pipestone",
+          "votes": {
+            "D": 505,
+            "R": 301,
+            "O": 858
+          }
+        },
+        "27119": {
+          "name": "Polk",
+          "votes": {
+            "D": 1662,
+            "R": 735,
+            "O": 3350
+          }
+        },
+        "27121": {
+          "name": "Pope",
+          "votes": {
+            "D": 443,
+            "R": 379,
+            "O": 1457
+          }
+        },
+        "27123": {
+          "name": "Ramsey",
+          "votes": {
+            "D": 12431,
+            "R": 4109,
+            "O": 15810
+          }
+        },
+        "27125": {
+          "name": "Red Lake",
+          "votes": {
+            "D": 374,
+            "R": 259,
+            "O": 296
+          }
+        },
+        "27127": {
+          "name": "Redwood",
+          "votes": {
+            "D": 1126,
+            "R": 542,
+            "O": 1506
+          }
+        },
+        "27129": {
+          "name": "Renville",
+          "votes": {
+            "D": 1310,
+            "R": 703,
+            "O": 1889
+          }
+        },
+        "27131": {
+          "name": "Rice",
+          "votes": {
+            "D": 1613,
+            "R": 1020,
+            "O": 1964
+          }
+        },
+        "27133": {
+          "name": "Rock",
+          "votes": {
+            "D": 466,
+            "R": 463,
+            "O": 881
+          }
+        },
+        "27135": {
+          "name": "Roseau",
+          "votes": {
+            "D": 299,
+            "R": 278,
+            "O": 1341
+          }
+        },
+        "27137": {
+          "name": "St. Louis",
+          "votes": {
+            "D": 5124,
+            "R": 3881,
+            "O": 11873
+          }
+        },
+        "27139": {
+          "name": "Scott",
+          "votes": {
+            "D": 1172,
+            "R": 462,
+            "O": 648
+          }
+        },
+        "27141": {
+          "name": "Sherburne",
+          "votes": {
+            "D": 360,
+            "R": 335,
+            "O": 823
+          }
+        },
+        "27143": {
+          "name": "Sibley",
+          "votes": {
+            "D": 890,
+            "R": 383,
+            "O": 1256
+          }
+        },
+        "27145": {
+          "name": "Stearns",
+          "votes": {
+            "D": 3317,
+            "R": 1134,
+            "O": 1983
+          }
+        },
+        "27147": {
+          "name": "Steele",
+          "votes": {
+            "D": 1294,
+            "R": 651,
+            "O": 1255
+          }
+        },
+        "27149": {
+          "name": "Stevens",
+          "votes": {
+            "D": 640,
+            "R": 286,
+            "O": 718
+          }
+        },
+        "27151": {
+          "name": "Swift",
+          "votes": {
+            "D": 937,
+            "R": 442,
+            "O": 1234
+          }
+        },
+        "27153": {
+          "name": "Todd",
+          "votes": {
+            "D": 1068,
+            "R": 1038,
+            "O": 1633
+          }
+        },
+        "27155": {
+          "name": "Traverse",
+          "votes": {
+            "D": 561,
+            "R": 131,
+            "O": 575
+          }
+        },
+        "27157": {
+          "name": "Wabasha",
+          "votes": {
+            "D": 1422,
+            "R": 797,
+            "O": 1198
+          }
+        },
+        "27159": {
+          "name": "Wadena",
+          "votes": {
+            "D": 336,
+            "R": 278,
+            "O": 716
+          }
+        },
+        "27161": {
+          "name": "Waseca",
+          "votes": {
+            "D": 1062,
+            "R": 553,
+            "O": 1079
+          }
+        },
+        "27163": {
+          "name": "Washington",
+          "votes": {
+            "D": 1289,
+            "R": 581,
+            "O": 2353
+          }
+        },
+        "27165": {
+          "name": "Watonwan",
+          "votes": {
+            "D": 618,
+            "R": 254,
+            "O": 1206
+          }
+        },
+        "27167": {
+          "name": "Wilkin",
+          "votes": {
+            "D": 586,
+            "R": 209,
+            "O": 649
+          }
+        },
+        "27169": {
+          "name": "Winona",
+          "votes": {
+            "D": 3004,
+            "R": 1042,
+            "O": 2254
+          }
+        },
+        "27171": {
+          "name": "Wright",
+          "votes": {
+            "D": 1333,
+            "R": 837,
+            "O": 2139
+          }
+        },
+        "27173": {
+          "name": "Yellow Medicine",
+          "votes": {
+            "D": 737,
+            "R": 352,
+            "O": 1383
+          }
+        }
+      }
+    },
+    "33": {
+      "name": "New Hampshire",
+      "ev": 4,
+      "candidates": [
+        {
+          "name": "Thomas Riley Marshall of Indiana",
+          "party": "O",
+          "votes": 34724,
+          "pct": 39.48,
+          "ev": 4
+        },
+        {
+          "name": "Nicholas Murray Butler of New York",
+          "party": "O",
+          "votes": 32927,
+          "pct": 37.43,
+          "ev": 0
+        },
+        {
+          "name": "Hiram Warren Johnson of California",
+          "party": "O",
+          "votes": 17794,
+          "pct": 20.23,
+          "ev": 0
+        },
+        {
+          "name": "Emil Seidel of Wisconsin",
+          "party": "O",
+          "votes": 1981,
+          "pct": 2.25,
+          "ev": 0
+        },
+        {
+          "name": "Aaron Sherman Watkins of Ohio",
+          "party": "O",
+          "votes": 535,
+          "pct": 0.61,
+          "ev": 0
+        }
+      ],
+      "counties": {
+        "33001": {
+          "name": "Belknap",
+          "votes": {
+            "D": 0,
+            "R": 0,
+            "O": 4728
+          }
+        },
+        "33003": {
+          "name": "Carroll",
+          "votes": {
+            "D": 0,
+            "R": 0,
+            "O": 4221
+          }
+        },
+        "33005": {
+          "name": "Cheshire",
+          "votes": {
+            "D": 0,
+            "R": 0,
+            "O": 6321
+          }
+        },
+        "33009": {
+          "name": "Grafton",
+          "votes": {
+            "D": 0,
+            "R": 0,
+            "O": 9590
+          }
+        },
+        "33011": {
+          "name": "Hillsborough",
+          "votes": {
+            "D": 0,
+            "R": 0,
+            "O": 22294
+          }
+        },
+        "33013": {
+          "name": "Merrimack",
+          "votes": {
+            "D": 0,
+            "R": 0,
+            "O": 11853
+          }
+        },
+        "33015": {
+          "name": "Rockingham",
+          "votes": {
+            "D": 0,
+            "R": 0,
+            "O": 11270
+          }
+        },
+        "33017": {
+          "name": "Strafford",
+          "votes": {
+            "D": 0,
+            "R": 0,
+            "O": 7866
+          }
+        },
+        "33019": {
+          "name": "Sullivan",
+          "votes": {
+            "D": 0,
+            "R": 0,
+            "O": 4317
+          }
+        }
+      }
+    },
+    "34": {
+      "name": "New Jersey",
+      "ev": 14,
+      "candidates": [
+        {
+          "name": "Woodrow Wilson",
+          "party": "D",
+          "votes": 178289,
+          "pct": 41.2,
+          "ev": 14
+        },
+        {
+          "name": "Theodore Roosevelt",
+          "party": "O",
+          "votes": 145410,
+          "pct": 33.6,
+          "ev": 0
+        },
+        {
+          "name": "William Howard Taft",
+          "party": "R",
+          "votes": 88835,
+          "pct": 20.53,
+          "ev": 0
+        },
+        {
+          "name": "Eugene V. Debs",
+          "party": "O",
+          "votes": 15948,
+          "pct": 3.69,
+          "ev": 0
+        },
+        {
+          "name": "Eugene W. Chafin",
+          "party": "O",
+          "votes": 2936,
+          "pct": 0.68,
+          "ev": 0
+        },
+        {
+          "name": "Arthur E. Reimer",
+          "party": "O",
+          "votes": 1321,
+          "pct": 0.31,
+          "ev": 0
+        }
+      ],
+      "counties": {
+        "34001": {
+          "name": "Atlantic",
+          "votes": {
+            "D": 4885,
+            "R": 4245,
+            "O": 4833
+          }
+        },
+        "34003": {
+          "name": "Bergen",
+          "votes": {
+            "D": 9978,
+            "R": 8594,
+            "O": 6296
+          }
+        },
+        "34005": {
+          "name": "Burlington",
+          "votes": {
+            "D": 5592,
+            "R": 3973,
+            "O": 4439
+          }
+        },
+        "34007": {
+          "name": "Camden",
+          "votes": {
+            "D": 10812,
+            "R": 8718,
+            "O": 9981
+          }
+        },
+        "34009": {
+          "name": "Cape May",
+          "votes": {
+            "D": 2124,
+            "R": 1847,
+            "O": 1058
+          }
+        },
+        "34011": {
+          "name": "Cumberland",
+          "votes": {
+            "D": 3858,
+            "R": 4097,
+            "O": 2469
+          }
+        },
+        "34013": {
+          "name": "Essex",
+          "votes": {
+            "D": 26250,
+            "R": 33627,
+            "O": 20724
+          }
+        },
+        "34015": {
+          "name": "Gloucester",
+          "votes": {
+            "D": 3364,
+            "R": 3108,
+            "O": 2314
+          }
+        },
+        "34017": {
+          "name": "Hudson",
+          "votes": {
+            "D": 40517,
+            "R": 24156,
+            "O": 12431
+          }
+        },
+        "34019": {
+          "name": "Hunterdon",
+          "votes": {
+            "D": 4103,
+            "R": 1470,
+            "O": 2115
+          }
+        },
+        "34021": {
+          "name": "Mercer",
+          "votes": {
+            "D": 7773,
+            "R": 6907,
+            "O": 6440
+          }
+        },
+        "34023": {
+          "name": "Middlesex",
+          "votes": {
+            "D": 8186,
+            "R": 5061,
+            "O": 5152
+          }
+        },
+        "34025": {
+          "name": "Monmouth",
+          "votes": {
+            "D": 9799,
+            "R": 6305,
+            "O": 4078
+          }
+        },
+        "34027": {
+          "name": "Morris",
+          "votes": {
+            "D": 5628,
+            "R": 4440,
+            "O": 3978
+          }
+        },
+        "34029": {
+          "name": "Ocean",
+          "votes": {
+            "D": 1858,
+            "R": 2055,
+            "O": 1027
+          }
+        },
+        "34031": {
+          "name": "Passaic",
+          "votes": {
+            "D": 10810,
+            "R": 11701,
+            "O": 8020
+          }
+        },
+        "34033": {
+          "name": "Salem",
+          "votes": {
+            "D": 2745,
+            "R": 1374,
+            "O": 1962
+          }
+        },
+        "34035": {
+          "name": "Somerset",
+          "votes": {
+            "D": 3146,
+            "R": 2059,
+            "O": 2197
+          }
+        },
+        "34037": {
+          "name": "Sussex",
+          "votes": {
+            "D": 2852,
+            "R": 1506,
+            "O": 1013
+          }
+        },
+        "34039": {
+          "name": "Union",
+          "votes": {
+            "D": 9695,
+            "R": 8429,
+            "O": 7032
+          }
+        },
+        "34041": {
+          "name": "Warren",
+          "votes": {
+            "D": 4663,
+            "R": 2007,
+            "O": 1787
+          }
+        }
+      }
+    },
+    "36": {
+      "name": "New York",
+      "ev": 45,
+      "candidates": [
+        {
+          "name": "Woodrow Wilson",
+          "party": "D",
+          "votes": 655573,
+          "pct": 41.27,
+          "ev": 45
+        },
+        {
+          "name": "William Howard Taft",
+          "party": "R",
+          "votes": 455487,
+          "pct": 28.68,
+          "ev": 0
+        },
+        {
+          "name": "Theodore Roosevelt",
+          "party": "O",
+          "votes": 390093,
+          "pct": 24.56,
+          "ev": 0
+        },
+        {
+          "name": "Eugene V. Debs",
+          "party": "O",
+          "votes": 63434,
+          "pct": 3.99,
+          "ev": 0
+        },
+        {
+          "name": "Eugene W. Chafin",
+          "party": "O",
+          "votes": 19455,
+          "pct": 1.22,
+          "ev": 0
+        },
+        {
+          "name": "Arthur E. Reimer",
+          "party": "O",
+          "votes": 4273,
+          "pct": 0.27,
+          "ev": 0
+        }
+      ],
+      "counties": {
+        "36001": {
+          "name": "Albany",
+          "votes": {
+            "D": 17235,
+            "R": 20418,
+            "O": 5362
+          }
+        },
+        "36003": {
+          "name": "Allegany",
+          "votes": {
+            "D": 2777,
+            "R": 3668,
+            "O": 3419
+          }
+        },
+        "36007": {
+          "name": "Broome",
+          "votes": {
+            "D": 6533,
+            "R": 7949,
+            "O": 3770
+          }
+        },
+        "36009": {
+          "name": "Cattaraugus",
+          "votes": {
+            "D": 4886,
+            "R": 4820,
+            "O": 4657
+          }
+        },
+        "36011": {
+          "name": "Cayuga",
+          "votes": {
+            "D": 4691,
+            "R": 5788,
+            "O": 3298
+          }
+        },
+        "36013": {
+          "name": "Chautauqua",
+          "votes": {
+            "D": 4954,
+            "R": 7899,
+            "O": 8991
+          }
+        },
+        "36015": {
+          "name": "Chemung",
+          "votes": {
+            "D": 6008,
+            "R": 3317,
+            "O": 3660
+          }
+        },
+        "36017": {
+          "name": "Chenango",
+          "votes": {
+            "D": 3341,
+            "R": 4043,
+            "O": 2082
+          }
+        },
+        "36019": {
+          "name": "Clinton",
+          "votes": {
+            "D": 3323,
+            "R": 3903,
+            "O": 1497
+          }
+        },
+        "36021": {
+          "name": "Columbia",
+          "votes": {
+            "D": 4599,
+            "R": 3741,
+            "O": 1501
+          }
+        },
+        "36023": {
+          "name": "Cortland",
+          "votes": {
+            "D": 2283,
+            "R": 2959,
+            "O": 2157
+          }
+        },
+        "36025": {
+          "name": "Delaware",
+          "votes": {
+            "D": 4511,
+            "R": 4731,
+            "O": 2491
+          }
+        },
+        "36027": {
+          "name": "Dutchess",
+          "votes": {
+            "D": 8871,
+            "R": 8916,
+            "O": 2638
+          }
+        },
+        "36029": {
+          "name": "Erie",
+          "votes": {
+            "D": 33518,
+            "R": 19185,
+            "O": 32410
+          }
+        },
+        "36031": {
+          "name": "Essex",
+          "votes": {
+            "D": 2070,
+            "R": 3127,
+            "O": 1878
+          }
+        },
+        "36033": {
+          "name": "Franklin",
+          "votes": {
+            "D": 2711,
+            "R": 3930,
+            "O": 1752
+          }
+        },
+        "36035": {
+          "name": "Fulton",
+          "votes": {
+            "D": 2550,
+            "R": 3741,
+            "O": 3555
+          }
+        },
+        "36037": {
+          "name": "Genesee",
+          "votes": {
+            "D": 2656,
+            "R": 3231,
+            "O": 2377
+          }
+        },
+        "36039": {
+          "name": "Greene",
+          "votes": {
+            "D": 3647,
+            "R": 2711,
+            "O": 1113
+          }
+        },
+        "36041": {
+          "name": "Hamilton",
+          "votes": {
+            "D": 493,
+            "R": 454,
+            "O": 188
+          }
+        },
+        "36043": {
+          "name": "Herkimer",
+          "votes": {
+            "D": 5122,
+            "R": 4665,
+            "O": 3793
+          }
+        },
+        "36045": {
+          "name": "Jefferson",
+          "votes": {
+            "D": 6054,
+            "R": 6692,
+            "O": 4878
+          }
+        },
+        "36047": {
+          "name": "Kings",
+          "votes": {
+            "D": 109748,
+            "R": 51239,
+            "O": 83676
+          }
+        },
+        "36049": {
+          "name": "Lewis",
+          "votes": {
+            "D": 2339,
+            "R": 2064,
+            "O": 1690
+          }
+        },
+        "36051": {
+          "name": "Livingston",
+          "votes": {
+            "D": 3203,
+            "R": 3726,
+            "O": 2044
+          }
+        },
+        "36053": {
+          "name": "Madison",
+          "votes": {
+            "D": 3164,
+            "R": 3490,
+            "O": 3276
+          }
+        },
+        "36055": {
+          "name": "Monroe",
+          "votes": {
+            "D": 17863,
+            "R": 16880,
+            "O": 18834
+          }
+        },
+        "36057": {
+          "name": "Montgomery",
+          "votes": {
+            "D": 4508,
+            "R": 5040,
+            "O": 2451
+          }
+        },
+        "36059": {
+          "name": "Nassau",
+          "votes": {
+            "D": 7073,
+            "R": 4608,
+            "O": 6865
+          }
+        },
+        "36061": {
+          "name": "New York",
+          "votes": {
+            "D": 166157,
+            "R": 63107,
+            "O": 118391
+          }
+        },
+        "36063": {
+          "name": "Niagara",
+          "votes": {
+            "D": 7647,
+            "R": 5654,
+            "O": 5507
+          }
+        },
+        "36065": {
+          "name": "Oneida",
+          "votes": {
+            "D": 12182,
+            "R": 11245,
+            "O": 10249
+          }
+        },
+        "36067": {
+          "name": "Onondaga",
+          "votes": {
+            "D": 15827,
+            "R": 16202,
+            "O": 13888
+          }
+        },
+        "36069": {
+          "name": "Ontario",
+          "votes": {
+            "D": 4734,
+            "R": 4897,
+            "O": 2648
+          }
+        },
+        "36071": {
+          "name": "Orange",
+          "votes": {
+            "D": 9404,
+            "R": 10364,
+            "O": 4258
+          }
+        },
+        "36073": {
+          "name": "Orleans",
+          "votes": {
+            "D": 2448,
+            "R": 2983,
+            "O": 1781
+          }
+        },
+        "36075": {
+          "name": "Oswego",
+          "votes": {
+            "D": 5256,
+            "R": 5996,
+            "O": 4751
+          }
+        },
+        "36077": {
+          "name": "Otsego",
+          "votes": {
+            "D": 5338,
+            "R": 5138,
+            "O": 2165
+          }
+        },
+        "36079": {
+          "name": "Putnam",
+          "votes": {
+            "D": 1321,
+            "R": 1267,
+            "O": 624
+          }
+        },
+        "36081": {
+          "name": "Queens",
+          "votes": {
+            "D": 28076,
+            "R": 9201,
+            "O": 18521
+          }
+        },
+        "36083": {
+          "name": "Rensselaer",
+          "votes": {
+            "D": 11684,
+            "R": 10853,
+            "O": 4954
+          }
+        },
+        "36085": {
+          "name": "Richmond",
+          "votes": {
+            "D": 8445,
+            "R": 3035,
+            "O": 4277
+          }
+        },
+        "36087": {
+          "name": "Rockland",
+          "votes": {
+            "D": 4241,
+            "R": 2221,
+            "O": 2586
+          }
+        },
+        "36091": {
+          "name": "Saratoga",
+          "votes": {
+            "D": 5296,
+            "R": 6401,
+            "O": 2947
+          }
+        },
+        "36093": {
+          "name": "Schenectady",
+          "votes": {
+            "D": 5345,
+            "R": 5230,
+            "O": 6032
+          }
+        },
+        "36095": {
+          "name": "Schoharie",
+          "votes": {
+            "D": 3355,
+            "R": 2391,
+            "O": 759
+          }
+        },
+        "36097": {
+          "name": "Schuyler",
+          "votes": {
+            "D": 1416,
+            "R": 1649,
+            "O": 747
+          }
+        },
+        "36099": {
+          "name": "Seneca",
+          "votes": {
+            "D": 2573,
+            "R": 2336,
+            "O": 1849
+          }
+        },
+        "36089": {
+          "name": "St. Lawrence",
+          "votes": {
+            "D": 5329,
+            "R": 8404,
+            "O": 4952
+          }
+        },
+        "36101": {
+          "name": "Steuben",
+          "votes": {
+            "D": 7396,
+            "R": 5986,
+            "O": 5598
+          }
+        },
+        "36103": {
+          "name": "Suffolk",
+          "votes": {
+            "D": 7878,
+            "R": 5595,
+            "O": 6182
+          }
+        },
+        "36105": {
+          "name": "Sullivan",
+          "votes": {
+            "D": 3864,
+            "R": 3039,
+            "O": 1189
+          }
+        },
+        "36107": {
+          "name": "Tioga",
+          "votes": {
+            "D": 2400,
+            "R": 2642,
+            "O": 1390
+          }
+        },
+        "36109": {
+          "name": "Tompkins",
+          "votes": {
+            "D": 3272,
+            "R": 2237,
+            "O": 2594
+          }
+        },
+        "36111": {
+          "name": "Ulster",
+          "votes": {
+            "D": 8510,
+            "R": 7485,
+            "O": 3531
+          }
+        },
+        "36113": {
+          "name": "Warren",
+          "votes": {
+            "D": 2802,
+            "R": 3155,
+            "O": 2011
+          }
+        },
+        "36115": {
+          "name": "Washington",
+          "votes": {
+            "D": 3555,
+            "R": 4593,
+            "O": 3072
+          }
+        },
+        "36117": {
+          "name": "Wayne",
+          "votes": {
+            "D": 3934,
+            "R": 4770,
+            "O": 3125
+          }
+        },
+        "36119": {
+          "name": "Westchester",
+          "votes": {
+            "D": 21160,
+            "R": 15843,
+            "O": 16708
+          }
+        },
+        "36121": {
+          "name": "Wyoming",
+          "votes": {
+            "D": 2541,
+            "R": 2838,
+            "O": 2550
+          }
+        },
+        "36123": {
+          "name": "Yates",
+          "votes": {
+            "D": 1456,
+            "R": 1795,
+            "O": 1116
+          }
+        }
+      }
+    },
+    "39": {
+      "name": "Ohio",
+      "ev": 24,
+      "candidates": [
+        {
+          "name": "Woodrow Wilson",
+          "party": "D",
+          "votes": 424834,
+          "pct": 40.96,
+          "ev": 24
+        },
+        {
+          "name": "William Howard Taft",
+          "party": "R",
+          "votes": 278168,
+          "pct": 26.82,
+          "ev": 0
+        },
+        {
+          "name": "Theodore Roosevelt",
+          "party": "O",
+          "votes": 229807,
+          "pct": 22.16,
+          "ev": 0
+        },
+        {
+          "name": "Eugene V. Debs",
+          "party": "O",
+          "votes": 90144,
+          "pct": 8.69,
+          "ev": 0
+        },
+        {
+          "name": "Eugene W. Chafin",
+          "party": "O",
+          "votes": 11511,
+          "pct": 1.11,
+          "ev": 0
+        },
+        {
+          "name": "Arthur E. Reimer",
+          "party": "O",
+          "votes": 2630,
+          "pct": 0.25,
+          "ev": 0
+        }
+      ],
+      "counties": {
+        "39001": {
+          "name": "Adams",
+          "votes": {
+            "D": 2279,
+            "R": 1863,
+            "O": 757
+          }
+        },
+        "39003": {
+          "name": "Allen",
+          "votes": {
+            "D": 5696,
+            "R": 2638,
+            "O": 3481
+          }
+        },
+        "39005": {
+          "name": "Ashland",
+          "votes": {
+            "D": 3364,
+            "R": 1017,
+            "O": 1913
+          }
+        },
+        "39007": {
+          "name": "Ashtabula",
+          "votes": {
+            "D": 3181,
+            "R": 2214,
+            "O": 6913
+          }
+        },
+        "39009": {
+          "name": "Athens",
+          "votes": {
+            "D": 2393,
+            "R": 3090,
+            "O": 4000
+          }
+        },
+        "39011": {
+          "name": "Auglaize",
+          "votes": {
+            "D": 3726,
+            "R": 1401,
+            "O": 1549
+          }
+        },
+        "39013": {
+          "name": "Belmont",
+          "votes": {
+            "D": 5412,
+            "R": 5267,
+            "O": 4812
+          }
+        },
+        "39015": {
+          "name": "Brown",
+          "votes": {
+            "D": 3451,
+            "R": 1650,
+            "O": 735
+          }
+        },
+        "39017": {
+          "name": "Butler",
+          "votes": {
+            "D": 7763,
+            "R": 3431,
+            "O": 5469
+          }
+        },
+        "39019": {
+          "name": "Carroll",
+          "votes": {
+            "D": 1293,
+            "R": 1096,
+            "O": 1333
+          }
+        },
+        "39021": {
+          "name": "Champaign",
+          "votes": {
+            "D": 2763,
+            "R": 2392,
+            "O": 1663
+          }
+        },
+        "39023": {
+          "name": "Clark",
+          "votes": {
+            "D": 5217,
+            "R": 6036,
+            "O": 5440
+          }
+        },
+        "39025": {
+          "name": "Clermont",
+          "votes": {
+            "D": 3610,
+            "R": 2543,
+            "O": 1444
+          }
+        },
+        "39027": {
+          "name": "Clinton",
+          "votes": {
+            "D": 2010,
+            "R": 2916,
+            "O": 1064
+          }
+        },
+        "39029": {
+          "name": "Columbiana",
+          "votes": {
+            "D": 4816,
+            "R": 4601,
+            "O": 6674
+          }
+        },
+        "39031": {
+          "name": "Coshocton",
+          "votes": {
+            "D": 3465,
+            "R": 1984,
+            "O": 1805
+          }
+        },
+        "39033": {
+          "name": "Crawford",
+          "votes": {
+            "D": 4733,
+            "R": 1432,
+            "O": 1879
+          }
+        },
+        "39035": {
+          "name": "Cuyahoga",
+          "votes": {
+            "D": 43610,
+            "R": 14176,
+            "O": 44838
+          }
+        },
+        "39037": {
+          "name": "Darke",
+          "votes": {
+            "D": 5027,
+            "R": 3107,
+            "O": 2075
+          }
+        },
+        "39039": {
+          "name": "Defiance",
+          "votes": {
+            "D": 2784,
+            "R": 872,
+            "O": 1848
+          }
+        },
+        "39041": {
+          "name": "Delaware",
+          "votes": {
+            "D": 2934,
+            "R": 2584,
+            "O": 1798
+          }
+        },
+        "39043": {
+          "name": "Erie",
+          "votes": {
+            "D": 3504,
+            "R": 2695,
+            "O": 2720
+          }
+        },
+        "39045": {
+          "name": "Fairfield",
+          "votes": {
+            "D": 5101,
+            "R": 1672,
+            "O": 2106
+          }
+        },
+        "39047": {
+          "name": "Fayette",
+          "votes": {
+            "D": 2261,
+            "R": 2186,
+            "O": 1057
+          }
+        },
+        "39049": {
+          "name": "Franklin",
+          "votes": {
+            "D": 20697,
+            "R": 12791,
+            "O": 17227
+          }
+        },
+        "39051": {
+          "name": "Fulton",
+          "votes": {
+            "D": 1805,
+            "R": 929,
+            "O": 2531
+          }
+        },
+        "39053": {
+          "name": "Gallia",
+          "votes": {
+            "D": 1765,
+            "R": 1355,
+            "O": 2250
+          }
+        },
+        "39055": {
+          "name": "Geauga",
+          "votes": {
+            "D": 873,
+            "R": 579,
+            "O": 1726
+          }
+        },
+        "39057": {
+          "name": "Greene",
+          "votes": {
+            "D": 2107,
+            "R": 3242,
+            "O": 1694
+          }
+        },
+        "39059": {
+          "name": "Guernsey",
+          "votes": {
+            "D": 2726,
+            "R": 3426,
+            "O": 2940
+          }
+        },
+        "39061": {
+          "name": "Hamilton",
+          "votes": {
+            "D": 42909,
+            "R": 42119,
+            "O": 24921
+          }
+        },
+        "39063": {
+          "name": "Hancock",
+          "votes": {
+            "D": 4309,
+            "R": 2241,
+            "O": 2491
+          }
+        },
+        "39065": {
+          "name": "Hardin",
+          "votes": {
+            "D": 3912,
+            "R": 2775,
+            "O": 1667
+          }
+        },
+        "39067": {
+          "name": "Harrison",
+          "votes": {
+            "D": 1714,
+            "R": 1950,
+            "O": 932
+          }
+        },
+        "39069": {
+          "name": "Henry",
+          "votes": {
+            "D": 2994,
+            "R": 804,
+            "O": 1436
+          }
+        },
+        "39071": {
+          "name": "Highland",
+          "votes": {
+            "D": 3314,
+            "R": 2757,
+            "O": 1388
+          }
+        },
+        "39073": {
+          "name": "Hocking",
+          "votes": {
+            "D": 2295,
+            "R": 1354,
+            "O": 1363
+          }
+        },
+        "39075": {
+          "name": "Holmes",
+          "votes": {
+            "D": 2429,
+            "R": 465,
+            "O": 737
+          }
+        },
+        "39077": {
+          "name": "Huron",
+          "votes": {
+            "D": 3317,
+            "R": 1707,
+            "O": 3259
+          }
+        },
+        "39079": {
+          "name": "Jackson",
+          "votes": {
+            "D": 2049,
+            "R": 1860,
+            "O": 2278
+          }
+        },
+        "39081": {
+          "name": "Jefferson",
+          "votes": {
+            "D": 3171,
+            "R": 4777,
+            "O": 3467
+          }
+        },
+        "39083": {
+          "name": "Knox",
+          "votes": {
+            "D": 3632,
+            "R": 2530,
+            "O": 1732
+          }
+        },
+        "39085": {
+          "name": "Lake",
+          "votes": {
+            "D": 1429,
+            "R": 1155,
+            "O": 2458
+          }
+        },
+        "39087": {
+          "name": "Lawrence",
+          "votes": {
+            "D": 2042,
+            "R": 2650,
+            "O": 2395
+          }
+        },
+        "39089": {
+          "name": "Licking",
+          "votes": {
+            "D": 6120,
+            "R": 4487,
+            "O": 2694
+          }
+        },
+        "39091": {
+          "name": "Logan",
+          "votes": {
+            "D": 2727,
+            "R": 1977,
+            "O": 2600
+          }
+        },
+        "39093": {
+          "name": "Lorain",
+          "votes": {
+            "D": 4591,
+            "R": 2226,
+            "O": 6804
+          }
+        },
+        "39095": {
+          "name": "Lucas",
+          "votes": {
+            "D": 13999,
+            "R": 5622,
+            "O": 17989
+          }
+        },
+        "39097": {
+          "name": "Madison",
+          "votes": {
+            "D": 2172,
+            "R": 2271,
+            "O": 793
+          }
+        },
+        "39099": {
+          "name": "Mahoning",
+          "votes": {
+            "D": 6838,
+            "R": 5839,
+            "O": 8026
+          }
+        },
+        "39101": {
+          "name": "Marion",
+          "votes": {
+            "D": 4024,
+            "R": 3218,
+            "O": 1686
+          }
+        },
+        "39103": {
+          "name": "Medina",
+          "votes": {
+            "D": 2108,
+            "R": 685,
+            "O": 2881
+          }
+        },
+        "39105": {
+          "name": "Meigs",
+          "votes": {
+            "D": 1738,
+            "R": 2129,
+            "O": 1983
+          }
+        },
+        "39107": {
+          "name": "Mercer",
+          "votes": {
+            "D": 3591,
+            "R": 1324,
+            "O": 768
+          }
+        },
+        "39109": {
+          "name": "Miami",
+          "votes": {
+            "D": 4310,
+            "R": 3615,
+            "O": 3200
+          }
+        },
+        "39111": {
+          "name": "Monroe",
+          "votes": {
+            "D": 3199,
+            "R": 1055,
+            "O": 587
+          }
+        },
+        "39113": {
+          "name": "Montgomery",
+          "votes": {
+            "D": 15544,
+            "R": 10341,
+            "O": 13653
+          }
+        },
+        "39115": {
+          "name": "Morgan",
+          "votes": {
+            "D": 1633,
+            "R": 1448,
+            "O": 975
+          }
+        },
+        "39117": {
+          "name": "Morrow",
+          "votes": {
+            "D": 1880,
+            "R": 1240,
+            "O": 1365
+          }
+        },
+        "39119": {
+          "name": "Muskingum",
+          "votes": {
+            "D": 5376,
+            "R": 4134,
+            "O": 4463
+          }
+        },
+        "39121": {
+          "name": "Noble",
+          "votes": {
+            "D": 1842,
+            "R": 1804,
+            "O": 858
+          }
+        },
+        "39123": {
+          "name": "Ottawa",
+          "votes": {
+            "D": 2728,
+            "R": 791,
+            "O": 1092
+          }
+        },
+        "39125": {
+          "name": "Paulding",
+          "votes": {
+            "D": 2296,
+            "R": 1542,
+            "O": 1431
+          }
+        },
+        "39127": {
+          "name": "Perry",
+          "votes": {
+            "D": 3147,
+            "R": 1739,
+            "O": 3166
+          }
+        },
+        "39129": {
+          "name": "Pickaway",
+          "votes": {
+            "D": 3311,
+            "R": 2282,
+            "O": 724
+          }
+        },
+        "39131": {
+          "name": "Pike",
+          "votes": {
+            "D": 1691,
+            "R": 1184,
+            "O": 562
+          }
+        },
+        "39133": {
+          "name": "Portage",
+          "votes": {
+            "D": 2855,
+            "R": 1162,
+            "O": 3370
+          }
+        },
+        "39135": {
+          "name": "Preble",
+          "votes": {
+            "D": 2859,
+            "R": 2135,
+            "O": 1164
+          }
+        },
+        "39137": {
+          "name": "Putnam",
+          "votes": {
+            "D": 4000,
+            "R": 1000,
+            "O": 1410
+          }
+        },
+        "39139": {
+          "name": "Richland",
+          "votes": {
+            "D": 5201,
+            "R": 2389,
+            "O": 3108
+          }
+        },
+        "39141": {
+          "name": "Ross",
+          "votes": {
+            "D": 4494,
+            "R": 3600,
+            "O": 1698
+          }
+        },
+        "39143": {
+          "name": "Sandusky",
+          "votes": {
+            "D": 4333,
+            "R": 1576,
+            "O": 2644
+          }
+        },
+        "39145": {
+          "name": "Scioto",
+          "votes": {
+            "D": 3508,
+            "R": 3609,
+            "O": 3430
+          }
+        },
+        "39147": {
+          "name": "Seneca",
+          "votes": {
+            "D": 5082,
+            "R": 2362,
+            "O": 2796
+          }
+        },
+        "39149": {
+          "name": "Shelby",
+          "votes": {
+            "D": 3305,
+            "R": 1613,
+            "O": 984
+          }
+        },
+        "39151": {
+          "name": "Stark",
+          "votes": {
+            "D": 9908,
+            "R": 6033,
+            "O": 10788
+          }
+        },
+        "39153": {
+          "name": "Summit",
+          "votes": {
+            "D": 7786,
+            "R": 3502,
+            "O": 11904
+          }
+        },
+        "39155": {
+          "name": "Trumbull",
+          "votes": {
+            "D": 3347,
+            "R": 2633,
+            "O": 5395
+          }
+        },
+        "39157": {
+          "name": "Tuscarawas",
+          "votes": {
+            "D": 4978,
+            "R": 3417,
+            "O": 4101
+          }
+        },
+        "39159": {
+          "name": "Union",
+          "votes": {
+            "D": 2362,
+            "R": 2051,
+            "O": 1394
+          }
+        },
+        "39161": {
+          "name": "Van Wert",
+          "votes": {
+            "D": 3287,
+            "R": 2490,
+            "O": 1329
+          }
+        },
+        "39163": {
+          "name": "Vinton",
+          "votes": {
+            "D": 1228,
+            "R": 952,
+            "O": 807
+          }
+        },
+        "39165": {
+          "name": "Warren",
+          "votes": {
+            "D": 2101,
+            "R": 2788,
+            "O": 1378
+          }
+        },
+        "39167": {
+          "name": "Washington",
+          "votes": {
+            "D": 4637,
+            "R": 3326,
+            "O": 1978
+          }
+        },
+        "39169": {
+          "name": "Wayne",
+          "votes": {
+            "D": 4737,
+            "R": 1674,
+            "O": 2852
+          }
+        },
+        "39171": {
+          "name": "Williams",
+          "votes": {
+            "D": 2875,
+            "R": 1145,
+            "O": 2396
+          }
+        },
+        "39173": {
+          "name": "Wood",
+          "votes": {
+            "D": 4356,
+            "R": 2020,
+            "O": 3648
+          }
+        },
+        "39175": {
+          "name": "Wyandot",
+          "votes": {
+            "D": 2848,
+            "R": 1409,
+            "O": 973
+          }
+        }
+      }
+    },
+    "42": {
+      "name": "Pennsylvania",
+      "ev": 38,
+      "candidates": [
+        {
+          "name": "Theodore Roosevelt",
+          "party": "O",
+          "votes": 444894,
+          "pct": 36.53,
+          "ev": 38
+        },
+        {
+          "name": "Woodrow Wilson",
+          "party": "D",
+          "votes": 395637,
+          "pct": 32.49,
+          "ev": 0
+        },
+        {
+          "name": "William Howard Taft",
+          "party": "R",
+          "votes": 273360,
+          "pct": 22.45,
+          "ev": 0
+        },
+        {
+          "name": "Eugene V. Debs",
+          "party": "O",
+          "votes": 83614,
+          "pct": 6.87,
+          "ev": 0
+        },
+        {
+          "name": "Eugene Chafin",
+          "party": "O",
+          "votes": 19525,
+          "pct": 1.6,
+          "ev": 0
+        },
+        {
+          "name": "Arthur Reimer",
+          "party": "O",
+          "votes": 706,
+          "pct": 0.06,
+          "ev": 0
+        }
+      ],
+      "counties": {
+        "42001": {
+          "name": "Adams",
+          "votes": {
+            "D": 819,
+            "R": 2548,
+            "O": 3843
+          }
+        },
+        "42003": {
+          "name": "Allegheny",
+          "votes": {
+            "D": 23822,
+            "R": 50017,
+            "O": 52547
+          }
+        },
+        "42005": {
+          "name": "Armstrong",
+          "votes": {
+            "D": 1904,
+            "R": 4297,
+            "O": 3869
+          }
+        },
+        "42007": {
+          "name": "Beaver",
+          "votes": {
+            "D": 2759,
+            "R": 4517,
+            "O": 5326
+          }
+        },
+        "42009": {
+          "name": "Bedford",
+          "votes": {
+            "D": 1140,
+            "R": 2971,
+            "O": 3233
+          }
+        },
+        "42011": {
+          "name": "Berks",
+          "votes": {
+            "D": 3032,
+            "R": 11284,
+            "O": 20244
+          }
+        },
+        "42013": {
+          "name": "Blair",
+          "votes": {
+            "D": 3138,
+            "R": 8179,
+            "O": 5959
+          }
+        },
+        "42015": {
+          "name": "Bradford",
+          "votes": {
+            "D": 2034,
+            "R": 5379,
+            "O": 3544
+          }
+        },
+        "42017": {
+          "name": "Bucks",
+          "votes": {
+            "D": 5452,
+            "R": 4280,
+            "O": 7305
+          }
+        },
+        "42019": {
+          "name": "Butler",
+          "votes": {
+            "D": 1273,
+            "R": 4327,
+            "O": 5615
+          }
+        },
+        "42021": {
+          "name": "Cambria",
+          "votes": {
+            "D": 3252,
+            "R": 10066,
+            "O": 8407
+          }
+        },
+        "42023": {
+          "name": "Cameron",
+          "votes": {
+            "D": 388,
+            "R": 553,
+            "O": 348
+          }
+        },
+        "42025": {
+          "name": "Carbon",
+          "votes": {
+            "D": 1246,
+            "R": 3549,
+            "O": 4139
+          }
+        },
+        "42027": {
+          "name": "Centre",
+          "votes": {
+            "D": 1507,
+            "R": 2612,
+            "O": 3807
+          }
+        },
+        "42029": {
+          "name": "Chester",
+          "votes": {
+            "D": 5708,
+            "R": 6596,
+            "O": 7482
+          }
+        },
+        "42031": {
+          "name": "Clarion",
+          "votes": {
+            "D": 916,
+            "R": 1724,
+            "O": 3622
+          }
+        },
+        "42033": {
+          "name": "Clearfield",
+          "votes": {
+            "D": 1523,
+            "R": 4902,
+            "O": 6475
+          }
+        },
+        "42035": {
+          "name": "Clinton",
+          "votes": {
+            "D": 1214,
+            "R": 1926,
+            "O": 2895
+          }
+        },
+        "42037": {
+          "name": "Columbia",
+          "votes": {
+            "D": 889,
+            "R": 2697,
+            "O": 5324
+          }
+        },
+        "42039": {
+          "name": "Crawford",
+          "votes": {
+            "D": 2497,
+            "R": 4139,
+            "O": 5511
+          }
+        },
+        "42041": {
+          "name": "Cumberland",
+          "votes": {
+            "D": 2566,
+            "R": 3507,
+            "O": 5639
+          }
+        },
+        "42043": {
+          "name": "Dauphin",
+          "votes": {
+            "D": 6012,
+            "R": 10676,
+            "O": 9131
+          }
+        },
+        "42045": {
+          "name": "Delaware",
+          "votes": {
+            "D": 8418,
+            "R": 8272,
+            "O": 6548
+          }
+        },
+        "42047": {
+          "name": "Elk",
+          "votes": {
+            "D": 603,
+            "R": 2638,
+            "O": 2501
+          }
+        },
+        "42049": {
+          "name": "Erie",
+          "votes": {
+            "D": 4958,
+            "R": 5019,
+            "O": 8431
+          }
+        },
+        "42051": {
+          "name": "Fayette",
+          "votes": {
+            "D": 4168,
+            "R": 4257,
+            "O": 10467
+          }
+        },
+        "42053": {
+          "name": "Forest",
+          "votes": {
+            "D": 240,
+            "R": 588,
+            "O": 732
+          }
+        },
+        "42055": {
+          "name": "Franklin",
+          "votes": {
+            "D": 2710,
+            "R": 3787,
+            "O": 5026
+          }
+        },
+        "42057": {
+          "name": "Fulton",
+          "votes": {
+            "D": 317,
+            "R": 622,
+            "O": 1128
+          }
+        },
+        "42059": {
+          "name": "Greene",
+          "votes": {
+            "D": 1150,
+            "R": 1063,
+            "O": 3839
+          }
+        },
+        "42061": {
+          "name": "Huntingdon",
+          "votes": {
+            "D": 903,
+            "R": 3493,
+            "O": 1904
+          }
+        },
+        "42063": {
+          "name": "Indiana",
+          "votes": {
+            "D": 1720,
+            "R": 3969,
+            "O": 2821
+          }
+        },
+        "42065": {
+          "name": "Jefferson",
+          "votes": {
+            "D": 1608,
+            "R": 3501,
+            "O": 3513
+          }
+        },
+        "42067": {
+          "name": "Juniata",
+          "votes": {
+            "D": 374,
+            "R": 1184,
+            "O": 1248
+          }
+        },
+        "42069": {
+          "name": "Lackawanna",
+          "votes": {
+            "D": 3799,
+            "R": 15199,
+            "O": 13885
+          }
+        },
+        "42071": {
+          "name": "Lancaster",
+          "votes": {
+            "D": 12668,
+            "R": 12031,
+            "O": 9583
+          }
+        },
+        "42073": {
+          "name": "Lawrence",
+          "votes": {
+            "D": 2128,
+            "R": 3348,
+            "O": 4369
+          }
+        },
+        "42075": {
+          "name": "Lebanon",
+          "votes": {
+            "D": 2378,
+            "R": 4540,
+            "O": 3662
+          }
+        },
+        "42077": {
+          "name": "Lehigh",
+          "votes": {
+            "D": 2722,
+            "R": 7580,
+            "O": 12009
+          }
+        },
+        "42079": {
+          "name": "Luzerne",
+          "votes": {
+            "D": 4970,
+            "R": 20104,
+            "O": 16264
+          }
+        },
+        "42081": {
+          "name": "Lycoming",
+          "votes": {
+            "D": 1631,
+            "R": 5208,
+            "O": 7988
+          }
+        },
+        "42083": {
+          "name": "McKean",
+          "votes": {
+            "D": 1345,
+            "R": 3489,
+            "O": 3167
+          }
+        },
+        "42085": {
+          "name": "Mercer",
+          "votes": {
+            "D": 1873,
+            "R": 4418,
+            "O": 6427
+          }
+        },
+        "42087": {
+          "name": "Mifflin",
+          "votes": {
+            "D": 654,
+            "R": 1831,
+            "O": 1995
+          }
+        },
+        "42089": {
+          "name": "Monroe",
+          "votes": {
+            "D": 536,
+            "R": 844,
+            "O": 3224
+          }
+        },
+        "42091": {
+          "name": "Montgomery",
+          "votes": {
+            "D": 8978,
+            "R": 11491,
+            "O": 13163
+          }
+        },
+        "42093": {
+          "name": "Montour",
+          "votes": {
+            "D": 308,
+            "R": 937,
+            "O": 1560
+          }
+        },
+        "42095": {
+          "name": "Northampton",
+          "votes": {
+            "D": 3893,
+            "R": 6602,
+            "O": 11241
+          }
+        },
+        "42097": {
+          "name": "Northumberland",
+          "votes": {
+            "D": 2371,
+            "R": 7064,
+            "O": 9709
+          }
+        },
+        "42099": {
+          "name": "Perry",
+          "votes": {
+            "D": 1140,
+            "R": 1670,
+            "O": 2045
+          }
+        },
+        "42101": {
+          "name": "Philadelphia",
+          "votes": {
+            "D": 91944,
+            "R": 82963,
+            "O": 76783
+          }
+        },
+        "42103": {
+          "name": "Pike",
+          "votes": {
+            "D": 191,
+            "R": 437,
+            "O": 1035
+          }
+        },
+        "42105": {
+          "name": "Potter",
+          "votes": {
+            "D": 850,
+            "R": 1907,
+            "O": 1922
+          }
+        },
+        "42107": {
+          "name": "Schuylkill",
+          "votes": {
+            "D": 3557,
+            "R": 13686,
+            "O": 14832
+          }
+        },
+        "42109": {
+          "name": "Snyder",
+          "votes": {
+            "D": 626,
+            "R": 1622,
+            "O": 1082
+          }
+        },
+        "42111": {
+          "name": "Somerset",
+          "votes": {
+            "D": 1428,
+            "R": 5026,
+            "O": 3134
+          }
+        },
+        "42113": {
+          "name": "Sullivan",
+          "votes": {
+            "D": 547,
+            "R": 472,
+            "O": 1048
+          }
+        },
+        "42115": {
+          "name": "Susquehanna",
+          "votes": {
+            "D": 1988,
+            "R": 2498,
+            "O": 2912
+          }
+        },
+        "42117": {
+          "name": "Tioga",
+          "votes": {
+            "D": 1895,
+            "R": 4314,
+            "O": 2249
+          }
+        },
+        "42119": {
+          "name": "Union",
+          "votes": {
+            "D": 470,
+            "R": 1776,
+            "O": 1219
+          }
+        },
+        "42121": {
+          "name": "Venango",
+          "votes": {
+            "D": 1660,
+            "R": 3111,
+            "O": 4321
+          }
+        },
+        "42123": {
+          "name": "Warren",
+          "votes": {
+            "D": 1564,
+            "R": 2934,
+            "O": 2760
+          }
+        },
+        "42125": {
+          "name": "Washington",
+          "votes": {
+            "D": 4297,
+            "R": 6395,
+            "O": 8005
+          }
+        },
+        "42127": {
+          "name": "Wayne",
+          "votes": {
+            "D": 659,
+            "R": 2594,
+            "O": 2107
+          }
+        },
+        "42129": {
+          "name": "Westmoreland",
+          "votes": {
+            "D": 4299,
+            "R": 10193,
+            "O": 14833
+          }
+        },
+        "42131": {
+          "name": "Wyoming",
+          "votes": {
+            "D": 480,
+            "R": 1464,
+            "O": 1589
+          }
+        },
+        "42133": {
+          "name": "York",
+          "votes": {
+            "D": 5251,
+            "R": 8007,
+            "O": 16937
+          }
+        }
+      }
+    },
+    "47": {
+      "name": "Tennessee",
+      "ev": 12,
+      "candidates": [
+        {
+          "name": "Woodrow Wilson",
+          "party": "D",
+          "votes": 133021,
+          "pct": 52.8,
+          "ev": 12
+        },
+        {
+          "name": "William Howard Taft",
+          "party": "R",
+          "votes": 60475,
+          "pct": 24.0,
+          "ev": 0
+        },
+        {
+          "name": "Theodore Roosevelt",
+          "party": "O",
+          "votes": 54041,
+          "pct": 21.45,
+          "ev": 0
+        },
+        {
+          "name": "Eugene V. Debs",
+          "party": "O",
+          "votes": 3564,
+          "pct": 1.41,
+          "ev": 0
+        },
+        {
+          "name": "Eugene W. Chafin",
+          "party": "O",
+          "votes": 832,
+          "pct": 0.33,
+          "ev": 0
+        }
+      ],
+      "counties": {
+        "47001": {
+          "name": "Anderson",
+          "votes": {
+            "D": 597,
+            "R": 539,
+            "O": 652
+          }
+        },
+        "47003": {
+          "name": "Bedford",
+          "votes": {
+            "D": 2305,
+            "R": 1474,
+            "O": 933
+          }
+        },
+        "47005": {
+          "name": "Benton",
+          "votes": {
+            "D": 1095,
+            "R": 652,
+            "O": 762
+          }
+        },
+        "47007": {
+          "name": "Bledsoe",
+          "votes": {
+            "D": 464,
+            "R": 379,
+            "O": 474
+          }
+        },
+        "47009": {
+          "name": "Blount",
+          "votes": {
+            "D": 836,
+            "R": 870,
+            "O": 870
+          }
+        },
+        "47011": {
+          "name": "Bradley",
+          "votes": {
+            "D": 645,
+            "R": 485,
+            "O": 655
+          }
+        },
+        "47013": {
+          "name": "Campbell",
+          "votes": {
+            "D": 554,
+            "R": 302,
+            "O": 606
+          }
+        },
+        "47015": {
+          "name": "Cannon",
+          "votes": {
+            "D": 1184,
+            "R": 631,
+            "O": 608
+          }
+        },
+        "47017": {
+          "name": "Carroll",
+          "votes": {
+            "D": 1653,
+            "R": 1362,
+            "O": 1327
+          }
+        },
+        "47019": {
+          "name": "Carter",
+          "votes": {
+            "D": 478,
+            "R": 1243,
+            "O": 1243
+          }
+        },
+        "47021": {
+          "name": "Cheatham",
+          "votes": {
+            "D": 1096,
+            "R": 317,
+            "O": 925
+          }
+        },
+        "47023": {
+          "name": "Chester",
+          "votes": {
+            "D": 636,
+            "R": 312,
+            "O": 674
+          }
+        },
+        "47025": {
+          "name": "Claiborne",
+          "votes": {
+            "D": 903,
+            "R": 589,
+            "O": 922
+          }
+        },
+        "47027": {
+          "name": "Clay",
+          "votes": {
+            "D": 718,
+            "R": 440,
+            "O": 373
+          }
+        },
+        "47029": {
+          "name": "Cocke",
+          "votes": {
+            "D": 597,
+            "R": 757,
+            "O": 399
+          }
+        },
+        "47031": {
+          "name": "Coffee",
+          "votes": {
+            "D": 1705,
+            "R": 521,
+            "O": 1275
+          }
+        },
+        "47033": {
+          "name": "Crockett",
+          "votes": {
+            "D": 1297,
+            "R": 852,
+            "O": 981
+          }
+        },
+        "47035": {
+          "name": "Cumberland",
+          "votes": {
+            "D": 489,
+            "R": 372,
+            "O": 500
+          }
+        },
+        "47037": {
+          "name": "Davidson",
+          "votes": {
+            "D": 9517,
+            "R": 1428,
+            "O": 9625
+          }
+        },
+        "47039": {
+          "name": "Decatur",
+          "votes": {
+            "D": 758,
+            "R": 405,
+            "O": 773
+          }
+        },
+        "47041": {
+          "name": "DeKalb",
+          "votes": {
+            "D": 1394,
+            "R": 1219,
+            "O": 442
+          }
+        },
+        "47043": {
+          "name": "Dickson",
+          "votes": {
+            "D": 1689,
+            "R": 448,
+            "O": 1589
+          }
+        },
+        "47045": {
+          "name": "Dyer",
+          "votes": {
+            "D": 1469,
+            "R": 318,
+            "O": 1551
+          }
+        },
+        "47047": {
+          "name": "Fayette",
+          "votes": {
+            "D": 830,
+            "R": 59,
+            "O": 830
+          }
+        },
+        "47049": {
+          "name": "Fentress",
+          "votes": {
+            "D": 399,
+            "R": 444,
+            "O": 293
+          }
+        },
+        "47051": {
+          "name": "Franklin",
+          "votes": {
+            "D": 2172,
+            "R": 370,
+            "O": 1998
+          }
+        },
+        "47053": {
+          "name": "Gibson",
+          "votes": {
+            "D": 2671,
+            "R": 1002,
+            "O": 2222
+          }
+        },
+        "47055": {
+          "name": "Giles",
+          "votes": {
+            "D": 3081,
+            "R": 1596,
+            "O": 1906
+          }
+        },
+        "47057": {
+          "name": "Grainger",
+          "votes": {
+            "D": 841,
+            "R": 741,
+            "O": 841
+          }
+        },
+        "47059": {
+          "name": "Greene",
+          "votes": {
+            "D": 2076,
+            "R": 1650,
+            "O": 1673
+          }
+        },
+        "47061": {
+          "name": "Grundy",
+          "votes": {
+            "D": 529,
+            "R": 122,
+            "O": 615
+          }
+        },
+        "47063": {
+          "name": "Hamblen",
+          "votes": {
+            "D": 722,
+            "R": 427,
+            "O": 638
+          }
+        },
+        "47065": {
+          "name": "Hamilton",
+          "votes": {
+            "D": 4394,
+            "R": 1493,
+            "O": 4675
+          }
+        },
+        "47067": {
+          "name": "Hancock",
+          "votes": {
+            "D": 427,
+            "R": 659,
+            "O": -148
+          }
+        },
+        "47069": {
+          "name": "Hardeman",
+          "votes": {
+            "D": 1323,
+            "R": 320,
+            "O": 1275
+          }
+        },
+        "47071": {
+          "name": "Hardin",
+          "votes": {
+            "D": 738,
+            "R": 955,
+            "O": 407
+          }
+        },
+        "47073": {
+          "name": "Hawkins",
+          "votes": {
+            "D": 1026,
+            "R": 828,
+            "O": 876
+          }
+        },
+        "47075": {
+          "name": "Haywood",
+          "votes": {
+            "D": 1069,
+            "R": 34,
+            "O": 1097
+          }
+        },
+        "47077": {
+          "name": "Henderson",
+          "votes": {
+            "D": 738,
+            "R": 473,
+            "O": 757
+          }
+        },
+        "47079": {
+          "name": "Henry",
+          "votes": {
+            "D": 2526,
+            "R": 941,
+            "O": 1978
+          }
+        },
+        "47081": {
+          "name": "Hickman",
+          "votes": {
+            "D": 1288,
+            "R": 868,
+            "O": 544
+          }
+        },
+        "47083": {
+          "name": "Houston",
+          "votes": {
+            "D": 586,
+            "R": 172,
+            "O": 565
+          }
+        },
+        "47085": {
+          "name": "Humphreys",
+          "votes": {
+            "D": 1283,
+            "R": 343,
+            "O": 1159
+          }
+        },
+        "47087": {
+          "name": "Jackson",
+          "votes": {
+            "D": 1344,
+            "R": 743,
+            "O": 852
+          }
+        },
+        "47089": {
+          "name": "Jefferson",
+          "votes": {
+            "D": 514,
+            "R": 540,
+            "O": 549
+          }
+        },
+        "47091": {
+          "name": "Johnson",
+          "votes": {
+            "D": 256,
+            "R": 933,
+            "O": 933
+          }
+        },
+        "47093": {
+          "name": "Knox",
+          "votes": {
+            "D": 4069,
+            "R": 1984,
+            "O": 4191
+          }
+        },
+        "47095": {
+          "name": "Lake",
+          "votes": {
+            "D": 499,
+            "R": 122,
+            "O": 421
+          }
+        },
+        "47097": {
+          "name": "Lauderdale",
+          "votes": {
+            "D": 1020,
+            "R": 186,
+            "O": 1048
+          }
+        },
+        "47099": {
+          "name": "Lawrence",
+          "votes": {
+            "D": 1504,
+            "R": 878,
+            "O": 1457
+          }
+        },
+        "47101": {
+          "name": "Lewis",
+          "votes": {
+            "D": 370,
+            "R": 126,
+            "O": 376
+          }
+        },
+        "47103": {
+          "name": "Lincoln",
+          "votes": {
+            "D": 2651,
+            "R": 672,
+            "O": 2087
+          }
+        },
+        "47105": {
+          "name": "Loudon",
+          "votes": {
+            "D": 415,
+            "R": 322,
+            "O": 421
+          }
+        },
+        "47111": {
+          "name": "Macon",
+          "votes": {
+            "D": 787,
+            "R": 1251,
+            "O": -270
+          }
+        },
+        "47113": {
+          "name": "Madison",
+          "votes": {
+            "D": 2702,
+            "R": 1036,
+            "O": 2062
+          }
+        },
+        "47115": {
+          "name": "Marion",
+          "votes": {
+            "D": 810,
+            "R": 463,
+            "O": 863
+          }
+        },
+        "47117": {
+          "name": "Marshall",
+          "votes": {
+            "D": 1551,
+            "R": 376,
+            "O": 1273
+          }
+        },
+        "47119": {
+          "name": "Maury",
+          "votes": {
+            "D": 2309,
+            "R": 615,
+            "O": 2131
+          }
+        },
+        "47107": {
+          "name": "McMinn",
+          "votes": {
+            "D": 912,
+            "R": 667,
+            "O": 819
+          }
+        },
+        "47109": {
+          "name": "McNairy",
+          "votes": {
+            "D": 1155,
+            "R": 616,
+            "O": 1155
+          }
+        },
+        "47121": {
+          "name": "Meigs",
+          "votes": {
+            "D": 517,
+            "R": 337,
+            "O": 344
+          }
+        },
+        "47123": {
+          "name": "Monroe",
+          "votes": {
+            "D": 1136,
+            "R": 721,
+            "O": 894
+          }
+        },
+        "47125": {
+          "name": "Montgomery",
+          "votes": {
+            "D": 1638,
+            "R": 514,
+            "O": 1405
+          }
+        },
+        "47127": {
+          "name": "Moore",
+          "votes": {
+            "D": 694,
+            "R": 116,
+            "O": 590
+          }
+        },
+        "47129": {
+          "name": "Morgan",
+          "votes": {
+            "D": 466,
+            "R": 312,
+            "O": 501
+          }
+        },
+        "47131": {
+          "name": "Obion",
+          "votes": {
+            "D": 2152,
+            "R": 455,
+            "O": 1953
+          }
+        },
+        "47133": {
+          "name": "Overton",
+          "votes": {
+            "D": 1531,
+            "R": 743,
+            "O": 1035
+          }
+        },
+        "47135": {
+          "name": "Perry",
+          "votes": {
+            "D": 664,
+            "R": 379,
+            "O": 421
+          }
+        },
+        "47137": {
+          "name": "Pickett",
+          "votes": {
+            "D": 411,
+            "R": 355,
+            "O": 190
+          }
+        },
+        "47139": {
+          "name": "Polk",
+          "votes": {
+            "D": 867,
+            "R": 533,
+            "O": 876
+          }
+        },
+        "47141": {
+          "name": "Putnam",
+          "votes": {
+            "D": 1867,
+            "R": 923,
+            "O": 1335
+          }
+        },
+        "47143": {
+          "name": "Rhea",
+          "votes": {
+            "D": 692,
+            "R": 253,
+            "O": 720
+          }
+        },
+        "47145": {
+          "name": "Roane",
+          "votes": {
+            "D": 570,
+            "R": 482,
+            "O": 640
+          }
+        },
+        "47147": {
+          "name": "Robertson",
+          "votes": {
+            "D": 2287,
+            "R": 513,
+            "O": 2041
+          }
+        },
+        "47149": {
+          "name": "Rutherford",
+          "votes": {
+            "D": 3406,
+            "R": 1217,
+            "O": 2533
+          }
+        },
+        "47151": {
+          "name": "Scott",
+          "votes": {
+            "D": 160,
+            "R": 123,
+            "O": 285
+          }
+        },
+        "47153": {
+          "name": "Sequatchie",
+          "votes": {
+            "D": 354,
+            "R": 139,
+            "O": 337
+          }
+        },
+        "47155": {
+          "name": "Sevier",
+          "votes": {
+            "D": 341,
+            "R": 967,
+            "O": 968
+          }
+        },
+        "47157": {
+          "name": "Shelby",
+          "votes": {
+            "D": 6732,
+            "R": 589,
+            "O": 6960
+          }
+        },
+        "47159": {
+          "name": "Smith",
+          "votes": {
+            "D": 1863,
+            "R": 915,
+            "O": 1132
+          }
+        },
+        "47161": {
+          "name": "Stewart",
+          "votes": {
+            "D": 1312,
+            "R": 485,
+            "O": 1078
+          }
+        },
+        "47163": {
+          "name": "Sullivan",
+          "votes": {
+            "D": 2413,
+            "R": 538,
+            "O": 2425
+          }
+        },
+        "47165": {
+          "name": "Sumner",
+          "votes": {
+            "D": 2477,
+            "R": 769,
+            "O": 1858
+          }
+        },
+        "47167": {
+          "name": "Tipton",
+          "votes": {
+            "D": 987,
+            "R": 564,
+            "O": 657
+          }
+        },
+        "47169": {
+          "name": "Trousdale",
+          "votes": {
+            "D": 544,
+            "R": 211,
+            "O": 368
+          }
+        },
+        "47171": {
+          "name": "Unicoi",
+          "votes": {
+            "D": 170,
+            "R": 280,
+            "O": 291
+          }
+        },
+        "47173": {
+          "name": "Union",
+          "votes": {
+            "D": 404,
+            "R": 307,
+            "O": 414
+          }
+        },
+        "47175": {
+          "name": "Van Buren",
+          "votes": {
+            "D": 225,
+            "R": 106,
+            "O": 173
+          }
+        },
+        "47177": {
+          "name": "Warren",
+          "votes": {
+            "D": 1745,
+            "R": 339,
+            "O": 1672
+          }
+        },
+        "47179": {
+          "name": "Washington",
+          "votes": {
+            "D": 1531,
+            "R": 1134,
+            "O": 1540
+          }
+        },
+        "47181": {
+          "name": "Wayne",
+          "votes": {
+            "D": 435,
+            "R": 971,
+            "O": -137
+          }
+        },
+        "47183": {
+          "name": "Weakley",
+          "votes": {
+            "D": 2810,
+            "R": 1265,
+            "O": 1928
+          }
+        },
+        "47185": {
+          "name": "White",
+          "votes": {
+            "D": 1222,
+            "R": 330,
+            "O": 1228
+          }
+        },
+        "47187": {
+          "name": "Williamson",
+          "votes": {
+            "D": 2205,
+            "R": 797,
+            "O": 1479
+          }
+        },
+        "47189": {
+          "name": "Wilson",
+          "votes": {
+            "D": 2325,
+            "R": 682,
+            "O": 1941
+          }
+        }
+      }
+    },
+    "50": {
+      "name": "Vermont",
+      "ev": 4,
+      "candidates": [
+        {
+          "name": "William Howard Taft",
+          "party": "R",
+          "votes": 23332,
+          "pct": 37.13,
+          "ev": 4
+        },
+        {
+          "name": "Theodore Roosevelt",
+          "party": "O",
+          "votes": 22132,
+          "pct": 35.22,
+          "ev": 0
+        },
+        {
+          "name": "Woodrow Wilson",
+          "party": "D",
+          "votes": 15354,
+          "pct": 24.43,
+          "ev": 0
+        },
+        {
+          "name": "Eugene W. Chafin",
+          "party": "O",
+          "votes": 1095,
+          "pct": 1.74,
+          "ev": 0
+        },
+        {
+          "name": "Eugene V. Debs",
+          "party": "O",
+          "votes": 928,
+          "pct": 1.48,
+          "ev": 0
+        }
+      ],
+      "counties": {
+        "50001": {
+          "name": "Addison",
+          "votes": {
+            "D": 1487,
+            "R": 1835,
+            "O": 725
+          }
+        },
+        "50003": {
+          "name": "Bennington",
+          "votes": {
+            "D": 1380,
+            "R": 1464,
+            "O": 1211
+          }
+        },
+        "50005": {
+          "name": "Caledonia",
+          "votes": {
+            "D": 2049,
+            "R": 1583,
+            "O": 1185
+          }
+        },
+        "50007": {
+          "name": "Chittenden",
+          "votes": {
+            "D": 1663,
+            "R": 2368,
+            "O": 2404
+          }
+        },
+        "50009": {
+          "name": "Essex",
+          "votes": {
+            "D": 353,
+            "R": 463,
+            "O": 371
+          }
+        },
+        "50011": {
+          "name": "Franklin",
+          "votes": {
+            "D": 1457,
+            "R": 1433,
+            "O": 1431
+          }
+        },
+        "50013": {
+          "name": "Grand Isle",
+          "votes": {
+            "D": 204,
+            "R": 193,
+            "O": 225
+          }
+        },
+        "50015": {
+          "name": "Lamoille",
+          "votes": {
+            "D": 996,
+            "R": 852,
+            "O": 516
+          }
+        },
+        "50017": {
+          "name": "Orange",
+          "votes": {
+            "D": 1426,
+            "R": 1289,
+            "O": 1055
+          }
+        },
+        "50019": {
+          "name": "Orleans",
+          "votes": {
+            "D": 1891,
+            "R": 1475,
+            "O": 689
+          }
+        },
+        "50021": {
+          "name": "Rutland",
+          "votes": {
+            "D": 2927,
+            "R": 2999,
+            "O": 2398
+          }
+        },
+        "50023": {
+          "name": "Washington",
+          "votes": {
+            "D": 1730,
+            "R": 2797,
+            "O": 2252
+          }
+        },
+        "50025": {
+          "name": "Windham",
+          "votes": {
+            "D": 2020,
+            "R": 2143,
+            "O": 1439
+          }
+        },
+        "50027": {
+          "name": "Windsor",
+          "votes": {
+            "D": 2546,
+            "R": 2409,
+            "O": 1472
+          }
+        }
+      }
+    },
+    "51": {
+      "name": "Virginia",
+      "ev": 12,
+      "candidates": [
+        {
+          "name": "Woodrow Wilson",
+          "party": "D",
+          "votes": 90332,
+          "pct": 65.95,
+          "ev": 12
+        },
+        {
+          "name": "William Howard Taft",
+          "party": "R",
+          "votes": 23288,
+          "pct": 17.0,
+          "ev": 0
+        },
+        {
+          "name": "Theodore Roosevelt",
+          "party": "O",
+          "votes": 21777,
+          "pct": 15.9,
+          "ev": 0
+        },
+        {
+          "name": "Eugene V. Debs",
+          "party": "O",
+          "votes": 820,
+          "pct": 0.6,
+          "ev": 0
+        },
+        {
+          "name": "Eugene W. Chafin",
+          "party": "O",
+          "votes": 709,
+          "pct": 0.52,
+          "ev": 0
+        }
+      ],
+      "counties": {
+        "51001": {
+          "name": "Accomack County",
+          "votes": {
+            "D": 1825,
+            "R": 153,
+            "O": 136
+          }
+        },
+        "51003": {
+          "name": "Albemarle County",
+          "votes": {
+            "D": 1215,
+            "R": 144,
+            "O": 144
+          }
+        },
+        "51005": {
+          "name": "Alleghany County",
+          "votes": {
+            "D": 325,
+            "R": 32,
+            "O": 52
+          }
+        },
+        "51007": {
+          "name": "Amelia County",
+          "votes": {
+            "D": 765,
+            "R": 64,
+            "O": 68
+          }
+        },
+        "51009": {
+          "name": "Amherst County",
+          "votes": {
+            "D": 654,
+            "R": 28,
+            "O": 52
+          }
+        },
+        "51011": {
+          "name": "Appomattox County",
+          "votes": {
+            "D": 346,
+            "R": 86,
+            "O": 163
+          }
+        },
+        "51015": {
+          "name": "Augusta County",
+          "votes": {
+            "D": 1556,
+            "R": 568,
+            "O": 356
+          }
+        },
+        "51017": {
+          "name": "Bath County",
+          "votes": {
+            "D": 329,
+            "R": 159,
+            "O": 53
+          }
+        },
+        "51019": {
+          "name": "Bedford County",
+          "votes": {
+            "D": 1219,
+            "R": 142,
+            "O": 372
+          }
+        },
+        "51021": {
+          "name": "Bland County",
+          "votes": {
+            "D": 290,
+            "R": 206,
+            "O": 120
+          }
+        },
+        "51023": {
+          "name": "Botetourt County",
+          "votes": {
+            "D": 889,
+            "R": 517,
+            "O": 202
+          }
+        },
+        "51025": {
+          "name": "Brunswick County",
+          "votes": {
+            "D": 643,
+            "R": 67,
+            "O": 54
+          }
+        },
+        "51027": {
+          "name": "Buchanan County",
+          "votes": {
+            "D": 524,
+            "R": 223,
+            "O": 391
+          }
+        },
+        "51029": {
+          "name": "Buckingham County",
+          "votes": {
+            "D": 603,
+            "R": 97,
+            "O": 110
+          }
+        },
+        "51031": {
+          "name": "Campbell County",
+          "votes": {
+            "D": 810,
+            "R": 97,
+            "O": 145
+          }
+        },
+        "51033": {
+          "name": "Caroline County",
+          "votes": {
+            "D": 591,
+            "R": 144,
+            "O": 132
+          }
+        },
+        "51035": {
+          "name": "Carroll County",
+          "votes": {
+            "D": 765,
+            "R": 874,
+            "O": 349
+          }
+        },
+        "51036": {
+          "name": "Charles City County",
+          "votes": {
+            "D": 121,
+            "R": 37,
+            "O": 23
+          }
+        },
+        "51037": {
+          "name": "Charlotte County",
+          "votes": {
+            "D": 609,
+            "R": 175,
+            "O": 134
+          }
+        },
+        "51041": {
+          "name": "Chesterfield County",
+          "votes": {
+            "D": 702,
+            "R": 61,
+            "O": 85
+          }
+        },
+        "51043": {
+          "name": "Clarke County",
+          "votes": {
+            "D": 576,
+            "R": 39,
+            "O": 15
+          }
+        },
+        "51045": {
+          "name": "Craig County",
+          "votes": {
+            "D": 336,
+            "R": 62,
+            "O": 155
+          }
+        },
+        "51047": {
+          "name": "Culpeper County",
+          "votes": {
+            "D": 753,
+            "R": 108,
+            "O": 55
+          }
+        },
+        "51049": {
+          "name": "Cumberland County",
+          "votes": {
+            "D": 362,
+            "R": 10,
+            "O": 32
+          }
+        },
+        "51051": {
+          "name": "Dickenson County",
+          "votes": {
+            "D": 529,
+            "R": 398,
+            "O": 162
+          }
+        },
+        "51053": {
+          "name": "Dinwiddie County",
+          "votes": {
+            "D": 512,
+            "R": 58,
+            "O": 79
+          }
+        },
+        "51057": {
+          "name": "Essex County",
+          "votes": {
+            "D": 278,
+            "R": 72,
+            "O": 11
+          }
+        },
+        "51059": {
+          "name": "Fairfax County",
+          "votes": {
+            "D": 992,
+            "R": 187,
+            "O": 159
+          }
+        },
+        "51061": {
+          "name": "Fauquier County",
+          "votes": {
+            "D": 1187,
+            "R": 182,
+            "O": 92
+          }
+        },
+        "51063": {
+          "name": "Floyd County",
+          "votes": {
+            "D": 409,
+            "R": 222,
+            "O": 730
+          }
+        },
+        "51065": {
+          "name": "Fluvanna County",
+          "votes": {
+            "D": 409,
+            "R": 53,
+            "O": 63
+          }
+        },
+        "51067": {
+          "name": "Franklin County",
+          "votes": {
+            "D": 1238,
+            "R": 415,
+            "O": 609
+          }
+        },
+        "51069": {
+          "name": "Frederick County",
+          "votes": {
+            "D": 922,
+            "R": 181,
+            "O": 131
+          }
+        },
+        "51071": {
+          "name": "Giles County",
+          "votes": {
+            "D": 725,
+            "R": 267,
+            "O": 254
+          }
+        },
+        "51073": {
+          "name": "Gloucester County",
+          "votes": {
+            "D": 510,
+            "R": 74,
+            "O": 56
+          }
+        },
+        "51075": {
+          "name": "Goochland County",
+          "votes": {
+            "D": 322,
+            "R": 114,
+            "O": 88
+          }
+        },
+        "51077": {
+          "name": "Grayson County",
+          "votes": {
+            "D": 850,
+            "R": 832,
+            "O": 292
+          }
+        },
+        "51079": {
+          "name": "Greene County",
+          "votes": {
+            "D": 238,
+            "R": 141,
+            "O": 100
+          }
+        },
+        "51081": {
+          "name": "Greensville County",
+          "votes": {
+            "D": 294,
+            "R": 31,
+            "O": 76
+          }
+        },
+        "51083": {
+          "name": "Halifax County",
+          "votes": {
+            "D": 1260,
+            "R": 426,
+            "O": 150
+          }
+        },
+        "51085": {
+          "name": "Hanover County",
+          "votes": {
+            "D": 609,
+            "R": 87,
+            "O": 6
+          }
+        },
+        "51087": {
+          "name": "Henrico County",
+          "votes": {
+            "D": 952,
+            "R": 93,
+            "O": 127
+          }
+        },
+        "51089": {
+          "name": "Henry County",
+          "votes": {
+            "D": 707,
+            "R": 216,
+            "O": 380
+          }
+        },
+        "51091": {
+          "name": "Highland County",
+          "votes": {
+            "D": 313,
+            "R": 221,
+            "O": 98
+          }
+        },
+        "51093": {
+          "name": "Isle of Wight County",
+          "votes": {
+            "D": 708,
+            "R": 75,
+            "O": 101
+          }
+        },
+        "51095": {
+          "name": "James City County",
+          "votes": {
+            "D": 128,
+            "R": 10,
+            "O": 18
+          }
+        },
+        "51097": {
+          "name": "King and Queen County",
+          "votes": {
+            "D": 246,
+            "R": 68,
+            "O": 48
+          }
+        },
+        "51099": {
+          "name": "King George County",
+          "votes": {
+            "D": 256,
+            "R": 48,
+            "O": 103
+          }
+        },
+        "51101": {
+          "name": "King William County",
+          "votes": {
+            "D": 305,
+            "R": 69,
+            "O": 65
+          }
+        },
+        "51103": {
+          "name": "Lancaster County",
+          "votes": {
+            "D": 479,
+            "R": 82,
+            "O": 23
+          }
+        },
+        "51105": {
+          "name": "Lee County",
+          "votes": {
+            "D": 1023,
+            "R": 699,
+            "O": 596
+          }
+        },
+        "51107": {
+          "name": "Loudoun County",
+          "votes": {
+            "D": 1386,
+            "R": 256,
+            "O": 126
+          }
+        },
+        "51109": {
+          "name": "Louisa County",
+          "votes": {
+            "D": 582,
+            "R": 91,
+            "O": 151
+          }
+        },
+        "51111": {
+          "name": "Lunenburg County",
+          "votes": {
+            "D": 508,
+            "R": 66,
+            "O": 54
+          }
+        },
+        "51113": {
+          "name": "Madison County",
+          "votes": {
+            "D": 402,
+            "R": 210,
+            "O": 65
+          }
+        },
+        "51115": {
+          "name": "Mathews County",
+          "votes": {
+            "D": 523,
+            "R": 45,
+            "O": 34
+          }
+        },
+        "51117": {
+          "name": "Mecklenburg County",
+          "votes": {
+            "D": 1039,
+            "R": 191,
+            "O": 97
+          }
+        },
+        "51119": {
+          "name": "Middlesex County",
+          "votes": {
+            "D": 374,
+            "R": 128,
+            "O": 22
+          }
+        },
+        "51121": {
+          "name": "Montgomery County",
+          "votes": {
+            "D": 684,
+            "R": 349,
+            "O": 560
+          }
+        },
+        "51125": {
+          "name": "Nelson County",
+          "votes": {
+            "D": 706,
+            "R": 163,
+            "O": 102
+          }
+        },
+        "51127": {
+          "name": "New Kent County",
+          "votes": {
+            "D": 160,
+            "R": 30,
+            "O": 47
+          }
+        },
+        "51131": {
+          "name": "Northampton County",
+          "votes": {
+            "D": 726,
+            "R": 83,
+            "O": 77
+          }
+        },
+        "51133": {
+          "name": "Northumberland County",
+          "votes": {
+            "D": 471,
+            "R": 102,
+            "O": 52
+          }
+        },
+        "51135": {
+          "name": "Nottoway County",
+          "votes": {
+            "D": 683,
+            "R": 72,
+            "O": 81
+          }
+        },
+        "51137": {
+          "name": "Orange County",
+          "votes": {
+            "D": 619,
+            "R": 87,
+            "O": 59
+          }
+        },
+        "51139": {
+          "name": "Page County",
+          "votes": {
+            "D": 705,
+            "R": 339,
+            "O": 174
+          }
+        },
+        "51141": {
+          "name": "Patrick County",
+          "votes": {
+            "D": 698,
+            "R": 434,
+            "O": 357
+          }
+        },
+        "51143": {
+          "name": "Pittsylvania County",
+          "votes": {
+            "D": 1558,
+            "R": 527,
+            "O": 341
+          }
+        },
+        "51145": {
+          "name": "Powhatan County",
+          "votes": {
+            "D": 230,
+            "R": 109,
+            "O": 65
+          }
+        },
+        "51147": {
+          "name": "Prince Edward County",
+          "votes": {
+            "D": 584,
+            "R": 72,
+            "O": 47
+          }
+        },
+        "51149": {
+          "name": "Prince George County",
+          "votes": {
+            "D": 204,
+            "R": 42,
+            "O": 49
+          }
+        },
+        "51153": {
+          "name": "Prince William County",
+          "votes": {
+            "D": 423,
+            "R": 40,
+            "O": 104
+          }
+        },
+        "51155": {
+          "name": "Pulaski County",
+          "votes": {
+            "D": 781,
+            "R": 196,
+            "O": 500
+          }
+        },
+        "51157": {
+          "name": "Rappahannock County",
+          "votes": {
+            "D": 356,
+            "R": 94,
+            "O": 24
+          }
+        },
+        "51159": {
+          "name": "Richmond County",
+          "votes": {
+            "D": 342,
+            "R": 110,
+            "O": 40
+          }
+        },
+        "51161": {
+          "name": "Roanoke County",
+          "votes": {
+            "D": 696,
+            "R": 108,
+            "O": 215
+          }
+        },
+        "51163": {
+          "name": "Rockbridge County",
+          "votes": {
+            "D": 949,
+            "R": 433,
+            "O": 232
+          }
+        },
+        "51165": {
+          "name": "Rockingham County",
+          "votes": {
+            "D": 1764,
+            "R": 937,
+            "O": 493
+          }
+        },
+        "51167": {
+          "name": "Russell County",
+          "votes": {
+            "D": 1298,
+            "R": 588,
+            "O": 633
+          }
+        },
+        "51169": {
+          "name": "Scott County",
+          "votes": {
+            "D": 1311,
+            "R": 557,
+            "O": 1093
+          }
+        },
+        "51171": {
+          "name": "Shenandoah County",
+          "votes": {
+            "D": 1336,
+            "R": 706,
+            "O": 512
+          }
+        },
+        "51173": {
+          "name": "Smyth County",
+          "votes": {
+            "D": 1022,
+            "R": 609,
+            "O": 587
+          }
+        },
+        "51175": {
+          "name": "Southampton County",
+          "votes": {
+            "D": 861,
+            "R": 95,
+            "O": 57
+          }
+        },
+        "51177": {
+          "name": "Spotsylvania County",
+          "votes": {
+            "D": 389,
+            "R": 58,
+            "O": 169
+          }
+        },
+        "51179": {
+          "name": "Stafford County",
+          "votes": {
+            "D": 347,
+            "R": 141,
+            "O": 185
+          }
+        },
+        "51181": {
+          "name": "Surry County",
+          "votes": {
+            "D": 360,
+            "R": 57,
+            "O": 48
+          }
+        },
+        "51183": {
+          "name": "Sussex County",
+          "votes": {
+            "D": 435,
+            "R": 59,
+            "O": 67
+          }
+        },
+        "51185": {
+          "name": "Tazewell County",
+          "votes": {
+            "D": 979,
+            "R": 586,
+            "O": 897
+          }
+        },
+        "51187": {
+          "name": "Warren County",
+          "votes": {
+            "D": 571,
+            "R": 122,
+            "O": 47
+          }
+        },
+        "51191": {
+          "name": "Washington County",
+          "votes": {
+            "D": 1721,
+            "R": 590,
+            "O": 1004
+          }
+        },
+        "51193": {
+          "name": "Westmoreland County",
+          "votes": {
+            "D": 341,
+            "R": 69,
+            "O": 45
+          }
+        },
+        "51195": {
+          "name": "Wise County",
+          "votes": {
+            "D": 1279,
+            "R": 851,
+            "O": 608
+          }
+        },
+        "51197": {
+          "name": "Wythe County",
+          "votes": {
+            "D": 1110,
+            "R": 633,
+            "O": 656
+          }
+        },
+        "51199": {
+          "name": "York County",
+          "votes": {
+            "D": 211,
+            "R": 34,
+            "O": 32
+          }
+        },
+        "51510": {
+          "name": "Alexandria City",
+          "votes": {
+            "D": 951,
+            "R": 132,
+            "O": 117
+          }
+        },
+        "51520": {
+          "name": "Bristol City",
+          "votes": {
+            "D": 405,
+            "R": 86,
+            "O": 75
+          }
+        },
+        "51530": {
+          "name": "Buena Vista City",
+          "votes": {
+            "D": 155,
+            "R": 43,
+            "O": 59
+          }
+        },
+        "51540": {
+          "name": "Charlottesville City",
+          "votes": {
+            "D": 454,
+            "R": 39,
+            "O": 29
+          }
+        },
+        "51590": {
+          "name": "Danville City",
+          "votes": {
+            "D": 1066,
+            "R": 93,
+            "O": 97
+          }
+        },
+        "51630": {
+          "name": "Fredericksburg City",
+          "votes": {
+            "D": 414,
+            "R": 51,
+            "O": 101
+          }
+        },
+        "51650": {
+          "name": "Hampton City",
+          "votes": {
+            "D": 353,
+            "R": 13,
+            "O": 33
+          }
+        },
+        "51680": {
+          "name": "Lynchburg City",
+          "votes": {
+            "D": 1487,
+            "R": 111,
+            "O": 242
+          }
+        },
+        "51700": {
+          "name": "Newport News City",
+          "votes": {
+            "D": 938,
+            "R": 100,
+            "O": 287
+          }
+        },
+        "51710": {
+          "name": "Norfolk City",
+          "votes": {
+            "D": 3539,
+            "R": 195,
+            "O": 494
+          }
+        },
+        "51730": {
+          "name": "Petersburg City",
+          "votes": {
+            "D": 1122,
+            "R": 75,
+            "O": 47
+          }
+        },
+        "51740": {
+          "name": "Portsmouth City",
+          "votes": {
+            "D": 1529,
+            "R": 64,
+            "O": 338
+          }
+        },
+        "51750": {
+          "name": "Radford City",
+          "votes": {
+            "D": 183,
+            "R": 36,
+            "O": 107
+          }
+        },
+        "51760": {
+          "name": "Richmond City",
+          "votes": {
+            "D": 5636,
+            "R": 405,
+            "O": 584
+          }
+        },
+        "51770": {
+          "name": "Roanoke City",
+          "votes": {
+            "D": 1913,
+            "R": 268,
+            "O": 557
+          }
+        },
+        "51790": {
+          "name": "Staunton City",
+          "votes": {
+            "D": 632,
+            "R": 65,
+            "O": 287
+          }
+        },
+        "51800": {
+          "name": "Suffolk City",
+          "votes": {
+            "D": 480,
+            "R": 71,
+            "O": 82
+          }
+        },
+        "51830": {
+          "name": "Williamsburg City",
+          "votes": {
+            "D": 113,
+            "R": 11,
+            "O": 15
+          }
+        },
+        "51840": {
+          "name": "Winchester City",
+          "votes": {
+            "D": 447,
+            "R": 141,
+            "O": 88
+          }
+        }
+      }
+    },
+    "55": {
+      "name": "Wisconsin",
+      "ev": 13,
+      "candidates": [
+        {
+          "name": "Woodrow Wilson",
+          "party": "D",
+          "votes": 164230,
+          "pct": 41.06,
+          "ev": 13
+        },
+        {
+          "name": "William Howard Taft",
+          "party": "R",
+          "votes": 130596,
+          "pct": 32.65,
+          "ev": 0
+        },
+        {
+          "name": "Theodore Roosevelt",
+          "party": "O",
+          "votes": 62448,
+          "pct": 15.61,
+          "ev": 0
+        },
+        {
+          "name": "Eugene V. Debs",
+          "party": "O",
+          "votes": 33476,
+          "pct": 8.37,
+          "ev": 0
+        },
+        {
+          "name": "Eugene Chafin",
+          "party": "O",
+          "votes": 8584,
+          "pct": 2.15,
+          "ev": 0
+        },
+        {
+          "name": "Arthur E. Reimer",
+          "party": "O",
+          "votes": 632,
+          "pct": 0.16,
+          "ev": 0
+        }
+      ],
+      "counties": {
+        "55001": {
+          "name": "Adams",
+          "votes": {
+            "D": 462,
+            "R": 689,
+            "O": 117
+          }
+        },
+        "55003": {
+          "name": "Ashland",
+          "votes": {
+            "D": 1451,
+            "R": 937,
+            "O": 1619
+          }
+        },
+        "55005": {
+          "name": "Barron",
+          "votes": {
+            "D": 1065,
+            "R": 1414,
+            "O": 1142
+          }
+        },
+        "55007": {
+          "name": "Bayfield",
+          "votes": {
+            "D": 666,
+            "R": 514,
+            "O": 1047
+          }
+        },
+        "55009": {
+          "name": "Brown",
+          "votes": {
+            "D": 3557,
+            "R": 2764,
+            "O": 2909
+          }
+        },
+        "55011": {
+          "name": "Buffalo",
+          "votes": {
+            "D": 848,
+            "R": 1239,
+            "O": 69
+          }
+        },
+        "55013": {
+          "name": "Burnett",
+          "votes": {
+            "D": 305,
+            "R": 403,
+            "O": 632
+          }
+        },
+        "55015": {
+          "name": "Calumet",
+          "votes": {
+            "D": 1366,
+            "R": 931,
+            "O": 998
+          }
+        },
+        "55017": {
+          "name": "Chippewa",
+          "votes": {
+            "D": 2028,
+            "R": 1736,
+            "O": 1645
+          }
+        },
+        "55019": {
+          "name": "Clark",
+          "votes": {
+            "D": 1528,
+            "R": 2035,
+            "O": 392
+          }
+        },
+        "55021": {
+          "name": "Columbia",
+          "votes": {
+            "D": 2473,
+            "R": 2463,
+            "O": 862
+          }
+        },
+        "55023": {
+          "name": "Crawford",
+          "votes": {
+            "D": 1515,
+            "R": 1407,
+            "O": 563
+          }
+        },
+        "55025": {
+          "name": "Dane",
+          "votes": {
+            "D": 9017,
+            "R": 5244,
+            "O": 5672
+          }
+        },
+        "55027": {
+          "name": "Dodge",
+          "votes": {
+            "D": 5246,
+            "R": 2559,
+            "O": 3629
+          }
+        },
+        "55029": {
+          "name": "Door",
+          "votes": {
+            "D": 769,
+            "R": 1167,
+            "O": 502
+          }
+        },
+        "55031": {
+          "name": "Douglas",
+          "votes": {
+            "D": 1181,
+            "R": 730,
+            "O": 2119
+          }
+        },
+        "55033": {
+          "name": "Dunn",
+          "votes": {
+            "D": 833,
+            "R": 1403,
+            "O": 1739
+          }
+        },
+        "55035": {
+          "name": "Eau Claire",
+          "votes": {
+            "D": 1727,
+            "R": 2013,
+            "O": 970
+          }
+        },
+        "55037": {
+          "name": "Florence",
+          "votes": {
+            "D": 131,
+            "R": 262,
+            "O": 287
+          }
+        },
+        "55039": {
+          "name": "Fond du Lac",
+          "votes": {
+            "D": 4838,
+            "R": 3014,
+            "O": 3588
+          }
+        },
+        "55041": {
+          "name": "Forest",
+          "votes": {
+            "D": 567,
+            "R": 518,
+            "O": 314
+          }
+        },
+        "55043": {
+          "name": "Grant",
+          "votes": {
+            "D": 3615,
+            "R": 3283,
+            "O": 1320
+          }
+        },
+        "55045": {
+          "name": "Green",
+          "votes": {
+            "D": 1716,
+            "R": 1601,
+            "O": 922
+          }
+        },
+        "55047": {
+          "name": "Green Lake",
+          "votes": {
+            "D": 1407,
+            "R": 1269,
+            "O": 446
+          }
+        },
+        "55049": {
+          "name": "Iowa",
+          "votes": {
+            "D": 2103,
+            "R": 1886,
+            "O": 912
+          }
+        },
+        "55051": {
+          "name": "Iron",
+          "votes": {
+            "D": 347,
+            "R": 473,
+            "O": 237
+          }
+        },
+        "55053": {
+          "name": "Jackson",
+          "votes": {
+            "D": 606,
+            "R": 1398,
+            "O": -147
+          }
+        },
+        "55055": {
+          "name": "Jefferson",
+          "votes": {
+            "D": 4381,
+            "R": 1926,
+            "O": 3169
+          }
+        },
+        "55057": {
+          "name": "Juneau",
+          "votes": {
+            "D": 1236,
+            "R": 1322,
+            "O": 543
+          }
+        },
+        "55059": {
+          "name": "Kenosha",
+          "votes": {
+            "D": 2216,
+            "R": 1671,
+            "O": 2799
+          }
+        },
+        "55061": {
+          "name": "Kewaunee",
+          "votes": {
+            "D": 1696,
+            "R": 1115,
+            "O": 892
+          }
+        },
+        "55063": {
+          "name": "La Crosse",
+          "votes": {
+            "D": 4263,
+            "R": 2272,
+            "O": 3489
+          }
+        },
+        "55065": {
+          "name": "Lafayette",
+          "votes": {
+            "D": 1852,
+            "R": 1747,
+            "O": 969
+          }
+        },
+        "55067": {
+          "name": "Langlade",
+          "votes": {
+            "D": 1387,
+            "R": 710,
+            "O": 1514
+          }
+        },
+        "55069": {
+          "name": "Lincoln",
+          "votes": {
+            "D": 1760,
+            "R": 712,
+            "O": 1934
+          }
+        },
+        "55071": {
+          "name": "Manitowoc",
+          "votes": {
+            "D": 3436,
+            "R": 2389,
+            "O": 2902
+          }
+        },
+        "55073": {
+          "name": "Marathon",
+          "votes": {
+            "D": 4043,
+            "R": 3033,
+            "O": 3069
+          }
+        },
+        "55075": {
+          "name": "Marinette",
+          "votes": {
+            "D": 1559,
+            "R": 1618,
+            "O": 1447
+          }
+        },
+        "55077": {
+          "name": "Marquette",
+          "votes": {
+            "D": 923,
+            "R": 881,
+            "O": 473
+          }
+        },
+        "55079": {
+          "name": "Milwaukee",
+          "votes": {
+            "D": 27628,
+            "R": 17877,
+            "O": 34182
+          }
+        },
+        "55081": {
+          "name": "Monroe",
+          "votes": {
+            "D": 2084,
+            "R": 1841,
+            "O": 1146
+          }
+        },
+        "55083": {
+          "name": "Oconto",
+          "votes": {
+            "D": 1523,
+            "R": 1988,
+            "O": 282
+          }
+        },
+        "55085": {
+          "name": "Oneida",
+          "votes": {
+            "D": 717,
+            "R": 774,
+            "O": 569
+          }
+        },
+        "55087": {
+          "name": "Outagamie",
+          "votes": {
+            "D": 4139,
+            "R": 2384,
+            "O": 3503
+          }
+        },
+        "55089": {
+          "name": "Ozaukee",
+          "votes": {
+            "D": 1878,
+            "R": 749,
+            "O": 1470
+          }
+        },
+        "55091": {
+          "name": "Pepin",
+          "votes": {
+            "D": 410,
+            "R": 528,
+            "O": 264
+          }
+        },
+        "55093": {
+          "name": "Pierce",
+          "votes": {
+            "D": 985,
+            "R": 986,
+            "O": 1196
+          }
+        },
+        "55095": {
+          "name": "Polk",
+          "votes": {
+            "D": 830,
+            "R": 848,
+            "O": 1227
+          }
+        },
+        "55097": {
+          "name": "Portage",
+          "votes": {
+            "D": 2301,
+            "R": 1932,
+            "O": 1448
+          }
+        },
+        "55099": {
+          "name": "Price",
+          "votes": {
+            "D": 662,
+            "R": 708,
+            "O": 984
+          }
+        },
+        "55101": {
+          "name": "Racine",
+          "votes": {
+            "D": 3909,
+            "R": 2606,
+            "O": 3646
+          }
+        },
+        "55103": {
+          "name": "Richland",
+          "votes": {
+            "D": 1493,
+            "R": 1623,
+            "O": 712
+          }
+        },
+        "55105": {
+          "name": "Rock",
+          "votes": {
+            "D": 3032,
+            "R": 4276,
+            "O": 1343
+          }
+        },
+        "55107": {
+          "name": "Rusk",
+          "votes": {
+            "D": 522,
+            "R": 575,
+            "O": 552
+          }
+        },
+        "55111": {
+          "name": "Sauk",
+          "votes": {
+            "D": 432,
+            "R": 295,
+            "O": 319
+          }
+        },
+        "55113": {
+          "name": "Sawyer",
+          "votes": {
+            "D": 1661,
+            "R": 1535,
+            "O": 1453
+          }
+        },
+        "55115": {
+          "name": "Shawano",
+          "votes": {
+            "D": 3968,
+            "R": 2692,
+            "O": 4241
+          }
+        },
+        "55117": {
+          "name": "Sheboygan",
+          "votes": {
+            "D": 1806,
+            "R": 1728,
+            "O": 1192
+          }
+        },
+        "55109": {
+          "name": "St. Croix",
+          "votes": {
+            "D": 2464,
+            "R": 2171,
+            "O": 1385
+          }
+        },
+        "55119": {
+          "name": "Taylor",
+          "votes": {
+            "D": 821,
+            "R": 773,
+            "O": 740
+          }
+        },
+        "55121": {
+          "name": "Trempealeau",
+          "votes": {
+            "D": 1235,
+            "R": 1763,
+            "O": 422
+          }
+        },
+        "55123": {
+          "name": "Vernon",
+          "votes": {
+            "D": 1253,
+            "R": 2663,
+            "O": -709
+          }
+        },
+        "55125": {
+          "name": "Vilas",
+          "votes": {
+            "D": 327,
+            "R": 304,
+            "O": 315
+          }
+        },
+        "55127": {
+          "name": "Walworth",
+          "votes": {
+            "D": 2125,
+            "R": 2096,
+            "O": 1649
+          }
+        },
+        "55129": {
+          "name": "Washburn",
+          "votes": {
+            "D": 398,
+            "R": 409,
+            "O": 600
+          }
+        },
+        "55131": {
+          "name": "Washington",
+          "votes": {
+            "D": 2425,
+            "R": 1799,
+            "O": 1104
+          }
+        },
+        "55133": {
+          "name": "Waukesha",
+          "votes": {
+            "D": 3594,
+            "R": 2714,
+            "O": 1934
+          }
+        },
+        "55135": {
+          "name": "Waupaca",
+          "votes": {
+            "D": 1563,
+            "R": 2204,
+            "O": 2523
+          }
+        },
+        "55137": {
+          "name": "Waushara",
+          "votes": {
+            "D": 772,
+            "R": 1343,
+            "O": 337
+          }
+        },
+        "55139": {
+          "name": "Winnebago",
+          "votes": {
+            "D": 4631,
+            "R": 1922,
+            "O": 5276
+          }
+        },
+        "55141": {
+          "name": "Wood",
+          "votes": {
+            "D": 2523,
+            "R": 1742,
+            "O": 1852
+          }
+        }
+      }
+    }
+  }
+}

@@ -77,6 +77,55 @@
     return m[abbr] || "#909aa4";
   }
 
+  /* ─── Pickup stripe angles (degrees) ──────────────────────────────────
+     Each party gets a distinct diagonal angle so pickups read as a
+     party-specific pattern even when zoomed out. Angles are spread
+     across 0–180° with ≥20° between any two majors. */
+  const PICKUP_STRIPE_ANGLE = {
+    Lab:   45,
+    Con:   135,   // perpendicular to Lab — instantly distinguishable
+    RUK:   20,
+    Reform:20,
+    LD:    70,
+    Grn:   110,
+    SNP:   160,
+    PC:    5,
+    SF:    90,
+    DUP:   25,
+    SDLP:  115,
+    UUP:   65,
+    ALL:   155,
+    IND:   35,
+  };
+
+  // Build one <pattern> per party. Each pattern is rotated to the
+  // party's angle and uses the party's darker accent so it reads
+  // against the lighter base fill underneath.
+  function injectPickupPatterns(svg) {
+    const defs = svg.append("defs").attr("class","pickup-defs");
+    const darkPair = {
+      Lab:"#b03030", Con:"#1e4e8c", LD:"#a06010", Grn:"#2a7a2a",
+      RUK:"#0a7090", Reform:"#0a7090", SNP:"#8a6a00", PC:"#0f6035",
+      SF:"#0f5030", DUP:"#6020a0", SDLP:"#0a6035", UUP:"#1a4880",
+      ALL:"#904000", IND:"#505a64",
+    };
+    Object.entries(PICKUP_STRIPE_ANGLE).forEach(([abbr, angle]) => {
+      const pat = defs.append("pattern")
+        .attr("id", `pickup-${abbr}`)
+        .attr("patternUnits", "userSpaceOnUse")
+        .attr("width", 6)
+        .attr("height", 6)
+        .attr("patternTransform", `rotate(${angle})`);
+      // Transparent gap then a stripe — the underlying fill shows through.
+      pat.append("rect").attr("width", 6).attr("height", 6).attr("fill", "transparent");
+      pat.append("line")
+        .attr("x1", 0).attr("y1", 0).attr("x2", 0).attr("y2", 6)
+        .attr("stroke", darkPair[abbr] || "#1a1a1a")
+        .attr("stroke-width", 1.6)
+        .attr("stroke-opacity", 0.85);
+    });
+  }
+
   /* ─── Rating helper ────────────────────────────────────────────────── */
   function ratingColour(winProb) {
     if (winProb >= 0.95) return "#aabbd4";
@@ -291,6 +340,8 @@
 
     svg.append("rect").attr("width",W).attr("height",H).attr("fill","#0d0f14");
 
+    injectPickupPatterns(svg);
+
     const projection = d3.geoMercator();
     const path = d3.geoPath().projection(projection);
     const mapG = svg.append("g");
@@ -422,6 +473,21 @@
             highlightG.selectAll(".riding-hover").remove();
           }
         });
+
+      // Pickup stripe overlay — diagonal lines per pickup-winning party,
+      // angle keyed to PICKUP_STRIPE_ANGLE so each party is distinguishable.
+      ridingG.selectAll(".riding-pickup")
+        .data(allRidings.features.filter(d => {
+          const dd = getData(d);
+          return dd && dd.change === "Pickup" && PICKUP_STRIPE_ANGLE[dd.winner];
+        }))
+        .join("path")
+        .attr("class","riding-pickup")
+        .attr("d", path)
+        .attr("fill", d => `url(#pickup-${getData(d).winner})`)
+        .attr("stroke","none")
+        .attr("pointer-events","none");
+
       mapG.append(() => highlightG.node());
     }
 
@@ -460,10 +526,25 @@
             highlightG.selectAll(".riding-hover").remove();
           }
         });
+      // Pickup stripes — same logic as country view, clipped to the region.
+      // Inserted after fills but before the mesh so riding boundaries stay visible.
+      clippedG.selectAll(".zoomed-pickup")
+        .data(regionRidings.filter(d => {
+          const dd = getData(d);
+          return dd && dd.change === "Pickup" && PICKUP_STRIPE_ANGLE[dd.winner];
+        }))
+        .join("path")
+        .attr("class","zoomed-pickup")
+        .attr("d", path)
+        .attr("fill", d => `url(#pickup-${getData(d).winner})`)
+        .attr("stroke","none")
+        .attr("pointer-events","none");
+
       clippedG.append("path").attr("class","riding-mesh")
         .datum(interiorMesh).attr("d", path).attr("fill","none")
         .attr("stroke","rgba(160,165,180,0.35)").attr("stroke-width", 0.4/currentK)
         .attr("pointer-events","none");
+
       mapG.append(() => highlightG.node());
     }
 
