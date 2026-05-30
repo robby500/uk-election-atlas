@@ -5,6 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>LeanTossup.ca — Electoral Intelligence</title>
   <meta name="description" content="Every seat. Every swing. Every election — mapped to the riding. UK results 1918–2024. US & UK models coming soon.">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png">
+  <link rel="icon" href="/favicon.ico">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,700;1,400&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
   <style>
@@ -60,6 +64,13 @@
     .nav-links { display: flex; gap: 24px; }
     .nav-link { font-size: 0.55rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); text-decoration: none; transition: color 0.15s; }
     .nav-link:hover { color: var(--text); }
+    .nav-kofi {
+      font-size: 0.55rem; letter-spacing: 0.14em; text-transform: uppercase;
+      color: var(--gold); text-decoration: none;
+      border: 1px solid rgba(201,168,0,0.4); padding: 5px 12px; border-radius: 2px;
+      transition: background 0.15s, color 0.15s;
+    }
+    .nav-kofi:hover { background: var(--gold); color: var(--bg); }
 
     /* ── Hero ── */
     .hero {
@@ -234,6 +245,9 @@
 
   <nav class="nav">
     <a href="index.html" class="nav-brand">LeanTossup<span class="ca">.ca</span></a>
+    <div class="nav-links">
+      <a href="https://ko-fi.com/leantossup" class="nav-kofi" target="_blank" rel="noopener">Support ♥</a>
+    </div>
   </nav>
 
   <section class="hero">
